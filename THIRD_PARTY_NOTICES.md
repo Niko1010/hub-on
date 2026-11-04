@@ -37,3 +37,7 @@ Apache-2.0。`audio/seeed_vad.py` 从 `services/voice-pipeline/src/realtime_pipe
 `frontend/assets/hubone-*.svg` 来自用户提供的《HUB ONE VIS.pdf》第 5 页原始矢量路径，用于其 HUBONE 品牌界面，品牌权益归原权利人所有。标准组合、比例和图形保持原样。
 
 Roboto 可变字体来自 Google Fonts 官方 `ofl/roboto` 包，随资源保留 `frontend/assets/ROBOTO-OFL.txt`。中文使用 VIS 所列思源黑体系列的系统字体栈及系统回退，没有分发商业字体。
+
+## V0.2 空间 CAD
+
+CAD 解析使用 MIT 许可的 [ezdxf 1.4.4](https://github.com/mozman/ezdxf)，通过 requirements.txt 安装，没有复制修改其源码。原始 DXF 和两份 PDF 由用户提供，保存在 space_intelligence/source，来源文件名与 hash 见 manifest.json。JSON/SVG 由本项目离线解析器生成，保留源几何与实体关系。PDF 核对使用环境中的 PyMuPDF 1.26.6，不是后端运行依赖，未将其源码或二进制打包。

@@ -2,6 +2,7 @@ const $ = (q) => document.querySelector(q);
 const esc = (x) => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clock = (s=0) => `${String(Math.floor(s/60)).padStart(2,'0')}:${(s%60).toFixed(1).padStart(4,'0')}`;
 const iconPaths={
+  space:'<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15M15 6v15"/>',
   capture:'<rect x="3" y="5" width="13" height="14" rx="3"/><path d="m16 9 5-3v12l-5-3"/>',
   timeline:'<path d="M7 3v18M11 6h9M11 12h6M11 18h9"/><circle cx="7" cy="6" r="2"/><circle cx="7" cy="18" r="2"/>',
   feedback:'<path d="M20 14a4 4 0 0 1-4 4H9l-5 3V7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4Z"/><path d="M8 8h8M8 12h5"/>',
@@ -19,6 +20,9 @@ const pages = [
   ['insights','✧','产品洞察','从真实证据，到改进假设。','每个产品建议，都能回到最初的体验证据。'],
   ['report','▤','研究报告','把一次体验，沉淀为研究。','完整研究记录、证据索引与下一轮验证实验。'],
 ];
+// Public V0.1 REPLAY packages contain simulated C3 records only, not building plans.
+if(!window.HUBONE_REPLAY||window.HUBONE_SPACE_PREVIEW)pages.unshift(['space','⌖','空间智能','让空间，成为洞察的起点。','SPACE INTELLIGENCE · 苏州观前街1号 · 从原始 CAD 建立可追溯的空间地图。']);
+let spaceView=null,renderGeneration=0;
 const state = {sid:localStorage.getItem('hubone-preview-session'),session:null,events:[],feedback:null,report:null,
   stats:{},cap:{},page:'capture',filter:'all',busy:false,stream:null,device:null,recorder:null};
 
@@ -40,7 +44,7 @@ function evidenceButtons(ids){return ids.map(id=>`<button class="quote-link" dat
 function empty(title,text){return `<div class="empty"><strong>${esc(title)}</strong>${esc(text)}</div>`;}
 function requireSession(){if(!state.sid)throw Error('请先新建 Session，或运行完整演示。');}
 function isSim(){return state.session?.simulated||state.session?.assets.some(a=>a.simulated)||state.events.some(e=>e.metadata.simulated);}
-function sessionBadge(){const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?'USER INPUT · 待复核':'尚无 Session';}
+function sessionBadge(){if(state.page==='space'){$('#mode').className='pill model';$('#mode').textContent='CAD SOURCE · mm';return;}const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?'USER INPUT · 待复核':'尚无 Session';}
 
 async function refreshSessions(){
   const sessions=await api('/sessions');
@@ -80,10 +84,17 @@ function navigate(){
   stopPreview();state.page=pages.some(p=>p[0]===next)?next:'capture';render();
 }
 function render(){
+  spaceView?.destroy();spaceView=null;const generation=++renderGeneration;
   const page=pages.find(p=>p[0]===state.page);
-  $('#nav').innerHTML=pages.map((p,i)=>`<a href="#${p[0]}" class="nav-link ${p[0]===state.page?'active':''}"><span class="nav-icon">${icon(p[0])}</span><span class="nav-text">${p[2]}</span><span class="nav-index">0${i+1}</span></a>`).join('');
+  const spatial=state.page==='space';document.body.classList.toggle('is-space',spatial);
+  $('#nav').innerHTML=pages.map((p,i)=>`${p[0]==='capture'&&!window.HUBONE_REPLAY?'<span class="nav-section-label">CREST C3 EXPERIENCE LAB</span>':''}<a href="#${p[0]}" class="nav-link ${p[0]===state.page?'active':''}"><span class="nav-icon">${icon(p[0])}</span><span class="nav-text">${p[2]}</span><span class="nav-index">0${i+1}</span></a>`).join('');
   $('#breadcrumb').textContent=page[2];$('#page-title').textContent=page[3];$('#page-subtitle').textContent=page[4];
-  $('#content').innerHTML=({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
+  $('#workspace-context').textContent=spatial?'Space Intelligence':'Crest C3';
+  $('#page-eyebrow').textContent=spatial?'HUB ONE / SPACE INTELLIGENCE':'MULTIMODAL CONSUMER RESEARCH';
+  $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':'HUB ONE × CREST C3';
+  $('#footer-note').textContent=spatial?'真实 CAD 几何 · 设备与消费者行为尚未连接':'证据驱动的产品研究 · 所有改进建议均待验证';
+  $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
+  if(spatial)import('./space.js?v=0.2.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
   $('#demo-btn').disabled=state.busy;$('#session-select').disabled=state.busy;$('#new-session').disabled=state.busy;
   sessionBadge();
 }
@@ -301,7 +312,7 @@ async function init(){
   navigate();
   try{
     const [health,cap,sessions]=await Promise.all([api('/health'),api('/capabilities'),refreshSessions()]);
-    state.cap=cap;$('#health').textContent=health.status==='ok'?'演示记录回放 · REPLAY':'服务待检查';
+    state.cap=cap;$('#health').textContent=health.status==='ok'?'空间地图 / C3 示例预览':'服务待检查';
     if(state.sid&&!sessions.some(s=>s.session_id===state.sid))state.sid=null;
     if(state.sid)await selectSession(state.sid);else render();
   }catch(e){$('#health').textContent='服务连接失败';error(e);}

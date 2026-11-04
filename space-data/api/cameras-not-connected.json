@@ -1,0 +1,8 @@
+{
+  "items": [],
+  "data_status": "NOT_CONNECTED",
+  "registered_real_devices": 0,
+  "physical_device_count": null,
+  "online_real_devices": null,
+  "note": "未接入真实设备清单；SIMULATED 位置仅用于坐标和覆盖扇形交互测试，不代表安装点或真实可视范围。"
+}
