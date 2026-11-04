@@ -21,7 +21,7 @@ const pages = [
   ['report','▤','研究报告','把一次体验，沉淀为研究。','完整研究记录、证据索引与下一轮验证实验。'],
 ];
 // Public V0.1 REPLAY packages contain simulated C3 records only, not building plans.
-if(!window.HUBONE_REPLAY||window.HUBONE_SPACE_PREVIEW)pages.unshift(['space','⌖','空间智能','让空间，成为洞察的起点。','SPACE INTELLIGENCE · 苏州观前街1号 · 从原始 CAD 建立可追溯的空间地图。']);
+if(!window.HUBONE_REPLAY||window.HUBONE_SPACE_PREVIEW)pages.unshift(['space','⌖','空间智能','Space Intelligence','观前街1号 · 建筑空间数字孪生']);
 let spaceView=null,renderGeneration=0;
 const state = {sid:localStorage.getItem('hubone-preview-session'),session:null,events:[],feedback:null,report:null,
   stats:{},cap:{},page:'capture',filter:'all',busy:false,stream:null,device:null,recorder:null};
@@ -94,7 +94,7 @@ function render(){
   $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':'HUB ONE × CREST C3';
   $('#footer-note').textContent=spatial?'真实 CAD 几何 · 设备与消费者行为尚未连接':'证据驱动的产品研究 · 所有改进建议均待验证';
   $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
-  if(spatial)import('./space.js?v=0.3.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
+  if(spatial)import('./space.js?v=0.4.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
   $('#demo-btn').disabled=state.busy;$('#session-select').disabled=state.busy;$('#new-session').disabled=state.busy;
   sessionBadge();
 }

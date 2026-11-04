@@ -18,6 +18,7 @@ class SpaceView {
     this.layers={...this.layers,zones:true,activity:false,heatmap:false,trajectories:false,experience:false,events:false};
     this.viewMode=localStorage.getItem('hubone-space-view')==='2d'?'2d':'3d';this.floorDisplay='both';this.explode=0;
     this.modelCache=new Map();this.mapGeneration=0;this.assets={walls:true,columns:true,glazing:true,stairs:true,slabs:true};
+    this.drawerMedia=window.matchMedia('(max-width:1199px)');this.drawerOpen=false;
   }
   async init() {
     try {
@@ -30,9 +31,11 @@ class SpaceView {
     } catch(error) {this.fail(error);}
   }
   frame() {
-    return `<div class="space-location"><div><span class="space-site-code">GQ / 001</span><strong>苏州 · 观前街1号</strong><span>空间数字孪生</span></div><div class="space-mode-switch" aria-label="地图模式"><button data-space-mode="2d" aria-pressed="false">2D 平面</button><button data-space-mode="3d" aria-pressed="false">3D 数字孪生</button></div><div><span class="space-badge cad">CAD SOURCE</span><a href="/api/v1/spaces/guanqian-1/report.md" class="space-report-link">CAD 解析报告 ↗</a></div></div>
+    return `<div class="space-location"><div><span class="space-site-code">GQ / 001</span><strong>苏州 · 观前街1号</strong><span>空间数字孪生</span></div><div class="space-mode-switch" aria-label="地图模式"><button data-space-mode="2d" aria-pressed="false">2D 平面</button><button data-space-mode="3d" aria-pressed="false">3D 数字孪生</button></div><div class="space-responsive-actions"><button data-space-drawer-toggle aria-expanded="false" aria-controls="space-controls-panel">☰ 楼层 / 图层</button><button data-space-inspector-open aria-expanded="false" aria-controls="space-inspector-details">Inspector</button></div><div><span class="space-badge cad">CAD SOURCE</span><a href="/api/v1/spaces/guanqian-1/report.md" class="space-report-link">CAD 解析报告 ↗</a></div></div>
+      <button class="space-drawer-backdrop" data-space-drawer-close aria-label="关闭楼层与图层抽屉" hidden></button>
       <div class="space-workspace">
-        <aside class="space-controls space-panel" aria-label="空间地图控制">
+        <aside class="space-controls space-panel" id="space-controls-panel" aria-label="楼层与图层控制">
+          <button class="space-drawer-close" data-space-drawer-close aria-label="关闭楼层与图层抽屉">×</button>
           <div class="space-panel-title"><span>楼层导航</span><small>FLOORS</small></div>
           <div class="space-floor-list">${this.floors.map(f=>`<button data-space-floor="${f.floor_id}" aria-pressed="false"><strong>0${f.level}<span>F</span></strong><span>${esc(f.name)}<small>原始 CAD 平面</small></span><b>↗</b></button>`).join('')}</div>
           <button class="space-building-view space-3d-only" data-space-building>▱　两层建筑总览</button>
@@ -56,9 +59,10 @@ class SpaceView {
           <div class="space-map-viewport" id="space-map" tabindex="0" aria-label="CAD 地图，滚轮缩放、拖动平移；方向键平移，加减键缩放，0 键复位"><div class="space-loading">正在载入真实 CAD 几何…</div></div>
           <div class="space-map-status" role="status"><span id="space-coordinate">X — / Y — mm</span><span id="space-zoom">100%</span><span>CAD Y ↑</span></div>
           <div class="space-map-legend"><span><i class="wall"></i> 墙柱</span><span><i class="window"></i> 半透明幕墙</span><span><i class="stair"></i> CAD 空间候选</span><span id="space-sim-legend" hidden><i class="sim"></i> SIMULATED</span><span class="space-legend-help" id="space-gesture-note">拖动旋转 · 右键平移 · 滚轮缩放</span></div>
-          <div class="space-map-notice" id="space-map-notice"></div>
+          <details class="space-data-note"><summary class="space-note-title">资料边界与 CAD 来源</summary><div class="space-map-notice" id="space-map-notice"></div></details>
         </section>
         <aside class="space-inspector" aria-label="空间数据与对象信息">
+          <details class="space-inspector-disclosure" id="space-inspector-details" open><summary>空间 Inspector <span class="space-inspector-context">选择空间查看信息</span></summary><div class="space-inspector-content">
           <section class="space-panel"><div class="space-panel-title"><span>空间数据概览</span><small>OVERVIEW</small></div><div class="space-overview-title"><strong id="space-floor-label">—</strong><span>GUANQIAN STREET</span></div>
             <div class="space-metrics"><div><small>CAD 图元</small><strong id="space-entity-count">—</strong><span>原始来源可追溯</span></div><div><small>已确认业务区域</small><strong>—</strong><span>NOT CONNECTED</span></div><div><small>登记真实摄像头</small><strong>0</strong><span>NOT CONNECTED</span></div><div><small>在线真实设备</small><strong>—</strong><span>NOT CONNECTED</span></div></div>
             <p class="space-inventory-note">设备清单尚未提供；0 表示已登记记录数，实际设备数量未知。</p>
@@ -66,13 +70,19 @@ class SpaceView {
           </section>
           <section class="space-panel space-selection-panel"><div class="space-panel-title"><span>空间对象</span><small>INSPECTOR</small></div><div id="space-selection"><div class="space-selection-empty"><span>⌖</span><strong>从地图开始探索</strong><p>点击墙柱、门窗或文字，查看 CAD 句柄、原始图层与坐标。框选用于临时查看对象集合。</p></div></div></section>
           <section class="space-panel space-bridge"><span class="space-kicker">EXPERIENCE CONNECTION</span><h3>空间 → 行为 → 产品洞察</h3><p>building / floor / zone / camera<br>session / event / timestamp</p><span class="space-badge">NOT CONNECTED</span><a href="/docs#/Space%20Intelligence" target="_blank" rel="noreferrer">查看独立 API ↗</a></section>
+          </div></details>
         </aside>
       </div><div class="space-source-footer"><span id="space-source-summary">SOURCE · ORIGINAL DXF</span><div><a id="space-download-svg">SVG ↓</a><a id="space-download-json">JSON ↓</a></div></div>`;
   }
   bind() {
+    this.root.querySelector('[data-space-zoom="fit"]').title='Fit to View · 完整建筑居中';
     this.root.addEventListener('click',e=>{
+      if(e.target.closest('[data-space-drawer-toggle]')){this.setDrawer(!this.drawerOpen);return;}
+      if(e.target.closest('[data-space-drawer-close]')){this.setDrawer(false);return;}
+      if(e.target.closest('[data-space-inspector-open]')){this.inspectorDetails.open=!this.inspectorDetails.open;return;}
+      if(e.target.closest('[data-space-focus-region]')){if(this.drawerMedia.matches)this.inspectorDetails.open=false;this.threeView?.focusRegion(this.selectedRegion?.[0].spatial_id);return;}
       const floor=e.target.closest('[data-space-floor]'),zoom=e.target.closest('[data-space-zoom]'),tool=e.target.closest('[data-space-tool]'),object=e.target.closest('[data-space-object]');
-      if(floor){this.floorDisplay='single';this.floor(floor.dataset.spaceFloor).catch(error=>this.fail(error));}
+      if(floor){this.floorDisplay='single';this.floor(floor.dataset.spaceFloor).catch(error=>this.fail(error));if(this.drawerMedia.matches)this.setDrawer(false);}
       const mode=e.target.closest('[data-space-mode]');if(mode)this.setMode(mode.dataset.spaceMode);
       if(e.target.closest('[data-space-building]')){this.floorDisplay='both';this.refreshScene();this.threeView?.fit(true);}
       if(e.target.closest('[data-space-isometric]'))this.threeView?.fit(true);
@@ -109,6 +119,33 @@ class SpaceView {
       const moves={ArrowLeft:[-.1,0],ArrowRight:[.1,0],ArrowUp:[0,-.1],ArrowDown:[0,.1]};
       if(moves[e.key]){this.view[0]+=moves[e.key][0]*this.view[2];this.view[1]+=moves[e.key][1]*this.view[3];this.setView();}
     },{signal:this.abort.signal});
+    this.bindResponsivePanels();
+  }
+  bindResponsivePanels(){
+    this.inspectorDetails=this.root.querySelector('#space-inspector-details');this.controlsPanel=this.root.querySelector('#space-controls-panel');
+    const adapt=()=>{this.setDrawer(false,false);this.inspectorDetails.open=!this.drawerMedia.matches;this.controlsPanel.setAttribute('role',this.drawerMedia.matches?'dialog':'complementary');};
+    this.drawerMedia.addEventListener('change',adapt,{signal:this.abort.signal});adapt();
+    this.inspectorDetails.addEventListener('toggle',()=>{this.root.querySelector('[data-space-inspector-open]').setAttribute('aria-expanded',String(this.inspectorDetails.open));},{signal:this.abort.signal});
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'&&this.drawerOpen){e.preventDefault();this.setDrawer(false);return;}
+      if(e.key==='Escape'&&this.drawerMedia.matches&&this.inspectorDetails.open){this.inspectorDetails.open=false;this.inspectorDetails.querySelector('summary').focus();return;}
+      if(e.key!=='Tab'||!this.drawerOpen)return;
+      const nodes=[...this.controlsPanel.querySelectorAll('button,input:not(:disabled),summary,a[href]')].filter(n=>n.offsetParent!==null);
+      const first=nodes[0],last=nodes.at(-1);if(!first)return;
+      if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+    },{signal:this.abort.signal});
+  }
+  setDrawer(open,restore=true){
+    this.drawerOpen=Boolean(open&&this.drawerMedia.matches);this.root.classList.toggle('space-controls-open',this.drawerOpen);
+    const toggle=this.root.querySelector('[data-space-drawer-toggle]');toggle?.setAttribute('aria-expanded',String(this.drawerOpen));
+    const backdrop=this.root.querySelector('.space-drawer-backdrop');if(backdrop)backdrop.hidden=!this.drawerOpen;
+    if(this.drawerOpen){this.controlsPanel.setAttribute('aria-modal','true');this.controlsPanel.querySelector('[data-space-drawer-close]').focus();}
+    else{this.controlsPanel?.removeAttribute('aria-modal');if(restore&&this.drawerMedia.matches)toggle?.focus();}
+  }
+  revealInspector(label='已选择空间对象'){
+    this.root.querySelector('.space-inspector-context').textContent=label;
+    if(this.drawerMedia.matches&&!this.drawerOpen)this.inspectorDetails.open=true;
+    this.root.querySelector('.space-inspector-content').scrollTop=0;
   }
   async floor(fid) {
     const generation=++this.generation;
@@ -130,6 +167,7 @@ class SpaceView {
     this.root.querySelector('#space-raw-layers').innerHTML=this.data.layers.map(l=>`<label><input type="checkbox" data-cad-layer-control="${esc(l.name)}" ${l.off||l.frozen?'':'checked'}><span title="${esc(l.name)}">${esc(l.name)}</span><small>${l.count}</small></label>`).join('');
     this.applyCadVisibility();
     this.root.querySelector('#space-map-notice').textContent=this.data.level===2?'二层由 CAD 图块与标题确认。上传的两份 PDF 均为一层，二层 PDF 核对待补充。':'一层已与 PDF 建筑轮廓核对；PDF 的阴影范围等标注与 CAD 主平面存在差异，未据 PDF 重绘。';
+    this.root.querySelector('.space-note-title').textContent=this.data.level===2?'资料边界 · 二层 PDF 待核对':'资料边界与 CAD 来源';
     this.root.querySelector('#space-source-summary').textContent=`DXF AC1027 · ${this.data.layers.length} 原始图层 · 单位 mm · ${this.data.source.sha256.slice(0,12)}`;
     for(const [kind,suffix] of [['svg','map.svg'],['json','geometry']]){const a=this.root.querySelector(`#space-download-${kind}`);a.href=`/api/v1/floors/${fid}/${suffix}`;a.setAttribute('download',`${fid}.${kind}`);}
     localStorage.setItem('hubone-space-floor',fid);this.clearSelection();this.applyLayers();await this.showMap();await this.loadCameras();
@@ -156,7 +194,8 @@ class SpaceView {
     }
     this.map.classList.add('is-webgl');this.map.replaceChildren(Object.assign(document.createElement('div'),{className:'space-loading',textContent:'正在构建三维建筑场景…'}));
     try{
-      const [engine,...models]=await Promise.all([import('./space-3d.bundle.js?v=0.3.0'),...this.floors.map(f=>this.model(f.floor_id))]);
+      const [engine,...models]=await Promise.all([import('./space-3d.bundle.js?v=0.4.0'),...this.floors.map(f=>this.model(f.floor_id)),document.fonts.ready]);
+      models.pop();
       if(token!==this.mapGeneration||this.abort.signal.aborted)return;
       this.engine=engine;this.threeView=engine.createSpatialScene(this.map,{models,onSelect:(r,m)=>this.inspectRegion(r,m),onCamera:c=>this.inspectCameraRecord(c),onEvent:(r,m)=>this.inspectRegion(r,m),onChange:z=>{const el=this.root.querySelector('#space-zoom');if(el)el.textContent=z+'%';}});
       this.refreshScene();this.threeView.fit(true);if(this.selectedRegion)this.threeView.selectRegion(this.selectedRegion[0].spatial_id);
@@ -171,10 +210,10 @@ class SpaceView {
   mark2DRegion(id){this.svg?.querySelectorAll('[data-space-region]').forEach(p=>p.classList.toggle('space-region-selected',p.dataset.spaceRegion===id));}
   async jumpToRegion2D(region,model){if(this.floorId!==region.floor_id)await this.floor(region.floor_id);this.selectedRegion=[region,model];this.setMode('2d');this.inspectRegion(region,model);}
   inspectRegion(region,model){
-    this.root.querySelector('.space-inspector').scrollTop=0;this.selectedRegion=[region,model];this.threeView?.selectRegion(region.spatial_id);this.mark2DRegion(region.spatial_id);
+    this.selectedRegion=[region,model];this.threeView?.selectRegion(region.spatial_id);this.mark2DRegion(region.spatial_id);this.revealInspector(`${model.level}F · CAD 区域`);
     const demo=this.simulated&&this.engine?this.engine.demoForRegion(region,model):null;
     const metric=(name,value,unit='')=>`<div><small>${name}</small><strong>${value}${unit?`<span>${unit}</span>`:''}</strong><em>${demo?'SIMULATED':'NOT CONNECTED'}</em></div>`;
-    this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card space-region-card"><span class="space-badge cad">CAD 区域候选 · 待确认</span>${demo?' <span class="space-badge simulated">SIMULATED 数据</span>':''}<h3>${esc(region.name)} <small>${model.level}F</small></h3><p class="space-detail-note">${esc(region.method==='CAD_HATCH_BOUNDARY'?'原始 CAD 填充边界，不代表业务用途或可使用范围。':'依据 CAD 封闭线网提取；未确认为业务区域。')}</p><div class="space-region-metrics">${metric('摄像头',demo?demo.camera_count:'—')}${metric('消费者数量',demo?demo.visitors:'—')}${metric('平均停留',demo?`${Math.floor(demo.dwell_seconds/60)}:${String(demo.dwell_seconds%60).padStart(2,'0')}`:'—')}${metric('体验事件',demo?demo.experience_events:'—')}</div><div class="space-region-feedback"><small>产品反馈 ${demo?'· SIMULATED':'· NOT CONNECTED'}</small><p>${demo?'“'+esc(demo.feedback)+'”':'尚未关联现场反馈。'}</p></div><dl><dt>空间 ID</dt><dd>${esc(region.spatial_id)}</dd><dt>楼层</dt><dd>${model.level}F / ${esc(region.floor_id)}</dd><dt>图形面积</dt><dd>约 ${num(region.area_m2)} m² <small>推导，非建筑测量</small></dd><dt>业务 Zone</dt><dd>NOT CONNECTED</dd><dt>原始实体</dt><dd>${region.source_entity_ids.length} 个来源 ID</dd><dt>高度 / 标高</dt><dd>未测量 · 展示使用 SIMULATED 参数</dd></dl>${demo?`<p class="space-detail-note">Session ${esc(demo.session_id)}<br>Event ${esc(demo.event_id)}<br>示例原话，不是本建筑的现场研究证据。</p>`:''}<button class="space-region-locate" data-space-region-2d>在 2D 中定位此区域 ↗</button></div>`;
+    this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card space-region-card"><span class="space-badge cad">CAD 区域候选 · 待确认</span>${demo?' <span class="space-badge simulated">SIMULATED 数据</span>':''}<h3>${esc(region.name)} <small>${model.level}F</small></h3><p class="space-detail-note">${esc(region.method==='CAD_HATCH_BOUNDARY'?'原始 CAD 填充边界，不代表业务用途或可使用范围。':'依据 CAD 封闭线网提取；未确认为业务区域。')}</p><div class="space-region-metrics">${metric('摄像头',demo?demo.camera_count:'—')}${metric('消费者数量',demo?demo.visitors:'—')}${metric('平均停留',demo?`${Math.floor(demo.dwell_seconds/60)}:${String(demo.dwell_seconds%60).padStart(2,'0')}`:'—')}${metric('体验事件',demo?demo.experience_events:'—')}</div><div class="space-region-feedback"><small>产品反馈 ${demo?'· SIMULATED':'· NOT CONNECTED'}</small><p>${demo?'“'+esc(demo.feedback)+'”':'尚未关联现场反馈。'}</p></div><dl><dt>空间 ID</dt><dd>${esc(region.spatial_id)}</dd><dt>楼层</dt><dd>${model.level}F / ${esc(region.floor_id)}</dd><dt>图形面积</dt><dd>约 ${num(region.area_m2)} m² <small>推导，非建筑测量</small></dd><dt>业务 Zone</dt><dd>NOT CONNECTED</dd><dt>原始实体</dt><dd>${region.source_entity_ids.length} 个来源 ID</dd><dt>高度 / 标高</dt><dd>未测量 · 展示使用 SIMULATED 参数</dd></dl>${demo?`<p class="space-detail-note">Session ${esc(demo.session_id)}<br>Event ${esc(demo.event_id)}<br>示例原话，不是本建筑的现场研究证据。</p>`:''}<button class="space-region-locate space-region-focus space-3d-only" data-space-focus-region>聚焦选中区域 ⌖</button><button class="space-region-locate" data-space-region-2d>在 2D 中定位此区域 ↗</button></div>`;
   }
   inspectCameraRecord(c){this.cameraRecords=[...this.cameraRecords.filter(v=>v.camera_id!==c.camera_id),c];this.inspectCamera(c.camera_id);}
   fit(){if(this.viewMode==='3d'){this.threeView?.fit(true);return;}if(!this.svg)return;this.view=[...this.data.svg_view_box];this.setView();}
@@ -221,10 +260,12 @@ class SpaceView {
   highlight(ids){this.svg.querySelectorAll('.space-object-selected').forEach(e=>e.classList.remove('space-object-selected'));const set=new Set(ids);this.svg.querySelectorAll('[data-entity-id]').forEach(e=>{if(set.has(e.dataset.entityId))e.classList.add('space-object-selected');});this.selected=ids;}
   inspect(obj){
     if(!obj)return;this.selectedRegion=null;this.mark2DRegion(null);this.highlight([obj.entity_id]);const source=this.data.source_entities[obj.source_handle];
+    this.revealInspector('CAD 实体 · '+obj.source_handle);
     const coords=obj.geometry.position||[(obj.bounds[0]+obj.bounds[2])/2,(obj.bounds[1]+obj.bounds[3])/2];
     this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card"><span class="space-badge cad">CAD SOURCE · RULE_BASED</span><h3>${esc(categories[obj.category])}</h3>${obj.geometry.text?`<p class="space-object-text">${esc(obj.geometry.text)}</p>`:''}<dl><dt>CAD 类型</dt><dd>${esc(obj.dxf_type)}</dd><dt>原始句柄</dt><dd>${esc(obj.source_handle||'派生图元')}</dd><dt>原始图层</dt><dd>${esc(obj.source_layer)}</dd><dt>生效图层</dt><dd>${esc(obj.effective_layer)}</dd><dt>楼层</dt><dd>${esc(this.data.name)}</dd><dt>来源图块</dt><dd>${esc(obj.source_block)}</dd><dt>插入链深度</dt><dd>${obj.insert_chain.length}</dd><dt>WCS X / Y</dt><dd>${num(coords[0])}<br>${num(coords[1])} mm</dd></dl><p class="space-detail-note">坐标为文本锚点或图元包围框中心，非设备或区域定位。分类按 CAD 图层规则展示，未做 BIM 语义验证。</p><details><summary>原始 DXF 属性 / 变换</summary><pre>${esc(JSON.stringify({entity_id:obj.entity_id,source_dxf:source?.dxf,world_matrix44:obj.world_matrix44},null,2))}</pre></details><a href="/api/v1/floors/${this.floorId}/objects/${obj.entity_id}" target="_blank" rel="noreferrer">原始实体数据 ↗</a></div>`;
   }
   inspectArea(ids,box){
+    this.revealInspector(`${ids.length} 个 CAD 对象`);
     this.highlight(ids);this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card"><span class="space-badge">TEMPORARY SELECTION</span><h3>${ids.length} 个 CAD 对象</h3><p class="space-detail-note">临时框选，不是已确认业务区域。仅选择完整落在框内的可见对象。</p><dl><dt>X 范围 mm</dt><dd>${num(box[0])} – ${num(box[2])}</dd><dt>Y 范围 mm</dt><dd>${num(box[1])} – ${num(box[3])}</dd></dl><div class="space-area-objects">${ids.slice(0,12).map(id=>{const o=this.objects.get(id);return `<button data-space-object="${esc(id)}">${esc(o.dxf_type)} · ${esc(o.source_handle)} ↗</button>`;}).join('')||'<p>此框内没有完整对象。</p>'}</div>${ids.length>12?'<p class="space-detail-note">列出前 12 个，可继续点击地图查看其余对象。</p>':''}</div>`;
   }
   async loadCameras(){
@@ -253,7 +294,7 @@ class SpaceView {
     }this.applyLayers();
   }
   applyLayers(){this.refreshScene();if(!this.svg)return;this.svg.querySelector('[data-cad-regions]')?.classList.toggle('space-overlay-hidden',!this.layers.zones);this.svg.querySelectorAll('[data-cad-layer]').forEach(g=>g.classList.toggle('space-structure-hidden',!this.layers.structure));for(const name of ['cameras','coverage'])this.svg.querySelector(`[data-space-device-layer="${name}"]`)?.classList.toggle('space-overlay-hidden',!this.layers[name]||!this.simulated);}
-  inspectCamera(id){const c=this.cameraRecords.find(c=>c.camera_id===id);if(!c)return;this.highlight([]);this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card"><span class="space-badge simulated">SIMULATED</span><h3>测试摄像头</h3><dl>${[['camera_id',c.camera_id],['floor_id',c.floor_id],['zone_id','未关联'],['X / Y (mm)',`${num(c.x)} / ${num(c.y)}`],['Z','未测量'],['方向 / FOV',`${c.direction}° / ${c.field_of_view}°`],['视频流','NOT CONNECTED']].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl><p class="space-detail-note">仅验证坐标映射与扇形绘制；未校准、未考虑墙体遮挡，不是真实覆盖率。</p></div>`;}
+  inspectCamera(id){const c=this.cameraRecords.find(c=>c.camera_id===id);if(!c)return;this.revealInspector('SIMULATED · 测试摄像头');this.highlight([]);this.root.querySelector('#space-selection').innerHTML=`<div class="space-object-card"><span class="space-badge simulated">SIMULATED</span><h3>测试摄像头</h3><dl>${[['camera_id',c.camera_id],['floor_id',c.floor_id],['zone_id','未关联'],['X / Y (mm)',`${num(c.x)} / ${num(c.y)}`],['Z','未测量'],['方向 / FOV',`${c.direction}° / ${c.field_of_view}°`],['视频流','NOT CONNECTED']].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl><p class="space-detail-note">仅验证坐标映射与扇形绘制；未校准、未考虑墙体遮挡，不是真实覆盖率。</p></div>`;}
   fail(error){if(error.name==='AbortError'||this.abort.signal.aborted)return;const target=this.root.querySelector('#space-map-notice')||this.root;target.innerHTML=`<p class="space-load-error" role="alert">${esc(error.message)}。请确认后端和已生成的空间数据文件可用。</p>`;}
   destroy(){document.body.classList.remove('space-is-3d');this.abort.abort();this.generation++;this.mapGeneration++;this.threeView?.destroy();this.threeView=null;this.cancelPointer();}
 }

@@ -1,0 +1,112 @@
+[
+  {
+    "key": "2048x972",
+    "width": 2048,
+    "height": 972,
+    "before_map": {
+      "x": 650,
+      "y": 419.484375,
+      "width": 908,
+      "height": 690
+    },
+    "before_visible_height": 552.515625,
+    "after_map": {
+      "x": 489,
+      "y": 218.984375,
+      "width": 1222,
+      "height": 618.03125
+    },
+    "before_page_height": 1347,
+    "after_page_height": 972,
+    "visible_map_area_increase_percent": 50.5,
+    "status": "PASS"
+  },
+  {
+    "key": "1920x1080",
+    "width": 1920,
+    "height": 1080,
+    "before_map": {
+      "x": 586,
+      "y": 419.484375,
+      "width": 908,
+      "height": 690
+    },
+    "before_visible_height": 660.515625,
+    "after_map": {
+      "x": 489,
+      "y": 218.984375,
+      "width": 1094,
+      "height": 726.03125
+    },
+    "before_page_height": 1347,
+    "after_page_height": 1080,
+    "visible_map_area_increase_percent": 32.4,
+    "status": "PASS"
+  },
+  {
+    "key": "1440x900",
+    "width": 1440,
+    "height": 900,
+    "before_map": {
+      "x": 473,
+      "y": 419.484375,
+      "width": 664,
+      "height": 610
+    },
+    "before_visible_height": 480.515625,
+    "after_map": {
+      "x": 439,
+      "y": 216.796875,
+      "width": 702,
+      "height": 548.21875
+    },
+    "before_page_height": 1267,
+    "after_page_height": 900,
+    "visible_map_area_increase_percent": 20.6,
+    "status": "PASS"
+  },
+  {
+    "key": "1024x768",
+    "width": 1024,
+    "height": 768,
+    "before_map": {
+      "x": 422,
+      "y": 419.484375,
+      "width": 576,
+      "height": 600
+    },
+    "before_visible_height": 348.515625,
+    "after_map": {
+      "x": 93,
+      "y": 216.796875,
+      "width": 914,
+      "height": 354.21875
+    },
+    "before_page_height": 1870,
+    "after_page_height": 768,
+    "visible_map_area_increase_percent": 61.3,
+    "status": "PASS"
+  },
+  {
+    "key": "390x844",
+    "width": 390,
+    "height": 844,
+    "before_map": {
+      "x": 81,
+      "y": 496.078125,
+      "width": 293,
+      "height": 440
+    },
+    "before_visible_height": 347.921875,
+    "after_map": {
+      "x": 67,
+      "y": 274,
+      "width": 312,
+      "height": 376.21875
+    },
+    "before_page_height": 2752,
+    "after_page_height": 844,
+    "visible_map_area_increase_percent": 15.1,
+    "status": "PASS"
+  }
+]

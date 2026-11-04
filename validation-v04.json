@@ -1,0 +1,414 @@
+{
+  "version": "0.4.0",
+  "status": "validated",
+  "checked_at": "2026-11-04T21:25:44.206040+08:00",
+  "backend_checks": 71,
+  "static_checks": 71,
+  "software_api_tests": 84,
+  "integration_deselected": 1,
+  "legacy_3d_checks": 29,
+  "legacy_2d_checks": 38,
+  "legacy_static_checks": 29,
+  "c3_backend_checks": 23,
+  "c3_static_checks": 24,
+  "viewports": [
+    {
+      "width": 2048,
+      "height": 972,
+      "scrollWidth": 2048,
+      "scrollHeight": 972,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1222,
+        "height": 618.03125
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 28,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.7092095005711879,
+        "maxX": 0.7092095005711869,
+        "minY": -0.8771929824561414,
+        "maxY": 0.8771929824561396
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1094,
+        "height": 726.03125
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 28,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.8771929824561416,
+        "maxX": 0.8771929824561396,
+        "minY": -0.8268252350952652,
+        "maxY": 0.826825235095264
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "map": {
+        "x": 439,
+        "y": 216.796875,
+        "width": 702,
+        "height": 548.21875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.8771929824561416,
+        "maxX": 0.8771929824561396,
+        "minY": -0.7028935779713703,
+        "maxY": 0.7028935779713693
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "scrollHeight": 768,
+      "map": {
+        "x": 93,
+        "y": 216.796875,
+        "width": 914,
+        "height": 354.21875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": false,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.5431431940279741,
+        "maxX": 0.5431431940279728,
+        "minY": -0.8771929824561414,
+        "maxY": 0.8771929824561401
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "map": {
+        "x": 67,
+        "y": 274,
+        "width": 312,
+        "height": 376.21875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": false,
+      "rendering": {
+        "ambientOcclusion": "OFF_COMPACT_VIEW",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.8771929824561416,
+        "maxX": 0.8771929824561396,
+        "minY": -0.45530222308310986,
+        "maxY": 0.45530222308310914
+      }
+    }
+  ],
+  "static_viewports": [
+    {
+      "width": 2048,
+      "height": 972,
+      "scrollWidth": 2048,
+      "scrollHeight": 972,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1222,
+        "height": 589.234375
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 28,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.6759294431010193,
+        "maxX": 0.6759294431010178,
+        "minY": -0.8771929824561414,
+        "maxY": 0.8771929824561401
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1094,
+        "height": 697.234375
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 28,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.877192982456141,
+        "maxX": 0.8771929824561397,
+        "minY": -0.8612268589371055,
+        "maxY": 0.8612268589371038
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "map": {
+        "x": 439,
+        "y": 216.796875,
+        "width": 702,
+        "height": 519.421875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": true,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.8771929824561414,
+        "maxX": 0.8771929824561394,
+        "minY": -0.7421689416730461,
+        "maxY": 0.742168941673045
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "scrollHeight": 768,
+      "map": {
+        "x": 93,
+        "y": 216.796875,
+        "width": 914,
+        "height": 325.421875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": false,
+      "rendering": {
+        "ambientOcclusion": "SSAO",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.4986484125963039,
+        "maxX": 0.49864841259630277,
+        "minY": -0.8771929824561414,
+        "maxY": 0.8771929824561401
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "map": {
+        "x": 67,
+        "y": 274,
+        "width": 312,
+        "height": 351.421875
+      },
+      "sidebarPosition": "fixed",
+      "fontFamily": "Inter, \"PingFang SC\", \"Microsoft YaHei UI\", \"Noto Sans SC\", \"Noto Sans CJK SC\", sans-serif",
+      "interLoaded": true,
+      "titleSize": 24,
+      "smallText": [],
+      "inspectorOpen": false,
+      "rendering": {
+        "ambientOcclusion": "OFF_COMPACT_VIEW",
+        "aoSamples": 16,
+        "environment": "RoomEnvironment",
+        "shadowMapSize": 2048,
+        "pixelRatio": 1,
+        "wallColor": "f1eee7",
+        "columnColor": "d9d6cf",
+        "glassColor": "91c6d1",
+        "glassOpacity": 0.36,
+        "slabColor": "dfe1df"
+      },
+      "bounds": {
+        "minX": -0.8771929824561414,
+        "maxX": 0.8771929824561394,
+        "minY": -0.4877311563511375,
+        "maxY": 0.4877311563511368
+      }
+    }
+  ],
+  "cad_and_spatial_data_unchanged": true,
+  "protected_data_files": 12,
+  "backend_modules_unchanged": 27,
+  "browser_errors": 0,
+  "gpu_performance_verified": false,
+  "device_input_verified": false,
+  "changed_files": [
+    "frontend/design-tokens.css",
+    "frontend/space-v04.css",
+    "frontend/index.html",
+    "frontend/app.js",
+    "frontend/space.js",
+    "frontend/three/scene.js",
+    "frontend/space-3d.bundle.js",
+    "frontend/assets/inter-variable.woff2",
+    "frontend/assets/INTER-OFL.txt",
+    "frontend/assets/inter-manifest.json",
+    "frontend/assets/README.md",
+    "package.json",
+    "package-lock.json",
+    "scripts/accept_space_v04.py",
+    "scripts/build_v04_review.py",
+    "scripts/build_online_preview.py",
+    "scripts/build_space_preview.py",
+    "scripts/package_ui_template.py",
+    "THIRD_PARTY_NOTICES.md",
+    "README.md",
+    "docs/V0.4_VISUAL_ACCEPTANCE.md",
+    "docs/validation/spatial-v04-validation.json"
+  ],
+  "public_source_tests": {
+    "passed": 79,
+    "skipped_private_cad_cases": 5,
+    "deselected_integration": 1
+  },
+  "comparison_gallery_verified": true
+}
