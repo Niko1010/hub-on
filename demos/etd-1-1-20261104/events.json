@@ -1,0 +1,239 @@
+[
+  {
+    "timestamp": 1.0,
+    "event_type": "zone_enter",
+    "source": "video",
+    "description": "SIMULATED：进入画面体验区（Mock 行为事件，非识别结果）",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "9054b94d75804a22b60bca2200972f29",
+      "media_time": 1
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 1
+    },
+    "event_id": "6f8ea8b792be485a9054552053a4825f",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 2.0,
+    "event_type": "wearing_started",
+    "source": "manual",
+    "description": "SIMULATED：开始穿戴（预设人工情境）",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json"
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 2
+    },
+    "event_id": "5ffa9bfce1e54e89b65136a05a0349d1",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 5.0,
+    "event_type": "walking_indicator",
+    "source": "video",
+    "description": "SIMULATED：行走迹象（Mock 行为事件，非识别结果）",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "9054b94d75804a22b60bca2200972f29",
+      "media_time": 5
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 5
+    },
+    "event_id": "6f5d238a4f5c4f3881ab65d651b7c71f",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 5.0,
+    "event_type": "research_hypothesis",
+    "source": "AI_analysis",
+    "description": "演示假设：舒适度与固定带设置需要分开验证",
+    "confidence": null,
+    "evidence": {
+      "event_ids": [
+        "cdfb511c033442c39142690fdb570b0f",
+        "76be0cbaf1424ca7bf1f475fe0756800",
+        "fabddb1e233b4f22bb37144709229707",
+        "40bea0d70b42440c93454650504e078b"
+      ]
+    },
+    "metadata": {
+      "engine": "MOCK / mock / fixture-evidence-to-decision-v1.1 · 软件流程测试，未调用 LLM",
+      "status": "hypothesis",
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "input_origins": [
+        "SIMULATED"
+      ],
+      "model_inference_executed": false,
+      "recommendation": "在研究员指导下比较当前穿戴流程与标准化调节流程。；如引导改善仍不足，再比较原固定带与可调整接触垫样件。"
+    },
+    "event_id": "7aea9a6d654348e4aede24d2f9a54641",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 5.0,
+    "event_type": "utterance",
+    "source": "audio",
+    "description": "穿起来还可以，但是腰部有点紧。",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "4383e6bcb59646569bc5e6b39221c699",
+      "quote": "穿起来还可以，但是腰部有点紧。",
+      "start": 5,
+      "end": 7.45
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 7.45,
+      "raw_text": "穿起来还可以，但是腰部有点紧。",
+      "cleaned_text": "穿起来还可以，但是腰部有点紧。",
+      "timing": "scripted",
+      "speaker": "SIMULATED_P01",
+      "speaker_status": "scripted_not_diarization"
+    },
+    "event_id": "cdfb511c033442c39142690fdb570b0f",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 7.45,
+    "event_type": "strap_adjustment",
+    "source": "manual",
+    "description": "SIMULATED：调整腰部固定带（预设人工情境，不是视觉识别）",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json"
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 7.45
+    },
+    "event_id": "c2b692b3a61b4e2e93971ebf07ee6474",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 9.95,
+    "event_type": "utterance",
+    "source": "audio",
+    "description": "上坡的时候感觉助力还不错。",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "4383e6bcb59646569bc5e6b39221c699",
+      "quote": "上坡的时候感觉助力还不错。",
+      "start": 9.95,
+      "end": 12.179
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 12.179,
+      "raw_text": "上坡的时候感觉助力还不错。",
+      "cleaned_text": "上坡的时候感觉助力还不错。",
+      "timing": "scripted",
+      "speaker": "SIMULATED_P01",
+      "speaker_status": "scripted_not_diarization"
+    },
+    "event_id": "76be0cbaf1424ca7bf1f475fe0756800",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 14.679,
+    "event_type": "utterance",
+    "source": "audio",
+    "description": "走久了之后感觉有一点重。",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "4383e6bcb59646569bc5e6b39221c699",
+      "quote": "走久了之后感觉有一点重。",
+      "start": 14.679,
+      "end": 16.885
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 16.885,
+      "raw_text": "走久了之后感觉有一点重。",
+      "cleaned_text": "走久了之后感觉有一点重。",
+      "timing": "scripted",
+      "speaker": "SIMULATED_P01",
+      "speaker_status": "scripted_not_diarization"
+    },
+    "event_id": "fabddb1e233b4f22bb37144709229707",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  },
+  {
+    "timestamp": 19.385,
+    "event_type": "utterance",
+    "source": "audio",
+    "description": "腰部固定带有点勒，希望能够再松一点。",
+    "confidence": null,
+    "evidence": {
+      "fixture": "sample_data/decision_session.example.json",
+      "asset_id": "4383e6bcb59646569bc5e6b39221c699",
+      "quote": "腰部固定带有点勒，希望能够再松一点。",
+      "start": 19.385,
+      "end": 22.531
+    },
+    "metadata": {
+      "simulated": true,
+      "input_origin": "SIMULATED",
+      "processing_method": "MOCK",
+      "model_inference_executed": false,
+      "offset_seconds": 0,
+      "origin": "MOCK/fixture-not-recognition",
+      "end_timestamp": 22.531,
+      "raw_text": "腰部固定带有点勒，希望能够再松一点。",
+      "cleaned_text": "腰部固定带有点勒，希望能够再松一点。",
+      "timing": "scripted",
+      "speaker": "SIMULATED_P01",
+      "speaker_status": "scripted_not_diarization"
+    },
+    "event_id": "40bea0d70b42440c93454650504e078b",
+    "session_id": "7140d09616c04f91b5a912a66a7effa4"
+  }
+]
