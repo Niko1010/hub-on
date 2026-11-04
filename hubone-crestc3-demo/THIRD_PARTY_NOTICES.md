@@ -45,3 +45,9 @@ CAD 解析使用 MIT 许可的 [ezdxf 1.4.4](https://github.com/mozman/ezdxf)，
 ## V0.3 Three.js
 
 Three.js 0.180.0 与附带的 OrbitControls、BufferGeometryUtils 使用 MIT 许可；许可保存在 `frontend/THREE-LICENSE.txt`，bundle 同目录保留法律声明文件。esbuild 0.25.10 仅作为编译工具，Node 依赖由 package-lock.json 固定；运行已编译页面无需 Node 或外部 CDN。
+
+## V0.4 字体与渲染扩展
+
+Inter Variable 来自官方 rsms/inter 仓库，采用 SIL Open Font License 1.1。许可证为 `frontend/assets/INTER-OFL.txt`，来源与 SHA-256 为 `inter-manifest.json`；字体在本站托管，不调用外部字体服务。中文保留系统字体回退。
+
+RoomEnvironment、EffectComposer、RenderPass、SSAOPass、OutputPass 来自同一 Three.js 0.180.0 的官方 addons，沿用 Three.js MIT 许可，没有引入额外运行依赖。摄影棚环境贴图只用于照明，不是新增建筑几何。SSAO 的可见性筛选扩展在本项目中实现，排除透明玻璃、区域叠层和模拟运营对象。

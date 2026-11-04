@@ -1,5 +1,7 @@
 # HUB ONE · Experience Intelligence
 
+**V0.4 Space Intelligence 视觉升级**：[在线模型](https://niko1010.github.io/hub-on/?v=0.4#space) · [前后截图对比](https://niko1010.github.io/hub-on/visual-review/) · [完整验收与文件清单](hubone-crestc3-demo/docs/V0.4_VISUAL_ACCEPTANCE.md)。全宽响应式布局、Inter 字体系统、暖白建筑材质、桌面 SSAO、区域聚焦和移动抽屉；CAD、几何与 API 保持原样。
+
 [在线查看 Mock 决策报告](https://niko1010.github.io/hub-on/?v=decision-1#report) · [进入 3D Space Intelligence](https://niko1010.github.io/hub-on/#space)
 
 本仓库包含 Crest C3 的 Evidence-to-Decision 决策报告引擎、统一 Ollama/OpenAI/Anthropic/自定义 Provider、严格 Schema/证据校验，以及现有 2D/3D 空间模块。

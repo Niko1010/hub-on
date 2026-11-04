@@ -24,10 +24,10 @@ def main():
     bundle['frames']={p.parent.name+'/'+p.name:data_url(p) for p in (SITE/'frames').rglob('*.jpg')}
     assets={}
     for p in (SITE/'assets').rglob('*'):
-        if p.is_file() and p.suffix in ('.svg','.ttf'):
+        if p.is_file() and p.suffix in ('.svg','.ttf','.woff2'):
             assets['./assets/'+p.name]=data_url(p)
     assets['./mark.svg']=data_url(SITE/'mark.svg')
-    css='\n'.join((SITE/name).read_text() for name in ['style.css','brand.css','research.css','space.css','space-3d.css'])
+    css='\n'.join((SITE/name).read_text() for name in ['style.css','brand.css','research.css','space.css','space-3d.css','design-tokens.css','space-v04.css'])
     for url,value in assets.items():
         css=css.replace(url,value)
     hook=(SITE/'preview-api.js').read_text(encoding='utf-8')

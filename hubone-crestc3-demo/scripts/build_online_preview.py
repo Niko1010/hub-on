@@ -16,7 +16,7 @@ def main(source=None,runtime_root=None):
     assert all(e['metadata'].get('simulated') is True for e in events)
     sid=session['session_id'];out=ROOT/'preview-site'
     out.mkdir(exist_ok=True)
-    for name in ['style.css','brand.css','research.css','space.css','space-3d.css','mark.svg']:
+    for name in ['style.css','brand.css','research.css','space.css','space-3d.css','design-tokens.css','space-v04.css','mark.svg']:
         shutil.copyfile(ROOT/'frontend'/name,out/name)
     shutil.copytree(ROOT/'frontend/assets',out/'assets',dirs_exist_ok=True)
     media={}

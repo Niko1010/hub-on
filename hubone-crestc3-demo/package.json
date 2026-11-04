@@ -1,11 +1,15 @@
 {
   "name": "hubone-spatial-viewer",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "scripts": {
     "build:3d": "esbuild frontend/three/scene.js --bundle --format=esm --minify --target=es2020 --outfile=frontend/space-3d.bundle.js --legal-comments=linked"
   },
-  "dependencies": { "three": "0.180.0" },
-  "devDependencies": { "esbuild": "0.25.10" }
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
 }

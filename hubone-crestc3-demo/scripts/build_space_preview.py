@@ -51,8 +51,12 @@ def main():
                  'physical_device_count':None,'online_real_devices':None,
                  'note':'SIMULATED 测试点，非真实安装位置或覆盖范围；未接入视频流。'}
         (api/f'cameras-{fid or "all"}-simulated.json').write_text(json.dumps(payload,ensure_ascii=False),encoding='utf-8')
-    for filename in ['CAD_PARSING_REPORT_V0.2.md','SPACE_API_V0.2.md','SPATIAL_DIGITAL_TWIN.md','V0.2_ACCEPTANCE_REPORT.md','V0.3_ACCEPTANCE_REPORT.md','SPACE_DEPLOYMENT.md','SPACE_3D_V0.3.md','GITHUB_PAGES.md','EVIDENCE_TO_DECISION.md','WINDOWS_EVIDENCE_TO_DECISION.md','DECISION_ACCEPTANCE.md']:
+    for filename in ['CAD_PARSING_REPORT_V0.2.md','SPACE_API_V0.2.md','SPATIAL_DIGITAL_TWIN.md','V0.2_ACCEPTANCE_REPORT.md','V0.3_ACCEPTANCE_REPORT.md','SPACE_DEPLOYMENT.md','SPACE_3D_V0.3.md','GITHUB_PAGES.md','EVIDENCE_TO_DECISION.md','WINDOWS_EVIDENCE_TO_DECISION.md','DECISION_ACCEPTANCE.md','V0.4_VISUAL_ACCEPTANCE.md']:
         shutil.copyfile(ROOT/'docs'/filename,data/filename)
+    review=ROOT/'artifacts/v0.4/visual-review'
+    if review.is_dir():shutil.copytree(review,out/'visual-review',dirs_exist_ok=True)
+    validation=ROOT/'docs/validation/spatial-v04-validation.json'
+    if validation.is_file():shutil.copyfile(validation,out/'validation-v04.json')
     for filename in ['space.js','space-preview.js','space-3d.bundle.js','space-3d.bundle.js.LEGAL.txt','THREE-LICENSE.txt']:
         shutil.copyfile(ROOT/'frontend'/filename,out/filename)
     app=(out/'app.js').read_text(encoding='utf-8')
@@ -64,19 +68,21 @@ def main():
     html=(out/'index.html').read_text(encoding='utf-8')
     start=html.index('<div class="preview-notice">');end=html.index('</div>',start)+len('</div>')
     html=html[:start]+'''<div class="preview-notice"><span class="space-preview-note"><strong>SPACE INTELLIGENCE · 2D / 3D</strong>　平面来自真实 CAD · 高度与支撑楼板为 SIMULATED 示意 · 摄像头及运营数据 NOT CONNECTED</span><span class="c3-preview-note"><strong>CREST C3 · MOCK / SIMULATED / REPLAY</strong>　决策型研究报告回放，可播放合成素材、查看原始事件并导出；本网页不运行 Ollama、ASR、视觉识别或设备采集。</span></div>'''+html[end:]
-    html=html.replace('<script type="module"','<script src="./space-preview.js?v=0.3.0"></script><script type="module"',1)
+    html=html.replace('<script type="module"','<script src="./space-preview.js?v=0.4.0"></script><script type="module"',1)
     (out/'index.html').write_text(html,encoding='utf-8')
     with (out/'space.css').open('a',encoding='utf-8') as f:
         f.write('\n.space-preview-note{display:none}body.is-space .space-preview-note{display:inline}body.is-space .c3-preview-note{display:none}body.is-space .preview-notice{border-color:#d9e5f4;background:#edf4fc;color:#6386b0}\n')
     (out/'README.md').write_text('''# HUB ONE online preview — Evidence-to-Decision + Space Intelligence
 
 https://niko1010.github.io/hub-on/?v=decision-1#report
-https://niko1010.github.io/hub-on/#space
+https://niko1010.github.io/hub-on/?v=0.4#space
+https://niko1010.github.io/hub-on/visual-review/
 
 Interactive 2D / 3D CAD-derived floor maps using Three.js. Orthographic isometric view, orbit, pan, zoom, single floors, exploded two-floor view, spatial selection and inspector.
 CAD plan coordinates are retained. Unknown heights, display floor spacing and reconstructed support slabs are explicitly SIMULATED, not surveyed BIM.
 Operating layers (heatmap, activity, paths, experience, events, cameras/FOV) require explicit SIMULATED opt-in. No furniture is claimed real; the demo experience stand is SIMULATED.
 No real camera inventory, live streams, occupancy or consumer tracking is connected.
+V0.4 adds a full-height responsive workspace, Inter design tokens, mobile layer drawer / inspector sheet, warm architectural materials, environment lighting, soft shadows, desktop SSAO and selected-region camera focus. The same Three.js r180 engine and unchanged CAD data are retained.
 Test devices are opt-in and SIMULATED. Original WCS mm / XYZ / handles / IDs are retained.
 Crest C3 includes the Evidence-to-Decision report as an explicitly MOCK / SIMULATED / REPLAY record: research question, observed records, quotes, timestamps, alternative explanations, product options and next experiments.
 No LLM inference, GPU/device tests, uploads or capture are executed on this static site. The locally deployable backend is available on main.

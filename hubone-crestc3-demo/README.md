@@ -1,5 +1,7 @@
 # HUB ONE · Experience Intelligence
 
+**V0.4 前端视觉升级**：全宽空间工作台、全站 Inter / 中文回退字体与 Design Tokens、暖白建筑 / 淡青幕墙 / 柔灰楼板、环境灯光与软阴影 / SSAO、区域高亮与镜头聚焦、移动抽屉和折叠 Inspector。继续使用 Three.js r180；原始 CAD、空间 JSON/SVG/模型和后端 API 未改变。见 [V0.4 验收与截图](docs/V0.4_VISUAL_ACCEPTANCE.md)。
+
 **当前优先级：Evidence-to-Decision 决策型研究报告。** 研究问题 → 行为/原话 → 时间戳证据 → 诊断及替代解释 → 改进选项 → 下一轮验证实验。已提供 Ollama/OpenAI/Anthropic/自定义统一接口；本轮在 Codex Cloud **只用 Mock + 模拟 Session 验证软件流程**，没有验证真实 Ollama、RTX 5070 或实体摄像头/麦克风。3D 空间模块保持不变。
 
 - [报告引擎、Schema、Prompt 与 API](docs/EVIDENCE_TO_DECISION.md)
