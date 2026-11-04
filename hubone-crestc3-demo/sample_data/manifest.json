@@ -1,0 +1,10 @@
+{
+  "label": "SIMULATED",
+  "duration_seconds": 23.531020408163265,
+  "audio": "CPU VITS 合成中文语音，非真实消费者录音。",
+  "video": "Ultralytics bus.jpg 参考图平移生成的视频；非真实 Crest C3 体验录像。",
+  "scenario": "所有专属体验行为仅来自明确标记的预设人工标注。",
+  "audio_sha256": "18e803b06dbb54dffc147beca881da12d0181cda3a46b0726d122f4f901873ef",
+  "video_sha256": "c6e6a6f139446722e853ccb5acf4c35cde4cf78beba469b3383627d2388a6d9e",
+  "reference_url": "https://github.com/ultralytics/assets/blob/main/im/bus.jpg"
+}

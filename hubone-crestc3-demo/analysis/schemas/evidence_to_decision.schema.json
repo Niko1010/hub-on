@@ -1,0 +1,373 @@
+{
+  "$defs": {
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "statement": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "FACT",
+            "INFERENCE",
+            "INSUFFICIENT_EVIDENCE"
+          ],
+          "title": "Classification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "reasoning": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Reasoning",
+          "type": "string"
+        }
+      },
+      "required": [
+        "claim_id",
+        "statement",
+        "classification",
+        "evidence_ids",
+        "reasoning"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Decision": {
+      "additionalProperties": false,
+      "properties": {
+        "recommendation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "INFERENCE",
+            "INSUFFICIENT_EVIDENCE"
+          ],
+          "title": "Classification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "data_gaps": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 15,
+          "minItems": 1,
+          "title": "Data Gaps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "recommendation",
+        "classification",
+        "evidence_ids",
+        "data_gaps"
+      ],
+      "title": "Decision",
+      "type": "object"
+    },
+    "Diagnosis": {
+      "additionalProperties": false,
+      "properties": {
+        "diagnosis_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Diagnosis Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "INFERENCE",
+            "INSUFFICIENT_EVIDENCE"
+          ],
+          "title": "Classification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "alternative_explanations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Alternative Explanations",
+          "type": "array"
+        },
+        "missing_evidence": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Missing Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "diagnosis_id",
+        "title",
+        "explanation",
+        "classification",
+        "evidence_ids",
+        "alternative_explanations",
+        "missing_evidence"
+      ],
+      "title": "Diagnosis",
+      "type": "object"
+    },
+    "Experiment": {
+      "additionalProperties": false,
+      "properties": {
+        "experiment_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Experiment Id",
+          "type": "string"
+        },
+        "option_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Option Ids",
+          "type": "array"
+        },
+        "hypothesis": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Hypothesis",
+          "type": "string"
+        },
+        "protocol": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Protocol",
+          "type": "string"
+        },
+        "comparison": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Comparison",
+          "type": "string"
+        },
+        "measures": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Measures",
+          "type": "array"
+        },
+        "success_criterion": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Success Criterion",
+          "type": "string"
+        },
+        "classification": {
+          "const": "INFERENCE",
+          "title": "Classification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "experiment_id",
+        "option_ids",
+        "hypothesis",
+        "protocol",
+        "comparison",
+        "measures",
+        "success_criterion",
+        "classification",
+        "evidence_ids"
+      ],
+      "title": "Experiment",
+      "type": "object"
+    },
+    "ProductOption": {
+      "additionalProperties": false,
+      "properties": {
+        "option_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Option Id",
+          "type": "string"
+        },
+        "diagnosis_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Diagnosis Ids",
+          "type": "array"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "change": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Change",
+          "type": "string"
+        },
+        "tradeoffs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Tradeoffs",
+          "type": "array"
+        },
+        "priority": {
+          "enum": [
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "classification": {
+          "const": "INFERENCE",
+          "title": "Classification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "option_id",
+        "diagnosis_ids",
+        "title",
+        "change",
+        "tradeoffs",
+        "priority",
+        "classification",
+        "evidence_ids"
+      ],
+      "title": "ProductOption",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/Claim"
+      },
+      "maxItems": 25,
+      "minItems": 1,
+      "title": "Claims",
+      "type": "array"
+    },
+    "diagnoses": {
+      "items": {
+        "$ref": "#/$defs/Diagnosis"
+      },
+      "maxItems": 8,
+      "title": "Diagnoses",
+      "type": "array"
+    },
+    "options": {
+      "items": {
+        "$ref": "#/$defs/ProductOption"
+      },
+      "maxItems": 12,
+      "title": "Options",
+      "type": "array"
+    },
+    "experiments": {
+      "items": {
+        "$ref": "#/$defs/Experiment"
+      },
+      "maxItems": 12,
+      "title": "Experiments",
+      "type": "array"
+    },
+    "decision": {
+      "$ref": "#/$defs/Decision"
+    }
+  },
+  "required": [
+    "summary",
+    "claims",
+    "diagnoses",
+    "options",
+    "experiments",
+    "decision"
+  ],
+  "title": "DecisionAnalysis",
+  "type": "object"
+}

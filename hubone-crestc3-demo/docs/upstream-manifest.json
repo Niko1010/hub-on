@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lab-Prooject-RK",
+    "commit": "d636e7dda68da31800252db906e8f703f6fb2cf2",
+    "url": "https://github.com/Seeed-Projects/Lab-Prooject-RK.git"
+  },
+  {
+    "name": "bristlenose",
+    "commit": "92c3609233f5a1609d6fe0e19b48ec5ba4fd9863",
+    "url": "https://github.com/cassiocassio/bristlenose.git"
+  },
+  {
+    "name": "retailvision",
+    "commit": "a0fae89b97fa45dd7e86ac0627935a682ec68ce8",
+    "url": "https://github.com/Jay14090/retailvision.git"
+  },
+  {
+    "name": "store-intelligence",
+    "commit": "b930e35ff8b334983d261245a55ee33cb0bbdc2e",
+    "url": "https://github.com/ranjitcj/store-intelligence.git"
+  }
+]

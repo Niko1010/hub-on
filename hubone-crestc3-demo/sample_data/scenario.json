@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": 1,
+    "event_type": "zone_enter",
+    "description": "进入体验区（预设人工情境）"
+  },
+  {
+    "timestamp": 2,
+    "event_type": "wearing_started",
+    "description": "开始穿戴（预设人工情境）"
+  },
+  {
+    "timestamp": 4,
+    "event_type": "wearing_complete",
+    "description": "穿戴完成（预设人工情境）"
+  },
+  {
+    "timestamp": 5,
+    "event_type": "walking_started",
+    "description": "开始行走（预设人工情境）"
+  },
+  {
+    "timestamp": 7.45,
+    "event_type": "strap_adjustment",
+    "description": "调整腰部固定带（预设人工情境）"
+  },
+  {
+    "timestamp": 9.95,
+    "event_type": "uphill_trial",
+    "description": "体验上坡（预设人工情境）"
+  },
+  {
+    "timestamp": 16.885,
+    "event_type": "walking_stopped",
+    "description": "停止行走（预设人工情境）"
+  },
+  {
+    "timestamp": 23.031,
+    "event_type": "experience_complete",
+    "description": "完成体验（预设人工情境）"
+  }
+]

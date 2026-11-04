@@ -1,0 +1,23 @@
+{
+  "files": [
+    {
+      "original_filename": "A 观前街一、二层平面（白图） 2026.04.14定_t3.dxf",
+      "preserved_file": "guanqian-original.dxf",
+      "sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48",
+      "bytes": 6600423
+    },
+    {
+      "original_filename": "观前街一层平面.pdf",
+      "preserved_file": "floor-1-reference.pdf",
+      "sha256": "773e13e91d5ce618c0e31844f660d75bb4de0191194d59f4fd8311bd2f96f12f",
+      "bytes": 165912
+    },
+    {
+      "original_filename": "观前街二层平面.pdf",
+      "preserved_file": "floor-2-reference.pdf",
+      "sha256": "d66873a5df3f3a813a4f4259b404976048e1ddd98f027323985edefb351c0872",
+      "bytes": 165912
+    }
+  ],
+  "note": "Byte-for-byte originals; never modified by extraction. Both PDF pages depict floor 1."
+}

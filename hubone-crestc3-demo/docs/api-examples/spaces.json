@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "building_id": "guanqian-1",
+      "name": "苏州观前街1号",
+      "english_name": "GUANQIAN STREET",
+      "data_status": "CAD_SOURCE",
+      "simulated": false,
+      "floor_ids": [
+        "floor_1",
+        "floor_2"
+      ],
+      "unit": "mm",
+      "source_sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48",
+      "business_zone_status": "NOT_CONNECTED",
+      "camera_inventory_status": "NOT_CONNECTED",
+      "physical_camera_count": null,
+      "registered_real_devices": 0,
+      "cross_floor_registration": "NOT_SURVEYED",
+      "pdf_warning": "两份 PDF 页面内容均为一层；二层 PDF 交叉核对待补充。"
+    }
+  ],
+  "data_status": "CAD_SOURCE",
+  "simulated": false
+}

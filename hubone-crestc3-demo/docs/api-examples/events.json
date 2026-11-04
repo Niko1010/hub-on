@@ -1,0 +1,9 @@
+{
+  "items": [],
+  "total": 0,
+  "offset": 0,
+  "limit": 100,
+  "data_status": "NOT_CONNECTED",
+  "invalid_binding_count": 0,
+  "note": "仅返回 metadata.spatial 中显式且有效的关联；timestamp 保留原 Session 相对秒，不自动推断空间、身份或跨 Session 时间。"
+}

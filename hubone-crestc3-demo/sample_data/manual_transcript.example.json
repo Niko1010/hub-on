@@ -1,0 +1,9 @@
+{
+  "segments": [
+    {"start": 5, "end": 8, "speaker": "SCRIPTED_P01", "text": "穿起来还可以，但是腰部有点紧。"},
+    {"start": 10, "end": 13, "speaker": "SCRIPTED_P01", "text": "上坡的时候感觉助力还不错。"},
+    {"start": 15, "end": 18, "speaker": "SCRIPTED_P01", "text": "走久了之后感觉有一点重。"},
+    {"start": 20, "end": 23, "speaker": "SCRIPTED_P01", "text": "腰部固定带有点勒。"}
+  ],
+  "offset_seconds": 0
+}

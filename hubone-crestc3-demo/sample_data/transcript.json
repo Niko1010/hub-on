@@ -1,0 +1,30 @@
+{
+  "label": "SIMULATED",
+  "notice": "TTS 脚本；fixture 模式时使用，不是模型转录。",
+  "segments": [
+    {
+      "start": 5,
+      "end": 7.45,
+      "text": "穿起来还可以，但是腰部有点紧。",
+      "speaker": "SCRIPTED_P01"
+    },
+    {
+      "start": 9.95,
+      "end": 12.179,
+      "text": "上坡的时候感觉助力还不错。",
+      "speaker": "SCRIPTED_P01"
+    },
+    {
+      "start": 14.679,
+      "end": 16.885,
+      "text": "走久了之后感觉有一点重。",
+      "speaker": "SCRIPTED_P01"
+    },
+    {
+      "start": 19.385,
+      "end": 22.531,
+      "text": "腰部固定带有点勒，希望能够再松一点。",
+      "speaker": "SCRIPTED_P01"
+    }
+  ]
+}

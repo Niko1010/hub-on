@@ -1,0 +1,22 @@
+{
+  "name": "Evidence-to-Decision 软件演示 / SIMULATED + MOCK",
+  "simulated": true,
+  "research": {
+    "question": "腰部束缚与负重反馈应先验证穿戴设置，还是固定带接触结构？",
+    "objective": "用模拟证据演示研究决策链路，不生成真实用户结论。",
+    "tasks": ["计划：穿戴并调整固定带", "计划：等长行走任务后逐条件口述反馈"],
+    "decision_to_support": "确定下一轮对照实验与产品改进选项，而非确认产品缺陷。",
+    "recording_relationship": "independent"
+  },
+  "notice": "所有事件、原话、时间和行为均为测试脚本。MOCK 不是视觉识别、ASR 或 LLM 推理。可选附件为合成语音与参考照片生成的视频，不是实际体验。",
+  "events": [
+    {"timestamp": 1, "source": "video", "event_type": "zone_enter", "description": "SIMULATED：进入画面体验区（Mock 行为事件，非识别结果）"},
+    {"timestamp": 2, "source": "manual", "event_type": "wearing_started", "description": "SIMULATED：开始穿戴（预设人工情境）"},
+    {"timestamp": 5, "source": "video", "event_type": "walking_indicator", "description": "SIMULATED：行走迹象（Mock 行为事件，非识别结果）"},
+    {"timestamp": 5, "end_timestamp": 7.45, "source": "audio", "event_type": "utterance", "description": "穿起来还可以，但是腰部有点紧。"},
+    {"timestamp": 7.45, "source": "manual", "event_type": "strap_adjustment", "description": "SIMULATED：调整腰部固定带（预设人工情境，不是视觉识别）"},
+    {"timestamp": 9.95, "end_timestamp": 12.179, "source": "audio", "event_type": "utterance", "description": "上坡的时候感觉助力还不错。"},
+    {"timestamp": 14.679, "end_timestamp": 16.885, "source": "audio", "event_type": "utterance", "description": "走久了之后感觉有一点重。"},
+    {"timestamp": 19.385, "end_timestamp": 22.531, "source": "audio", "event_type": "utterance", "description": "腰部固定带有点勒，希望能够再松一点。"}
+  ]
+}

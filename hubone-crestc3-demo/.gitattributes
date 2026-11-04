@@ -1,0 +1,7 @@
+# Preserve uploaded CAD bytes and provenance hashes on Windows checkouts.
+space_intelligence/source/*.dxf binary
+space_intelligence/source/*.pdf binary
+*.cmd text eol=crlf
+# Offline exports use the same newline convention on all platforms.
+space_intelligence/data/*.json text eol=lf
+space_intelligence/data/*.svg text eol=lf
