@@ -1,0 +1,31 @@
+{
+  "status": "ready_for_publication",
+  "validated_at": "2026-11-04T20:27:26.403518+08:00",
+  "private_workspace_software_tests": {
+    "passed": 84,
+    "deselected_integration": 1
+  },
+  "public_source_software_tests": {
+    "passed": 79,
+    "skipped_private_cad_cases": 5,
+    "deselected_integration": 1
+  },
+  "mock_http_assertions": 51,
+  "backend_browser_checks": 23,
+  "static_mock_report_checks": 24,
+  "static_2d_c3_checks": 29,
+  "static_3d_webgl_checks": 29,
+  "browser_javascript_errors": 0,
+  "browser_http_errors": 0,
+  "mock_processing_method": "MOCK",
+  "input_origin": "SIMULATED",
+  "model_inference_executed": false,
+  "ollama_live_verified": false,
+  "gpu_performance_verified": false,
+  "camera_microphone_verified": false,
+  "original_cad_published": false,
+  "raw_dxf_tags_published": false,
+  "database_or_secrets_published": false,
+  "static_media_test_server": "HTTP Range supported; no product backend endpoints",
+  "public_site_direct_http_verified": false
+}

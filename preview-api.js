@@ -7,7 +7,7 @@
   const path=String(input);
   if(!path.startsWith('/api/'))return original(input,options);
   const p=path.slice(4), prefix='/sessions/'+d.session.session_id;
-  if((options.method||'GET')==='POST'){
+  if(!['GET','HEAD'].includes(options.method||'GET')){
    if(p==='/demo')return json({session_id:d.session.session_id,job:{job_id:'replay'}});
    return json({detail:'只读 REPLAY 预览不接收上传或运行分析，请使用完整后端。'},409);
   }
@@ -23,10 +23,12 @@
   return json({detail:'只读预览中没有此接口'},404);
  };
  const readonly=()=>{
-  document.querySelectorAll('[data-action],[data-reprocess],#new-session,#session-sim,#analysis-provider,input[type=file]').forEach(e=>{
+  document.querySelectorAll('[data-action],[data-reprocess],#new-session,#session-sim,#analysis-provider,#research-relationship,input[type=file]').forEach(e=>{
    if(!e.disabled)e.disabled=true;e.title='只读演示记录；在线预览不接收上传、不运行模型';
   });
   document.querySelectorAll('textarea,input[type=number]').forEach(e=>e.readOnly=true);
+  const analysis=document.querySelector('#analysis-provider');
+  if(analysis&&d.report.processing_method==='MOCK')analysis.value='mock';
  };
  new MutationObserver(readonly).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['disabled']});readonly();
 })();

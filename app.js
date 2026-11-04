@@ -120,7 +120,7 @@ function assetOffset(asset){
 function renderCapture(){
   const video=state.session?.assets.find(a=>a.kind==='video');
   const audio=state.session?.assets.find(a=>a.kind==='audio');
-  return statCards()+`<div class="content-grid"><section class="card"><div class="card-head"><h2><span class="status-dot"></span> 体验现场</h2><span class="sub">YOLO · REAL_MODEL / 行为 · RULE_BASED</span></div>
+  return statCards()+researchBrief()+`<div class="content-grid"><section class="card"><div class="card-head"><h2><span class="status-dot"></span> 体验现场</h2><span class="sub">YOLO · REAL_MODEL / 行为 · RULE_BASED</span></div>
     <div class="video-stage"><span class="overlay-label">${isSim()?'SIMULATED INPUT':'EXPERIENCE · 01'}</span>${video?`<video id="experience-video" controls preload="metadata" src="${mediaUrl(video)}"></video>`:`<div class="video-empty"><svg viewBox="0 0 100 100" fill="none"><rect x="15" y="25" width="52" height="44" rx="10" stroke="currentColor" stroke-width="1.3"/><path d="m67 40 19-9v31l-19-9M31 48h20m-10-10v20" stroke="currentColor" stroke-width="1.3"/></svg><h3>新的产品洞察，从这里开始。</h3><p>上传一段体验视频，或在本地浏览器开启采集。<br>也可以运行完整的 SIMULATED 演示。</p></div>`}<span class="overlay-corner">HUB ONE / EXPERIENCE LAB</span></div>
     <div class="capture-toolbar"><span class="small-note">${video?esc(video.original_name):'MP4 / WebM · 最长 10 分钟'}</span><div><button class="button" data-action="camera">▣ 开启摄像头预览</button> <button class="button" id="record-video" data-action="record-video">● 录制体验</button></div></div>
     <p class="device-warning">云端不访问本地设备；采集需浏览器权限，且需 HTTPS 或 localhost。录制从本 Session 的所填偏移时间开始。</p>
@@ -135,7 +135,15 @@ function renderCapture(){
 function assetList(){
   return `<div class="asset-list">${(state.session?.assets||[]).map(a=>`<div class="asset-row"><span>${a.kind==='video'?'▣':'♩'} ${esc(a.original_name)} <small class="stage-tag">${(a.size/1024/1024).toFixed(1)} MB</small></span><button class="button small" data-reprocess="${a.asset_id}" data-kind="${a.kind}">重新${a.kind==='video'?'分析':'转录'}</button></div>`).join('')}</div>`;
 }
-function analysisButtons(){return `<div class="analysis-actions"><select id="analysis-provider" aria-label="选择分析引擎"><option value="rules">规则基线 · 无需密钥</option value="llm">大模型 API · 待验证假设</option></select><button class="button primary" data-action="analyze">生成研究分析 ↗</button></div>`;}
+function analysisButtons(){
+  const selected=state.cap.analysis_provider==='llm'?'llm':'rules';
+  return `<div class="analysis-actions"><select id="analysis-provider" aria-label="选择分析引擎"><option value="llm" ${selected==='llm'?'selected':''}>${esc(state.cap.llm_provider||'LLM')} · 配置模型生成</option>${state.session?.simulated?'<option value="mock">MOCK · 软件测试，不调用模型</option>':''}<option value="rules" ${selected==='rules'?'selected':''}>RULE_BASED · 规则基线</option></select><button class="button primary" data-action="analyze">生成决策型报告 ↗</button></div>`;
+}
+function researchBrief(){
+  if(!state.session)return `<section class="card research-brief"><div class="card-body"><div class="eyebrow">EVIDENCE → DECISION</div><h2>从研究问题开始。</h2><p>新建 Session 后设置研究目标并上传资料，或使用明确标记的 Mock 测试链路。</p><button class="button" data-action="research-demo">运行决策研究演示 · SIMULATED + MOCK</button></div></section>`;
+  const b=state.session.research||{question:'消费者在 Crest C3 穿戴与行走任务中遇到哪些使用障碍，下一轮应验证什么？',objective:'区分原始记录、消费者反馈与研究推断。',tasks:['穿戴并调整固定带','等长行走后口述反馈'],decision_to_support:'确定下一轮产品验证。',recording_relationship:'unknown'};
+  return `<section class="card research-brief"><div class="card-head"><h2>研究问题 → 验证决定</h2><span class="sub">EVIDENCE-TO-DECISION</span></div><div class="card-body"><p class="research-question">${esc(b.question)}</p><details><summary>编辑目标、任务与采集关系</summary><div class="research-form"><label>具体研究问题<textarea id="research-question" rows="2" maxlength="1000">${esc(b.question)}</textarea></label><label>研究目标<textarea id="research-objective" rows="2" maxlength="1500">${esc(b.objective)}</textarea></label><label>计划任务（每行一项，不代表已经完成）<textarea id="research-tasks" rows="3">${esc(b.tasks.join('\n'))}</textarea></label><label>需要支持的决定<textarea id="research-decision" rows="2" maxlength="1500">${esc(b.decision_to_support)}</textarea></label><label>音视频原始采集关系<select id="research-relationship">${[['unknown','未知，尚未核验'],['same_capture','同一次采集（用户声明，仍待核验）'],['independent','独立采集，不作真实同步解释']].map(([v,t])=>`<option value="${v}" ${b.recording_relationship===v?'selected':''}>${t}</option>`).join('')}</select></label><div><button class="button" data-action="save-research">保存研究设置</button><p class="small-note">修改设置会使旧报告失效，需要重新生成。</p></div></div></details><div class="form-actions"><button class="button small" data-action="research-demo">运行决策研究演示 · SIMULATED + MOCK</button></div></div></section>`;
+}
 function renderTimeline(){
   const events=state.events.filter(e=>state.filter==='all'||e.source===state.filter);
   return `<div class="section-intro"><div><h2>体验事件时间线 <span class="pill">${events.length} 条事件</span></h2><p>SESSION TIME · 事件时间是相对于共同起点的秒数。</p></div>${state.sid?`<a class="button" download="crestc3-replay-events.json" href="./events.json">↓ 导出事件 JSON</a>`:''}</div><div class="card"><div class="card-head"><div class="timeline-tools">${[['all','全部事件'],['video','视频'],['audio','语音'],['manual','人工'],['AI_analysis','分析']].map(([key,label])=>`<button class="filter ${state.filter===key?'active':''}" data-filter="${key}">${label}</button>`).join('')}</div><span class="sub">按时间排序</span></div><div class="timeline-list">${events.length?events.map(e=>`<article class="timeline-item"><time>${clock(e.timestamp)}</time><span class="timeline-line"></span><div><h3>${esc(e.description)}</h3><div class="event-meta"><span class="pill">${sourceLabel(e.source)}</span>${provenanceTags(e)}<span class="stage-tag">${esc(e.event_type)}</span></div><p>${e.confidence===null?'置信度未提供':`${e.source==='video'?'人体检测':'来源'}置信度 ${(e.confidence*100).toFixed(0)}%（非行为准确率）`} · E:${e.event_id.slice(0,8)}</p></div><button class="button small" data-evidence="${e.event_id}">查看证据 ↗</button></article>`).join(''):empty('时间线还是空的','先上传资料、输入文本，或运行完整演示。')}</div></div>`;
@@ -155,7 +163,7 @@ function renderInsights(){
 function markdown(text){
   // Escape before applying a tiny, non-HTML Markdown renderer.
   return text.split('\n').map(line=>{
-    const s=esc(line).replace(/`([^`]+)`/g,'<code>$1</code>');
+    const s=esc(line).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\[E:([A-Za-z0-9_-]+)\]/g,(_,id)=>evidenceButtons([id]));
     if(line.startsWith('### '))return `<h3>${s.slice(4)}</h3>`;
     if(line.startsWith('## '))return `<h2>${s.slice(3)}</h2>`;
     if(line.startsWith('# '))return `<h1>${s.slice(2)}</h1>`;
@@ -165,8 +173,10 @@ function markdown(text){
 }
 function renderReport(){
   const r=state.report;
-  if(!r)return `<div class="card"><div class="card-body"><div class="section-intro"><div><h2>研究报告尚未生成。</h2><p>完成视频与语音处理后，即可生成和导出报告。</p></div>${analysisButtons()}</div></div></div>`;
-  return `<div class="report-banner"><div><div class="eyebrow">RESEARCH DELIVERABLE / ${r.simulated?'SIMULATED':'USER INPUT'}</div><h2>CREST C3 · 消费者体验研究报告</h2><p>${esc(r.engine)} · ${new Date(r.generated_at).toLocaleString('zh-CN')} · ${r.insights.length} 项研究假设</p></div><a class="button outline" download="crestc3-replay-report.md" href="./report.md">↓ 导出 Markdown</a></div><article class="report-paper">${markdown(r.markdown)}</article>`;
+  if(!r)return researchBrief()+`<div class="card"><div class="card-body"><div class="section-intro"><div><h2>决策型研究报告尚未生成。</h2><p>先保存研究问题，再从当前 Session 的证据生成报告。模型失败会保留真实错误，不改用 Mock。</p></div>${analysisButtons()}</div><button class="button" data-action="research-demo">运行软件流程演示 · SIMULATED + MOCK</button></div></div>`;
+  const a=r.decision_analysis;
+  const decision=a?`<section class="decision-summary"><div><div class="eyebrow">CURRENT DECISION / ${esc(a.decision.classification)}</div><h2>${esc(a.decision.recommendation)}</h2><p>研究问题：${esc(r.research.question)}</p>${evidenceButtons(a.decision.evidence_ids)}</div><div class="decision-counts">${[['FACT','记录事实'],['INFERENCE','研究推断'],['INSUFFICIENT_EVIDENCE','证据不足']].map(([key,label])=>`<div><strong>${a.claims.filter(c=>c.classification===key).length}</strong><span>${label}</span></div>`).join('')}</div></section>`:'';
+  return researchBrief()+`<div class="report-banner"><div><div class="eyebrow">EVIDENCE → DECISION / ${r.simulated?'SIMULATED':'USER INPUT'}</div><h2>CREST C3 · 决策型研究报告</h2><p>${esc(r.engine)} · ${new Date(r.generated_at).toLocaleString('zh-CN')}</p></div><div class="report-export"><a class="button outline" download="crestc3-replay-report.md" href="./report.md">↓ Markdown</a><a class="button outline" download="crestc3-replay-report.json" href="./report.json">↓ JSON</a></div></div>${r.processing_method==='MOCK'?'<div class="hint-banner mock-banner">MOCK + SIMULATED · 软件流程演示，未执行 LLM、真实设备或 GPU 验证。</div>':''}${decision}<div class="card card-body report-regenerate"><span class="small-note">引用完整性已校验；内容、因果与模型质量仍待研究员复核。</span>${analysisButtons()}</div><article class="report-paper">${markdown(r.markdown)}</article>`;
 }
 
 async function watchJob(job,sid=state.sid){
@@ -203,11 +213,12 @@ async function processAsset(asset,offsetSeconds){
 async function showEvidence(id){
   const e=state.events.find(e=>e.event_id===id)||state.report?.evidence[id];
   if(!e)throw Error('证据已更新，请重新生成报告。');
-  let media='';
+  let media='',seekTime=0;
   const aid=e.evidence.asset_id;
   const asset=state.session?.assets.find(a=>a.asset_id===aid);
   if(asset){
     const t=e.evidence.media_time??e.evidence.start??0;
+    seekTime=Number(t);
     const src=mediaUrl(asset)+`#t=${t}`;
     if(e.source==='video'){
       if(e.evidence.snapshot)media+=`<img alt="模型标注证据帧" src="./frames/${asset.asset_id}/${esc(e.evidence.snapshot)}">`;
@@ -215,6 +226,12 @@ async function showEvidence(id){
     }else media+=`<audio controls src="${src}"></audio>`;
   }
   $('#evidence-content').innerHTML=`<div class="event-meta"><span class="pill">${sourceLabel(e.source)}</span>${provenanceTags(e)}<time>${clock(e.timestamp)}</time></div><blockquote>“${esc(e.metadata.raw_text||e.description)}”</blockquote>${media}<p class="small-note">${e.metadata.origin==='scripted_annotation_not_cv'?'预设人工情境标注，不是模型识别。':'置信度、说话人状态与方法见下方原始记录。'}</p>${e.evidence.event_ids?evidenceButtons(e.evidence.event_ids):''}<pre>${esc(JSON.stringify(e,null,2))}</pre>`;
+  const player=$('#evidence-content video,#evidence-content audio');
+  if(player){
+    // Chromium may ignore a media fragment on static file servers; seek explicitly.
+    const seek=()=>{if(Number.isFinite(seekTime)&&seekTime>=0)player.currentTime=Number.isFinite(player.duration)?Math.min(seekTime,player.duration):seekTime;};
+    if(player.readyState>=1)seek();else player.addEventListener('loadedmetadata',seek,{once:true});
+  }
   $('#evidence-dialog').showModal();
 }
 
@@ -261,9 +278,11 @@ async function record(audioOnly){
 }
 
 const actions={
+  async 'save-research'(){requireSession();const research={question:$('#research-question').value.trim(),objective:$('#research-objective').value.trim(),tasks:$('#research-tasks').value.split('\n').map(t=>t.trim()).filter(Boolean),decision_to_support:$('#research-decision').value.trim(),recording_relationship:$('#research-relationship').value};await api(`/sessions/${state.sid}/research`,{method:'PATCH',body:JSON.stringify(research)});await loadData();render();toast('研究问题已保存；请重新生成报告。');},
+  async 'research-demo'(){if(state.recorder?.state==='recording')throw Error('请先停止录制。');const data=await post('/research/demo',{});await refreshSessions();await selectSession(data.session_id);await watchJob(data.job,data.session_id);location.hash='report';toast('MOCK 软件演示完成，未调用模型。');},
   async 'upload-video'(){requireSession();const file=$('#video-file').files[0];if(!file)throw Error('请选择视频文件。');const start=offset('video');const asset=await uploadFile(file,'video');await loadData();await processAsset(asset,start);},
   async 'upload-audio'(){requireSession();const file=$('#audio-file').files[0];if(!file)throw Error('请选择音频文件。');const start=offset('audio');const asset=await uploadFile(file,'audio');await loadData();await processAsset(asset,start);},
-  async analyze(){requireSession();const provider=$('#analysis-provider').value;const job=await post(`/sessions/${state.sid}/analyze`,{provider});await watchJob(job);location.hash='insights';},
+  async analyze(){requireSession();const provider=$('#analysis-provider').value;const job=await post(`/sessions/${state.sid}/analyze`,{provider});await watchJob(job);location.hash='report';},
   async 'save-transcript'(){requireSession();const input=$('#transcript-input').value.trim();if(!input)throw Error('请填写转录文本。');const segments=input.split('\n').filter(x=>x.trim()).map((line,index)=>{
     const fields=line.split('|').map(s=>s.trim());
     if(fields.length<4||fields[0]===''||fields[1]===''||!Number.isFinite(Number(fields[0]))||!Number.isFinite(Number(fields[1])))throw Error(`第 ${index+1} 行格式应为：起始秒 | 结束秒 | 说话人 | 原话`);
