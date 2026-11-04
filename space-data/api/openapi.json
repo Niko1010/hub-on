@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "HUB ONE × CREST C3",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "paths": {
     "/api/v1/spaces": {
@@ -228,6 +228,41 @@
         ],
         "summary": "Svg",
         "operationId": "svg_api_v1_floors__floor_id__map_svg_get",
+        "parameters": [
+          {
+            "name": "floor_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Floor Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/floors/{floor_id}/model": {
+      "get": {
+        "tags": [
+          "Space Intelligence"
+        ],
+        "summary": "Model",
+        "operationId": "model_api_v1_floors__floor_id__model_get",
         "parameters": [
           {
             "name": "floor_id",

@@ -10,8 +10,8 @@
   const unavailable = () => json({detail:'这是静态只读预览；上传、设备连接和模型分析请使用完整后端。'},409);
 
   function asset(path) {
-    const floor = path.match(/^\/floors\/(floor_[12])\/(geometry|map\.svg)$/);
-    if(floor)return `space-data/${floor[1]}.${floor[2]==='geometry'?'json':'svg'}`;
+    const floor = path.match(/^\/floors\/(floor_[12])\/(geometry|map\.svg|model)$/);
+    if(floor)return floor[2]==='model'?`space-data/${floor[1]}_model.json`:`space-data/${floor[1]}.${floor[2]==='geometry'?'json':'svg'}`;
     if(path==='/spaces/guanqian-1/metadata')return 'space-data/spatial_metadata.json';
     if(path==='/spaces/guanqian-1/report.md')return 'space-data/CAD_PARSING_REPORT_V0.2.md';
     return null;

@@ -94,7 +94,7 @@ function render(){
   $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':'HUB ONE × CREST C3';
   $('#footer-note').textContent=spatial?'真实 CAD 几何 · 设备与消费者行为尚未连接':'证据驱动的产品研究 · 所有改进建议均待验证';
   $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
-  if(spatial)import('./space.js?v=0.2.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
+  if(spatial)import('./space.js?v=0.3.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
   $('#demo-btn').disabled=state.busy;$('#session-select').disabled=state.busy;$('#new-session').disabled=state.busy;
   sessionBadge();
 }

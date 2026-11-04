@@ -13,6 +13,7 @@
 | `/api/v1/floors/{floor_id}` | floor_1 或 floor_2 | 单层摘要 |
 | `/api/v1/floors/{floor_id}/geometry` | 同上 | 完整楼层 JSON：XYZ 几何、原始参数、容器关系 |
 | `/api/v1/floors/{floor_id}/map.svg` | 同上 | 原 CAD 派生二维 SVG |
+| `/api/v1/floors/{floor_id}/model` | floor_1 或 floor_2 | V0.3 三维场景几何；高度仍未知，展示参数明确 SIMULATED；见 SPACE_3D_V0.3.md |
 | `/api/v1/floors/{floor_id}/objects/{entity_id}` | 本楼层的实体 ID | 图元和原始 source_entity 属性/tags |
 | `/api/v1/zones` | 可选 building_id、floor_id | 空列表、NOT_CONNECTED，待业务确认 |
 | `/api/v1/cameras` | 可选 building_id、floor_id、zone_id、include_simulated | 设备契约；默认空；显式 include_simulated=true 才有测试点 |

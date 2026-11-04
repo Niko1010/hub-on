@@ -2,6 +2,8 @@
 
 本版在原 V0.1 单进程 FastAPI + SQLite + 原生 HTML/CSS/JavaScript 基础上增加独立 Space Intelligence 页面。**无需 npm 构建，无需 GPU；空间页不加载 YOLO/ASR 权重，不需要开启摄像头。** 已生成的 CAD JSON/SVG 随项目提供，不必每次启动重新解析。
 
+V0.3 已增加可交互 Three.js 视图，默认进入 3D，保留 2D 切换。部署包同时包含 `floor_1_model.json`、`floor_2_model.json` 和编译好的 `frontend/space-3d.bundle.js`，正常运行仍不需要 Node/npm；修改三维源码时才运行 `npm ci && npm run build:3d`。浏览器需支持 WebGL 2，云端已使用软件 WebGL 验证。三维高度与支撑楼板的示意边界见 SPACE_3D_V0.3.md。
+
 ## 1. 已有 V0.1 环境升级
 
 保留完整项目和原 runtime 数据。新增目录 `space_intelligence/` 必须一起复制，包含 `source/` 与 `data/`；更新 frontend、backend/main.py、requirements.txt、scripts 和 docs。无需迁移或清空原 SQLite Session 数据。

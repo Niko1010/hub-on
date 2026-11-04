@@ -41,3 +41,7 @@ Roboto 可变字体来自 Google Fonts 官方 `ofl/roboto` 包，随资源保留
 ## V0.2 空间 CAD
 
 CAD 解析使用 MIT 许可的 [ezdxf 1.4.4](https://github.com/mozman/ezdxf)，通过 requirements.txt 安装，没有复制修改其源码。原始 DXF 和两份 PDF 由用户提供，保存在 space_intelligence/source，来源文件名与 hash 见 manifest.json。JSON/SVG 由本项目离线解析器生成，保留源几何与实体关系。PDF 核对使用环境中的 PyMuPDF 1.26.6，不是后端运行依赖，未将其源码或二进制打包。
+
+## V0.3 Three.js
+
+Three.js 0.180.0 与附带的 OrbitControls、BufferGeometryUtils 使用 MIT 许可；许可保存在 `frontend/THREE-LICENSE.txt`，bundle 同目录保留法律声明文件。esbuild 0.25.10 仅作为编译工具，Node 依赖由 package-lock.json 固定；运行已编译页面无需 Node 或外部 CDN。

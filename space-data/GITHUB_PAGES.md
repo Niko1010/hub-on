@@ -2,7 +2,7 @@
 
 入口：**https://niko1010.github.io/hub-on/#space**
 
-默认进入 Space Intelligence：原始 DXF 导出的一层与二层地图，可切换楼层、缩放、平移、区域框选、打开原始图层、点击对象、下载 SVG/JSON 和 CAD 解析报告。
+V0.3 默认进入 Space Intelligence 三维视图，保留 2D 切换。使用 Three.js 实时绘制 CAD 衍生的一、二层，支持旋转、缩放、平移、等轴测复位、单层/总览/爆炸视图、CAD 区域高亮与右侧数据联动。缺失的高度和支撑楼板为明确 SIMULATED 展示，完整边界说明见 SPACE_3D_V0.3.md。
 
 在线版直接读取静态空间 JSON/SVG，保留 CAD 原始坐标、XYZ、句柄、图层和稳定空间 ID，不依赖 FastAPI 常驻。摄像头、客流、停留时长、动线和事件保持 NOT CONNECTED；只有显式勾选后才显示 SIMULATED 测试设备及扇形。二层 PDF 待补充的提示继续保留。
 
@@ -40,3 +40,5 @@ GitHub Actions 的实际部署状态：
 https://github.com/Niko1010/hub-on/actions
 
 当前 Codex 网络不允许直接访问 `niko1010.github.io` 和 GitHub Pages REST API；部署状态通过允许访问的 GitHub Actions 网页核对。静态交互在本地浏览器使用同一构建文件验证。
+
+V0.3 三维额外完成 29 项真实 WebGL 交互检查（后端与纯静态各通过），机器记录公开为 validation-3d.json；二维与 C3 的 29 项静态检查继续通过。未知高度、区域显示体块和支撑板均为明确演示参数。
