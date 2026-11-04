@@ -20,8 +20,8 @@ const pages = [
   ['insights','✧','产品洞察','从真实证据，到改进假设。','每个产品建议，都能回到最初的体验证据。'],
   ['report','▤','研究报告','把一次体验，沉淀为研究。','完整研究记录、证据索引与下一轮验证实验。'],
 ];
-// This C3 replay links to the original published space demo in a separate page.
-pages.unshift(['space','⌖','空间演示入口','Space 3D','在原有云端页面打开空间演示。']);
+// Integrated local review: public CAD-derived viewer and C3 1.1 replay in one shell.
+if(!window.HUBONE_REPLAY||window.HUBONE_SPACE_PREVIEW)pages.unshift(['space','⌖','空间智能','Space Intelligence','观前街1号 · 建筑空间数字孪生']);
 let spaceView=null,renderGeneration=0;
 const state = {sid:localStorage.getItem('hubone-etd-1-1-20261104-session'),session:null,sessions:[],events:[],feedback:null,report:null,comparisonReport:null,
   stats:{},cap:{},page:'capture',filter:'all',busy:false,stream:null,device:null,recorder:null};
@@ -44,7 +44,7 @@ function evidenceButtons(ids){return ids.map(id=>`<button class="quote-link" dat
 function empty(title,text){return `<div class="empty"><strong>${esc(title)}</strong>${esc(text)}</div>`;}
 function requireSession(){if(!state.sid)throw Error('请先新建 Session，或运行完整演示。');}
 function isSim(){return state.session?.simulated||state.session?.assets.some(a=>a.simulated)||state.events.some(e=>e.metadata.simulated);}
-function sessionBadge(){if(state.page==='space'){$('#mode').className='pill model';$('#mode').textContent='已有演示 · 外部链接';return;}const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?'USER INPUT · 待复核':'尚无 Session';}
+function sessionBadge(){if(state.page==='space'){$('#mode').className='pill model';$('#mode').textContent='CAD SOURCE · mm';return;}const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?'USER INPUT · 待复核':'尚无 Session';}
 
 async function refreshSessions(){
   const sessions=await api('/sessions');
@@ -93,9 +93,9 @@ function render(){
   $('#workspace-context').textContent=spatial?'Space Intelligence':'Crest C3';
   $('#page-eyebrow').textContent=spatial?'HUB ONE / SPACE INTELLIGENCE':'MULTIMODAL CONSUMER RESEARCH';
   $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':'HUB ONE × CREST C3';
-  $('#footer-note').textContent=spatial?'空间演示在原有云端页面打开':'证据驱动的产品研究 · 所有改进建议均待验证';
+  $('#footer-note').textContent=spatial?'真实 CAD 几何 · 设备与消费者行为尚未连接':'证据驱动的产品研究 · 所有改进建议均待验证';
   $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
-  if(spatial)import('./space.js?v=0.4.0').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
+  if(spatial)import('./space.js?v=etd-1-1-20261105-integrated').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
   $('#demo-btn').disabled=state.busy;$('#session-select').disabled=state.busy;$('#new-session').disabled=state.busy;
   sessionBadge();
 }

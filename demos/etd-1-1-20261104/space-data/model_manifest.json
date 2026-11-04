@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.3.0",
+  "floors": [
+    {
+      "floor_id": "floor_1",
+      "components": {
+        "glazing": 640,
+        "column": 243,
+        "stair_plan": 567,
+        "wall_plane": 336,
+        "wall_solid": 12
+      },
+      "regions": 45,
+      "cad_json_unchanged_sha256": "5a25267bb1d997db90c0d58b7875672e7b24b576e7ead17f1b0291500bdd119d",
+      "model_status": "CAD_PLAN_DERIVED; 3D heights and support slabs are illustrative, not verified BIM"
+    },
+    {
+      "floor_id": "floor_2",
+      "components": {
+        "wall_plane": 304,
+        "column": 263,
+        "stair_plan": 916,
+        "glazing": 279,
+        "wall_solid": 14
+      },
+      "regions": 19,
+      "cad_json_unchanged_sha256": "89ecb303108d37f8f66aeb133c7e112f4e86ca43fd2c7a82ad908fc6c668c73e",
+      "model_status": "CAD_PLAN_DERIVED; 3D heights and support slabs are illustrative, not verified BIM"
+    }
+  ],
+  "no_additional_floors": true,
+  "business_zones_confirmed": false,
+  "heights_surveyed": false
+}

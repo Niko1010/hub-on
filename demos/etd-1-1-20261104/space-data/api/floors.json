@@ -1,0 +1,781 @@
+{
+  "items": [
+    {
+      "floor_id": "floor_1",
+      "building_id": "guanqian-1",
+      "name": "一层",
+      "level": 1,
+      "data_status": "CAD_SOURCE",
+      "simulated": false,
+      "entity_count": 5842,
+      "container_count": 612,
+      "bounds_wcs_mm": [
+        1032.2754635734595,
+        -450674.53791011,
+        156405.1213175373,
+        -384388.02182332106
+      ],
+      "z_range_mm": [
+        -299.9999999999997,
+        0.0
+      ],
+      "crs": {
+        "id": "guanqian-dxf-wcs",
+        "unit": "mm",
+        "insunits": 4,
+        "axes": "Original DXF WCS X/Y/Z; Z is drawing geometry, not floor elevation",
+        "floor_elevation_mm": null,
+        "svg_matrix": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "svg_formula": "svg_x = cad_x; svg_y = -cad_y",
+        "meters_formula": "meters = millimeters / 1000",
+        "cross_floor_registration": "NOT_SURVEYED; sheet placements are not physical floor alignment"
+      },
+      "layers": [
+        {
+          "name": "0",
+          "count": 764,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Defpoints",
+          "count": 351,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★11 平面轴号",
+          "count": 101,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★16 楼梯扶梯",
+          "count": 385,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆09 建筑幕墙",
+          "count": 867,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "X▲13 给排水",
+          "count": 142,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★13 平面栏杆",
+          "count": 32,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-钢",
+          "count": 20,
+          "color_index": 21,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "符号",
+          "count": 10,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-石膏板墙",
+          "count": 59,
+          "color_index": 111,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★10 平面文字",
+          "count": 15,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆01 原始墙柱",
+          "count": 1614,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆02 墙柱填充",
+          "count": 243,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★06 平面窗户",
+          "count": 2,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■04 地面门槛",
+          "count": 62,
+          "color_index": 8,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★02 固定家具",
+          "count": 236,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★04 平面门扇",
+          "count": 46,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★05 平面门套",
+          "count": 26,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆10 建筑沉降缝",
+          "count": 17,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "FF-Text【平面文字】",
+          "count": 3,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DOTE",
+          "count": 51,
+          "color_index": 24,
+          "linetype": "DOTE",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS",
+          "count": 596,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS_TEXT",
+          "count": 101,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW_TEXT",
+          "count": 12,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_DIM",
+          "count": 28,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_TEXT",
+          "count": 3,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_SYMB",
+          "count": 3,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "A-新隔墙填充",
+          "count": 4,
+          "color_index": 177,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_LEAD",
+          "count": 10,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "房间名称",
+          "count": 22,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆06 墙体层",
+          "count": 14,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-说明",
+          "count": 2,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-上部洞口",
+          "count": 1,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        }
+      ],
+      "category_counts": {
+        "annotation": 1391,
+        "other": 915,
+        "door_window": 1035,
+        "wall_column": 1934,
+        "stair_railing": 567
+      },
+      "pdf_validation": "MATCHED_BUILDING_GEOMETRY_WITH_ANNOTATION_DIFFERENCES",
+      "zone_status": "NOT_CONNECTED",
+      "spatial_id": "guanqian-1:floor_1",
+      "vertical_reference": {
+        "floor_elevation_mm": null,
+        "floor_to_floor_height_mm": null,
+        "clear_height_mm": null,
+        "slab_thickness_mm": null,
+        "status": "NOT_SURVEYED"
+      },
+      "render_frames": {
+        "cad_wcs_to_building_matrix44": null,
+        "building_registration_status": "NOT_SURVEYED",
+        "floating_origin_wcs_mm": [
+          7039.097002928902,
+          -442358.1755997843,
+          0.0
+        ],
+        "threejs_local_meters_formula": {
+          "x": "(cad_x - origin_x) / 1000",
+          "y": "(cad_z - origin_z) / 1000",
+          "z": "-(cad_y - origin_y) / 1000"
+        },
+        "note": "Rendering-only floating origin, not a surveyed floor alignment or elevation."
+      },
+      "confirmed_zone_count": null,
+      "registered_camera_count": 0,
+      "geometry_url": "/api/v1/floors/floor_1/geometry",
+      "svg_url": "/api/v1/floors/floor_1/map.svg"
+    },
+    {
+      "floor_id": "floor_2",
+      "building_id": "guanqian-1",
+      "name": "二层",
+      "level": 2,
+      "data_status": "CAD_SOURCE",
+      "simulated": false,
+      "entity_count": 6722,
+      "container_count": 710,
+      "bounds_wcs_mm": [
+        307507.50252394873,
+        -449887.66425472,
+        462880.34837791283,
+        -383095.5110773485
+      ],
+      "z_range_mm": [
+        -1.5891649654728355e-10,
+        1e-08
+      ],
+      "crs": {
+        "id": "guanqian-dxf-wcs",
+        "unit": "mm",
+        "insunits": 4,
+        "axes": "Original DXF WCS X/Y/Z; Z is drawing geometry, not floor elevation",
+        "floor_elevation_mm": null,
+        "svg_matrix": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "svg_formula": "svg_x = cad_x; svg_y = -cad_y",
+        "meters_formula": "meters = millimeters / 1000",
+        "cross_floor_registration": "NOT_SURVEYED; sheet placements are not physical floor alignment"
+      },
+      "layers": [
+        {
+          "name": "0",
+          "count": 1240,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Defpoints",
+          "count": 381,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★11 平面轴号",
+          "count": 101,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★16 楼梯扶梯",
+          "count": 692,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆09 建筑幕墙",
+          "count": 599,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "X▲13 给排水",
+          "count": 126,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★13 平面栏杆",
+          "count": 70,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-钢",
+          "count": 22,
+          "color_index": 21,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-门窗编号",
+          "count": 25,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "符号",
+          "count": 34,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-石膏板墙",
+          "count": 42,
+          "color_index": 111,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★03 平面洁具",
+          "count": 98,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★10 平面文字",
+          "count": 33,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆01 原始墙柱",
+          "count": 1542,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆02 墙柱填充",
+          "count": 264,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-消防疏散说明",
+          "count": 2,
+          "color_index": 6,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★06 平面窗户",
+          "count": 4,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★07 平面完成面",
+          "count": 9,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★08 半高隔断",
+          "count": 5,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★24 平面洁具地坪不显示",
+          "count": 5,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "疏散距离",
+          "count": 29,
+          "color_index": 1,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■01 地材分格",
+          "count": 4,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■04 地面门槛",
+          "count": 13,
+          "color_index": 8,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★01 活动家具",
+          "count": 1,
+          "color_index": 51,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★02 固定家具",
+          "count": 236,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★04 平面门扇",
+          "count": 48,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★05 平面门套",
+          "count": 26,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★09 到顶隔断",
+          "count": 50,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆10 建筑沉降缝",
+          "count": 29,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "FF-Text【平面文字】",
+          "count": 3,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DOTE",
+          "count": 51,
+          "color_index": 24,
+          "linetype": "DOTE",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW",
+          "count": 1,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-孔",
+          "count": 1,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★08 平面完成面(顶面显示）",
+          "count": 49,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS",
+          "count": 596,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS_TEXT",
+          "count": 101,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW_TEXT",
+          "count": 21,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_DIM",
+          "count": 79,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_TEXT",
+          "count": 6,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_SYMB",
+          "count": 3,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "A-新隔墙填充",
+          "count": 5,
+          "color_index": 177,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_LEAD",
+          "count": 30,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "房间名称",
+          "count": 36,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "看线",
+          "count": 1,
+          "color_index": 165,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆06 墙体层",
+          "count": 9,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        }
+      ],
+      "category_counts": {
+        "door_window": 793,
+        "wall_column": 1862,
+        "other": 1618,
+        "stair_railing": 916,
+        "annotation": 1533
+      },
+      "pdf_validation": "PENDING_CORRECT_SECOND_FLOOR_PDF",
+      "zone_status": "NOT_CONNECTED",
+      "spatial_id": "guanqian-1:floor_2",
+      "vertical_reference": {
+        "floor_elevation_mm": null,
+        "floor_to_floor_height_mm": null,
+        "clear_height_mm": null,
+        "slab_thickness_mm": null,
+        "status": "NOT_SURVEYED"
+      },
+      "render_frames": {
+        "cad_wcs_to_building_matrix44": null,
+        "building_registration_status": "NOT_SURVEYED",
+        "floating_origin_wcs_mm": [
+          313634.3240632969,
+          -442307.3362466615,
+          0.0
+        ],
+        "threejs_local_meters_formula": {
+          "x": "(cad_x - origin_x) / 1000",
+          "y": "(cad_z - origin_z) / 1000",
+          "z": "-(cad_y - origin_y) / 1000"
+        },
+        "note": "Rendering-only floating origin, not a surveyed floor alignment or elevation."
+      },
+      "confirmed_zone_count": null,
+      "registered_camera_count": 0,
+      "geometry_url": "/api/v1/floors/floor_2/geometry",
+      "svg_url": "/api/v1/floors/floor_2/map.svg"
+    }
+  ],
+  "data_status": "CAD_SOURCE"
+}

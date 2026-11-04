@@ -5,10 +5,13 @@
   <meta name="theme-color" content="#23518b">
   <title>HUB ONE · Evidence-to-Decision 1.1 · REPLAY</title>
   <link rel="icon" href="./assets/hubone-symbol.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=etd-1-1-20261104">
-  <link rel="stylesheet" href="./brand.css?v=etd-1-1-20261104">
-  <link rel="stylesheet" href="./research.css?v=etd-1-1-20261104">
-  <link rel="stylesheet" href="./design-tokens.css?v=etd-1-1-20261104">
+  <link rel="stylesheet" href="./style.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./brand.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./research.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./space.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./space-3d.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./design-tokens.css?v=etd-1-1-20261104-review">
+  <link rel="stylesheet" href="./space-v04.css?v=etd-1-1-20261104-review">
 </head>
 <body>
   <aside class="sidebar">
@@ -17,11 +20,12 @@
     <div class="workspace-label">研究工作台 <span>01</span></div>
     <nav id="nav"></nav>
     <div class="sidebar-study"><span class="eyebrow">CURRENT STUDY</span><div class="study-mark">C3<span>↗</span></div><strong>CREST C3</strong><p>智能运动外骨骼<br>消费者体验研究</p><span class="tiny-pill">PRODUCT EXPERIENCE</span></div>
+    <div class="sidebar-space"><span class="eyebrow">CURRENT BUILDING</span><strong>观前街1号</strong><p>苏州 · GUANQIAN STREET<br>一层 / 二层 · 原始 CAD 底图</p><span class="tiny-pill">SPACE INTELLIGENCE</span></div>
     <div class="sidebar-footer"><span class="status-dot"></span><span id="health">正在连接服务</span><small>连接世界 · 触碰未来</small></div>
   </aside>
   <div class="shell">
     <header class="topbar"><span class="breadcrumb">Workspace <b>/</b> <span id="workspace-context">Crest C3</span> <b>/</b> <span id="breadcrumb">实时采集</span></span><div class="top-actions"><span class="pill" id="mode">尚无 Session</span><span class="api-link">只读预览</span><div class="avatar">H</div></div></header>
-    <main><div class="preview-notice"><strong>EVIDENCE-TO-DECISION 1.1 · CREST C3 · MOCK / SIMULATED / REPLAY</strong><br>只读回放：可播放真实参考视频与 SIMULATED 音频、查看证据和导出。行为事件与报告为 MOCK / SIMULATED；上传、采集、LLM 与 MOCK 比较不在本页运行。Space 3D 入口会打开原有云端演示，本页不加载空间数据。</div>
+    <main><div class="preview-notice"><span class="space-preview-note"><strong>SPACE INTELLIGENCE · 2D / 3D</strong>　平面来自真实 CAD · 高度与支撑楼板为 SIMULATED 示意 · 摄像头及运营数据 NOT CONNECTED</span><span class="c3-preview-note"><strong>CREST C3 · MOCK / 1.1 / SIMULATED / REPLAY</strong>　决策型研究报告回放，只读回放：可播放 Crest C3 真实参考视频与 SIMULATED 音频、查看证据和导出。行为事件与报告为 MOCK / SIMULATED，不是真实识别结果；上传、采集、LLM 与 MOCK 比较均不在本页运行。</span></div>
       <div class="page-heading"><div><div class="eyebrow green" id="page-eyebrow">MULTIMODAL CONSUMER RESEARCH</div><h1 id="page-title">让每一次体验，都有迹可循。</h1><p id="page-subtitle">连接行为与原话，发现产品改进的下一步。</p></div><button class="button primary" id="demo-btn">▷ 重新加载示例 <span>1.1 / SIMULATED / REPLAY</span></button></div>
       <section class="session-bar"><div class="session-label"><span class="status-dot"></span> 体验 SESSION</div><select id="session-select" aria-label="选择体验 Session"><option value="">选择已保存的回放 Session</option></select><button class="button subtle" id="new-session">只读 · 新建不可用</button><label class="small-note"><input type="checkbox" id="session-sim"> 新体验为模拟资料</label><div class="session-right" id="session-id">统一相对时间</div></section>
       <div id="job-panel" class="job-panel" hidden><div><span class="spinner"></span><strong id="job-message">处理中</strong><span id="job-status"></span></div><progress id="job-progress" max="1" value="0"></progress></div>
@@ -32,6 +36,6 @@
   </div>
   <dialog id="evidence-dialog"><div class="dialog-head"><h2>原始事件证据</h2><button id="close-dialog" class="icon-button" aria-label="关闭">×</button></div><div id="evidence-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
-  <script src="./preview-data.js?v=etd-1-1-20261104"></script><script src="./preview-api.js?v=etd-1-1-20261104"></script><script type="module" src="./app.js?v=etd-1-1-20261104"></script>
+  <script src="./preview-data.js?v=etd-1-1-20261105-integrated"></script><script src="./preview-api.js?v=etd-1-1-20261105-integrated"></script><script src="./space-preview.js?v=etd-1-1-20261105-integrated"></script><script type="module" src="./app.js?v=etd-1-1-20261105-integrated"></script>
 </body>
 </html>
