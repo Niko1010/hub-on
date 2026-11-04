@@ -2,18 +2,20 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#143c31">
+  <meta name="theme-color" content="#23518b">
   <title>HUB ONE · CREST C3 Experience Lab</title>
-  <link rel="icon" href="./mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=0.1.0">
+  <link rel="icon" href="./assets/hubone-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css?v=0.1.1">
+  <link rel="stylesheet" href="./brand.css?v=0.1.1">
 </head>
 <body>
   <aside class="sidebar">
-    <a class="brand" href="#capture"><img src="./mark.svg" alt="">HUB <strong>ONE</strong><span>EXPERIENCE LAB</span></a>
+    <a class="brand" href="#capture" aria-label="hubone 消费者体验研究工作台"><img class="brand-logo" src="./assets/hubone-logo.svg" alt="hubone"></a>
+    <p class="brand-caption">EXPERIENCE INTELLIGENCE</p>
     <div class="workspace-label">研究工作台 <span>01</span></div>
     <nav id="nav"></nav>
     <div class="sidebar-study"><span class="eyebrow">CURRENT STUDY</span><div class="study-mark">C3<span>↗</span></div><strong>CREST C3</strong><p>智能运动外骨骼<br>消费者体验研究</p><span class="tiny-pill">PRODUCT EXPERIENCE</span></div>
-    <div class="sidebar-footer"><span class="status-dot"></span><span id="health">正在连接服务</span><small>HUB ONE × CREST C3 · DEMO</small></div>
+    <div class="sidebar-footer"><span class="status-dot"></span><span id="health">正在连接服务</span><small>连接世界 · 触碰未来</small></div>
   </aside>
   <div class="shell">
     <header class="topbar"><span class="breadcrumb">Workspace <b>/</b> Crest C3 <b>/</b> <span id="breadcrumb">实时采集</span></span><div class="top-actions"><span class="pill" id="mode">尚无 Session</span><span class="api-link">只读预览</span><div class="avatar">H</div></div></header>
@@ -28,6 +30,6 @@
   </div>
   <dialog id="evidence-dialog"><div class="dialog-head"><h2>原始事件证据</h2><button id="close-dialog" class="icon-button" aria-label="关闭">×</button></div><div id="evidence-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
-  <script src="./preview-data.js"></script><script src="./preview-api.js"></script><script type="module" src="./app.js?v=0.1.0"></script>
+  <script src="./preview-data.js"></script><script src="./preview-api.js"></script><script type="module" src="./app.js?v=0.1.1"></script>
 </body>
 </html>

@@ -31,3 +31,9 @@ Apache-2.0。`audio/seeed_vad.py` 从 `services/voice-pipeline/src/realtime_pipe
 - bus.jpg：来自 Ultralytics 官方 assets，仅用于模型验证。未称为 Crest C3 产品素材。图片保留在本地下载缓存，不嵌入 Git。
 
 下载脚本保留 HTTPS/TLS 校验，并固定实际检索资产的 SHA-256；这用于重复安装的内容完整性，不是对发布者身份的额外数字签名声明。
+
+## HUBONE UI 品牌与字体
+
+`frontend/assets/hubone-*.svg` 来自用户提供的《HUB ONE VIS.pdf》第 5 页原始矢量路径，用于其 HUBONE 品牌界面，品牌权益归原权利人所有。标准组合、比例和图形保持原样。
+
+Roboto 可变字体来自 Google Fonts 官方 `ofl/roboto` 包，随资源保留 `frontend/assets/ROBOTO-OFL.txt`。中文使用 VIS 所列思源黑体系列的系统字体栈及系统回退，没有分发商业字体。
