@@ -1,0 +1,54 @@
+/* HUB ONE digital twin: shared shell, orthographic WebGL, explicit provenance. */
+body.is-space .page-heading{min-height:112px;padding:21px 29px;margin-top:23px;margin-bottom:18px}
+body.is-space .page-heading h1{font-size:24px;margin:8px 0 6px}
+body.is-space .page-heading::after{height:170px;top:-30px}
+body.is-space.space-is-3d .page-heading{min-height:88px;padding:15px 25px;margin-top:18px}
+body.is-space.space-is-3d .page-heading h1{font-size:21px;margin:7px 0 2px}
+body.is-space.space-is-3d .page-heading p{display:none}
+.space-mode-switch{padding:4px;background:#e8eef7;border-radius:8px;gap:3px!important}
+.space-mode-switch button{border:0;border-radius:5px;padding:8px 13px;background:transparent;color:#91a4bc;cursor:pointer;font-size:10px;white-space:nowrap}
+.space-mode-switch button.active{background:#fff;color:#315e92;box-shadow:0 2px 6px #234b7a10}
+.space-mode-3d .space-2d-only,.space-mode-2d .space-3d-only{display:none!important}
+.space-building-view{display:block;width:calc(100% - 20px);border:1px solid #e0e9f5;background:#f8fafd;color:#7d99ba;padding:10px;margin:6px 10px 0;border-radius:6px;font-size:10px;cursor:pointer}
+.space-building-view.active{background:#eaf2fd;color:#426f9f;border-color:#cddff4}
+.space-mode-3d .space-floor-list button.active{background:#edf4fc;color:#416b9a;border-color:#d6e3f4;box-shadow:none}
+.space-mode-3d .space-floor-list button.active small{color:#8faac7}
+.space-mode-3d .space-map-heading{min-height:76px}
+.space-mode-3d .space-map-viewport{height:610px;background:#f5f8fc;cursor:grab}
+.space-webgl{display:block;width:100%;height:100%;touch-action:none;outline:none}
+.space-3d-tools{align-items:center;gap:8px!important}
+.space-3d-tools label{display:flex;align-items:center;gap:5px;color:#88a0bc;font-size:9px;white-space:nowrap;padding-left:5px;border-left:1px solid #e0e9f5}
+.space-3d-tools label input{accent-color:#527fb3;width:11px;height:11px;margin:0}
+#space-explode-range{width:62px;accent-color:#659bd3;cursor:pointer}
+.space-model-provenance{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#f8fafd;border-bottom:1px solid #eaf0f7;padding:9px 16px;color:#9cadc3;font-size:8px;line-height:1.6}
+.space-model-provenance b{font-size:7px;font-weight:500;margin-left:4px;padding:3px 5px;border-radius:3px;color:#5e87b3;background:#eaf2fc}
+.space-model-provenance span:nth-child(2) b{color:#ae8842;background:#fff6df}
+.space-model-provenance span:last-child{margin-left:auto;font-size:7px;color:#a5b1c0}
+.space-assets{border-top:1px solid #eaf0f7;padding:15px 14px;color:#7c97b6;font-size:10px}
+.space-assets summary{cursor:pointer;margin-bottom:10px}
+.space-assets label{display:flex;align-items:center;gap:8px;color:#95a8c1;font-size:9px;padding:7px 0}
+.space-assets input{accent-color:#659bd3;width:11px;height:11px;margin:0}
+.space-simulation button{display:block;background:#fff5d9;border:1px solid #eedcaa;color:#ad8b49;border-radius:5px;padding:7px;margin-top:9px;font-size:8px;width:100%;cursor:pointer}
+.space-mode-3d .space-selection-panel{order:-1}
+@media(min-width:1251px){.space-mode-3d .space-controls{max-height:calc(100vh - 290px);overflow-y:auto;scrollbar-width:thin}.space-mode-3d .space-inspector{max-height:calc(100vh - 290px);overflow-y:auto;scrollbar-width:thin}.space-mode-3d .space-inspector>.space-panel{flex-shrink:0}.space-mode-3d .space-layer-list>label{padding:7px 0}}
+.space-region-card>h3{display:flex;align-items:center;justify-content:space-between;font-size:17px}
+.space-region-card>h3>small{font-size:11px;color:#8caccd;font-weight:400}
+.space-region-metrics{display:grid;grid-template-columns:1fr 1fr;gap:17px 8px;padding:14px 0;border-top:1px solid #edf2f8;border-bottom:1px solid #edf2f8;margin-top:16px}
+.space-region-metrics small{display:block;color:#94a8c0;font-size:9px}
+.space-region-metrics strong{display:block;color:#466f9d;font-size:24px;font-weight:350;margin:7px 0}
+.space-region-metrics em{font-size:6px;letter-spacing:.3px;font-style:normal;color:#a7b4c7}
+.space-region-feedback{background:#f6f9fd;padding:12px;margin:14px 0;border-radius:6px}
+.space-region-feedback small{font-size:8px;color:#95a9c1}
+.space-region-feedback p{font-size:10px;line-height:1.9;color:#708cad;margin:9px 0 0}
+.space-region-locate{width:100%;background:#edf4fd;border:1px solid #d9e6f5;border-radius:6px;color:#648ab7;font-size:9px;padding:10px;cursor:pointer;margin-top:8px}
+.space-cad-region{fill:#8fb6df;fill-opacity:.025;stroke:none;cursor:pointer;pointer-events:visibleFill}
+.space-cad-region:hover{fill-opacity:.12}
+.space-cad-region.space-region-selected{fill:#e4b95e;fill-opacity:.22;stroke:#cf9f42;stroke-width:1.4px;vector-effect:non-scaling-stroke}
+.space-webgl-fallback{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column;color:#6f8db2;padding:30px;text-align:center}
+.space-webgl-fallback strong{font-size:17px;font-weight:450}.space-webgl-fallback p{font-size:12px;line-height:1.9;color:#91a7c2}
+.space-webgl-fallback button{background:#23518b;color:white;border:0;border-radius:6px;padding:10px 18px;font-size:11px;cursor:pointer}
+@media(min-width:1700px){.space-mode-3d .space-map-viewport{height:690px}}
+@media(max-width:1250px){.space-mode-3d .space-inspector{grid-template-columns:1fr 1fr 1fr}.space-mode-3d .space-map-viewport{height:600px}.space-3d-tools label{font-size:8px}#space-explode-range{width:48px}}
+@media(max-width:800px){.space-mode-3d .space-inspector{grid-template-columns:1fr 1fr}.space-mode-3d .space-map-viewport{height:500px}.space-location{gap:10px}.space-mode-switch{order:3}.space-3d-tools label{font-size:7px}.space-3d-tools button span{display:none}#space-explode-range{width:35px}}
+@media(max-width:600px){body.is-space .page-heading{min-height:125px;padding:21px 18px}.space-location{justify-content:space-between}.space-mode-switch{width:100%;justify-content:center}.space-mode-switch button{flex:1}.space-mode-3d .space-map-viewport{height:440px}.space-mode-3d .space-inspector{grid-template-columns:minmax(0,1fr)}.space-3d-tools{gap:4px!important}.space-3d-tools label{font-size:8px}.space-model-provenance{gap:7px;font-size:7px;padding:9px 10px}.space-model-provenance span:last-child{display:none}#space-explode-range{width:40px}.space-region-metrics{grid-template-columns:repeat(4,1fr)}.space-region-metrics small{font-size:8px}.space-region-metrics strong{font-size:20px}.space-region-metrics em{font-size:5.5px}}
+@media(max-width:600px){body.is-space .sidebar-space{display:none!important}.space-mode-3d .space-map-panel{order:-1}}
