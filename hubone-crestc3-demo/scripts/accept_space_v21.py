@@ -35,7 +35,9 @@ def main():
             print('Checking V2 baseline and C3',flush=True)
             page.goto(base+'space-v2.html#space',wait_until='networkidle');ready();meshes['v2']=page.locator('canvas.space-webgl').evaluate(MESH_HASH)
             check('v2_remains_available',diag()['presentation']['version']=='V2')
-            page.locator('#nav a[href="#report"]').click();expect(page.locator('.report-paper')).to_be_visible();page.mouse.move(1900,4);page.wait_for_timeout(300);page.screenshot(path=str(shots/'c3-before.png'),animations='disabled');reports['before']=shots/'c3-before.png'
+            page.locator('#nav a[href="#report"]').click();expect(page.locator('.report-paper')).to_be_visible()
+            # Compare fresh report documents at the same size, avoiding Chromium's SVG resize cache.
+            page.reload(wait_until='networkidle');expect(page.locator('.report-paper')).to_be_visible();page.mouse.move(1900,4);page.wait_for_timeout(300);page.screenshot(path=str(shots/'c3-before.png'),animations='disabled');reports['before']=shots/'c3-before.png'
             print('Checking V2.1 presentation',flush=True)
             page.goto(base+'space-v21.html#space',wait_until='networkidle');ready()
             check('same_threejs_engine',diag()['engine']=='Three.js r180')
@@ -65,7 +67,7 @@ def main():
             page.locator('[data-v21-roof]').uncheck();check('roof_can_hide',not page.locator('canvas.space-webgl').evaluate('c=>c.__huboneViewer.scene.getObjectByName("PDF_REFERENCE_SLOPED_ROOF").visible'))
             page.locator('[data-v21-roof]').check();page.locator('[data-v21-context]').uncheck();check('context_can_hide',not diag()['presentation']['contextVisible']);page.locator('[data-v21-context]').check()
             page.evaluate('window.v21Viewer=document.querySelector("canvas.space-webgl").__huboneViewer')
-            mode('exploded');check('modes_reuse_same_viewer',page.locator('canvas.space-webgl').evaluate('c=>c.__huboneViewer===window.v21Viewer'))
+            mode('interior');page.locator('#space-explode-range').fill('1');check('modes_reuse_same_viewer',page.locator('canvas.space-webgl').evaluate('c=>c.__huboneViewer===window.v21Viewer'))
             check('exploded_offset_is_separate',diag()['presentation']['displayExplodedOffsetM']>40 and diag()['floorY']['floor_2']>40)
             bounds=page.locator('canvas.space-webgl').evaluate('c=>c.__huboneViewer.getFloorProjectedBounds()');check('floors_do_not_occlude_in_default_exploded_view',bounds['floor_2']['bottom']<bounds['floor_1']['top'])
             check('both_floor_labels',page.locator('[data-v21-floor-tag]:visible').count()==2)
@@ -97,9 +99,10 @@ def main():
             page.locator('[data-space-mode="3d"]').click();ready();check('3d_return_preserved',diag()['presentation']['version']=='V2.1')
             page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(150);page.locator('[data-space-drawer-toggle]').click();expect(page.locator('#space-controls-panel')).to_have_attribute('aria-modal','true');page.screenshot(path=str(shots/'mobile-drawer.png'));page.keyboard.press('Escape');check('drawer_focus_return',page.locator('[data-space-drawer-toggle]').evaluate('e=>e===document.activeElement'))
             page.locator('#space-inspector-details>summary').click();expect(page.locator('#space-inspector-details')).to_have_attribute('open','');page.screenshot(path=str(shots/'mobile-inspector.png'));page.keyboard.press('Escape');check('inspector_mobile_close',not page.locator('#space-inspector-details').evaluate('e=>e.open'))
-            page.set_viewport_size({'width':1920,'height':1080});page.locator('#nav a[href="#report"]').click();expect(page.locator('.report-paper')).to_be_visible();page.mouse.move(1900,4);page.wait_for_timeout(300);page.screenshot(path=str(shots/'c3-after.png'),animations='disabled');reports['after']=shots/'c3-after.png'
+            page.set_viewport_size({'width':1920,'height':1080});page.locator('#nav a[href="#report"]').click();expect(page.locator('.report-paper')).to_be_visible()
             check('v21_scope_removed_on_c3',not page.locator('#content').evaluate('e=>e.classList.contains("space-v21-stage1")'))
             check('webgl_disposed_on_c3',page.locator('canvas.space-webgl').count()==0)
+            page.reload(wait_until='networkidle');expect(page.locator('.report-paper')).to_be_visible();page.mouse.move(1900,4);page.wait_for_timeout(300);page.screenshot(path=str(shots/'c3-after.png'),animations='disabled');reports['after']=shots/'c3-after.png'
             check('report11_preserved',page.locator('.report-paper h2').count()==14 and '1.1' in page.locator('.report-banner').inner_text())
             report=page.request.get(base+'report.json').json();check('mock_provenance_preserved',report['processing_method']=='MOCK' and not report['generation']['model_inference_executed'])
             check('report_evidence_ids_valid',all(i in report['evidence'] for group in ['claims','diagnoses','options','experiments'] for item in report['decision_analysis'][group] for i in item['evidence_ids']))

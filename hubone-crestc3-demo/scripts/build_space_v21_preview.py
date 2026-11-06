@@ -7,7 +7,7 @@ import re
 import shutil
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='v21-stage1-20261106'
+VERSION='v21-slider-20261106'
 ASSETS=['space-v21.js','space-v21.css','space-v21.bundle.js','space-v21.bundle.js.LEGAL.txt']
 
 

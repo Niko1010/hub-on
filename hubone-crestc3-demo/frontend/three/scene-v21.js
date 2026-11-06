@@ -24,10 +24,13 @@ export function createSpatialScene(host,options){
   // Remove only the original neutral studio ground in this opt-in instance.
   for(const child of view.scene.children){if(child.isMesh&&child.geometry?.type==='PlaneGeometry')child.visible=false;}
   const [x0,y0,x1,y1]=envelope.bounds_local_xy_m;
-  const mode={mode:'overview',floors:{floor_1:true,floor_2:true},context:true,roof:true,gap:1};
-  const gap=Math.max(44,((x1-x0)+(y1-y0))*.37); // Display separation, never a real elevation.
+  const mode={mode:'overview',floors:{floor_1:true,floor_2:true},context:true,roof:true,separation:0};
+  const normalFloorSpacing=envelope.display_parameters.floor_spacing_m;
+  const legacyMaxSeparation=Math.max(44,((x1-x0)+(y1-y0))*.37)*1.25;
+  const normalBuildingHeight=new THREE.Box3().setFromObject(exterior).getSize(new THREE.Vector3()).y;
+  const maxSeparation=Math.max(legacyMaxSeparation*1.5,normalBuildingHeight*1.5); // Display offset only.
   const guides=new THREE.Group();guides.name='DISPLAY_REGISTRATION_GUIDES';root.add(guides);
-  const openingHelpers=new THREE.Group();openingHelpers.name='CAD_OPENING_AUDIT';internal.add(openingHelpers);
+  const openingHelpers=new THREE.Group();openingHelpers.name='CAD_OPENING_AUDIT';view.floorGroups.get('floor_2').group.add(openingHelpers);
   const origin=sourceModels.find(m=>m.floor_id==='floor_2').registration.origin_wcs_mm;
   for(const hole of surfaces.floors.floor_2.openings){
     for(const p of hole.footprints){
@@ -37,7 +40,8 @@ export function createSpatialScene(host,options){
     }
   }
   const guideMaterial=new THREE.LineDashedMaterial({color:'#80909a',dashSize:1.1,gapSize:.9,transparent:true,opacity:.45});
-  const guide=new THREE.LineSegments(new THREE.BufferGeometry(),guideMaterial);guides.add(guide);
+  const guideGeometry=new THREE.BufferGeometry();guideGeometry.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(12),3));guideGeometry.setAttribute('lineDistance',new THREE.Float32BufferAttribute(new Float32Array(4),1));
+  const guide=new THREE.LineSegments(guideGeometry,guideMaterial);guides.add(guide);
   const baseSet=view.setOptions.bind(view),baseBounds=view.fullBounds.bind(view),baseDiagnostics=view.getDiagnostics.bind(view),baseDraw=view.draw.bind(view),baseFit=view.fit.bind(view),baseHits=view.hits.bind(view);
   const originalFloorLabels=[...view.screenLabels].filter(l=>l.userData.floorLabel);originalFloorLabels.forEach(l=>l.material.opacity=0);
   view.setOptions=o=>{baseSet({...o,simulated:false,layers:{...o.layers,cameras:false,coverage:false,activity:false,heatmap:false,trajectories:false,experience:false,events:false}});apply();};
@@ -55,27 +59,49 @@ export function createSpatialScene(host,options){
     baseFit(false);
   };
   function apply(){
-    exterior.visible=mode.mode==='overview';internal.visible=true;openingHelpers.visible=mode.mode!=='overview';context.visible=mode.context&&mode.mode==='overview';guides.visible=mode.mode==='exploded';
+    exterior.visible=mode.mode==='overview';internal.visible=true;openingHelpers.visible=mode.mode!=='overview';context.visible=mode.context&&mode.mode==='overview';guides.visible=mode.mode==='interior'&&mode.separation>0&&mode.floors.floor_1&&mode.floors.floor_2;
     exterior.getObjectByName('PDF_REFERENCE_SLOPED_ROOF').visible=mode.roof;
     exterior.getObjectByName('PDF_ROOF_EDGES').visible=mode.roof;
     exterior.getObjectByName('PDF_GABLE_END_INFILL').visible=mode.roof;
     for(const [id,f]of view.floorGroups){
-      f.group.visible=mode.floors[id];f.group.position.y=(f.model.level-1)*(4.2+(mode.mode==='exploded'?gap*mode.gap:0));
+      const baseline=(f.model.level-1)*normalFloorSpacing;
+      f.group.visible=mode.floors[id];f.group.position.y=baseline+(mode.mode==='interior'&&mode.separation>0?(f.model.level-1)*maxSeparation*mode.separation:0);
       f.operations.visible=false;
     }
-    for(const line of openingHelpers.children){line.visible=mode.floors.floor_2;line.position.y=view.floorGroups.get('floor_2').group.position.y;}
+    for(const line of openingHelpers.children)line.visible=mode.floors.floor_2;
     const y=view.floorGroups.get('floor_2').group.position.y;
     const points=[new THREE.Vector3(x0-2,0,-y0),new THREE.Vector3(x0-2,y,-y0),new THREE.Vector3(x1+2,0,-y1),new THREE.Vector3(x1+2,y,-y1)];
-    guide.geometry.dispose();guide.geometry=new THREE.BufferGeometry().setFromPoints(points);guide.computeLineDistances();
+    const positions=guide.geometry.attributes.position;points.forEach((p,i)=>positions.setXYZ(i,p.x,p.y,p.z));positions.needsUpdate=true;
+    guide.geometry.attributes.lineDistance.array.set([0,y,0,y]);guide.geometry.attributes.lineDistance.needsUpdate=true;
     view.invalidate();
   }
   view.setPresentation=update=>{
     const modeChanged=update.mode&&update.mode!==mode.mode;
-    if(update.mode&&['overview','interior','exploded'].includes(update.mode))mode.mode=update.mode;
+    if(update.mode&&['overview','interior'].includes(update.mode))mode.mode=update.mode;
     if(update.floors)Object.assign(mode.floors,update.floors);
-    for(const key of ['context','roof','gap'])if(key in update)mode[key]=update[key];
+    for(const key of ['context','roof'])if(key in update)mode[key]=update[key];
+    if('separation' in update)mode.separation=THREE.MathUtils.clamp(Number(update.separation)||0,0,1);
+    if(mode.mode==='overview')mode.separation=0;
     apply();view.fit(Boolean(modeChanged));host.dispatchEvent(new CustomEvent('hubone-v21-change',{bubbles:true}));
   };
+  view.setFloorSeparation=amount=>{
+    const value=Number(amount);if(!Number.isFinite(value))return;
+    mode.mode='interior';mode.separation=THREE.MathUtils.clamp(value,0,1);apply();
+    // Continuously enclose the current geometry while retaining the user's viewing direction.
+    // No model rebuild, incremental coordinate mutation, camera preset or delayed animation.
+    view.focusMotion=null;view.focusedRegion=null;
+    const damping=view.controls.enableDamping;view.controls.enableDamping=false;view.controls.update();
+    const box=view.fullBounds();
+    if(!box.isEmpty()){
+      const direction=view.camera.position.clone().sub(view.controls.target).normalize(),center=box.getCenter(new THREE.Vector3());
+      view.controls.target.copy(center);view.camera.position.copy(center).addScaledVector(direction,280);view.camera.lookAt(center);view.camera.updateMatrixWorld(true);
+      const projected=new THREE.Box3();for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])projected.expandByPoint(new THREE.Vector3(x,y,z).applyMatrix4(view.camera.matrixWorldInverse));
+      const size=projected.getSize(new THREE.Vector3()),aspect=Math.max(1,host.clientWidth)/Math.max(1,host.clientHeight);view.halfHeight=Math.max(size.y,size.x/aspect)*.57;
+      view.camera.zoom=1;view.updateProjection();view.controls.update();view.onChange?.(100);
+    }
+    view.controls.enableDamping=damping;view.invalidate();host.dispatchEvent(new CustomEvent('hubone-v21-change',{bubbles:true}));
+  };
+  view.setExplode=view.setFloorSeparation; // Keep the original Demo slider input path.
   view.getPresentation=()=>({...mode,floors:{...mode.floors}});
   view.getFloorScreenAnchors=()=>{
     const b=host.getBoundingClientRect(),result={};
@@ -101,7 +127,7 @@ export function createSpatialScene(host,options){
     view.setPresentation({mode:'interior',floors:{floor_1:false,floor_2:true}});
     const ring=surfaces.floors.floor_2.openings[0].footprints[0].outer;
     const xs=ring.map(p=>(p[0]-origin[0])/1000),zs=ring.map(p=>-(p[1]-origin[1])/1000);
-    const target=new THREE.Vector3((Math.min(...xs)+Math.max(...xs))/2,4.2,(Math.min(...zs)+Math.max(...zs))/2);
+    const target=new THREE.Vector3((Math.min(...xs)+Math.max(...xs))/2,view.floorGroups.get('floor_2').group.position.y,(Math.min(...zs)+Math.max(...zs))/2);
     const delta=view.camera.position.clone().sub(view.controls.target);view.controls.target.copy(target);view.camera.position.copy(target).add(delta);view.camera.zoom=3.1;view.updateProjection();view.controls.update();view.invalidate();
   };
   view.draw=t=>{baseDraw(t);host.dispatchEvent(new CustomEvent('hubone-v21-draw',{bubbles:true}));};
@@ -110,7 +136,9 @@ export function createSpatialScene(host,options){
     visibleInternalFloors:internal.visible?[...view.floorGroups].filter(([,f])=>f.group.visible).map(([id])=>id):[],
     envelopeVisible:exterior.visible,roofVisible:mode.roof,contextVisible:context.visible,contextStatus:'SIMULATED',
     facadeStatus:envelope.facade_status,heightStatus:'SIMULATED',sourceFloorIds:sourceModels.map(m=>m.floor_id),
-    analyticsImplemented:false,displayExplodedOffsetM:mode.mode==='exploded'?gap*mode.gap:0,
+    analyticsImplemented:false,displayExplodedOffsetM:mode.mode==='interior'?maxSeparation*mode.separation:0,
+    separationProgress:mode.separation,maxSeparationM:maxSeparation,legacyMaxSeparationM:legacyMaxSeparation,normalBuildingHeightM:normalBuildingHeight,
+    baselineFloorY:{floor_1:0,floor_2:normalFloorSpacing},cameraFraming:'CONTINUOUS_CURRENT_VIEW_FIT',
     registration:sourceModels.map(m=>({floor_id:m.floor_id,...m.registration})),
     openingAudit:surfaces.audit,openingSourceHandle:'189F',openingAreaM2:surfaces.floors.floor_2.openings[0].area_m2,
     flatSurfaceOverOpening:false,walkingSurfaceVerified:false,envelope:exterior.userData.statistics}});
