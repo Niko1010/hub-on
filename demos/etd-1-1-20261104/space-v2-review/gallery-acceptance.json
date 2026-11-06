@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks_passed": 12,
+  "checks": [
+    "comparison_2048x972",
+    "comparison_1920x1080",
+    "comparison_1440x900",
+    "comparison_1024x768",
+    "comparison_390x844",
+    "download_source.patch",
+    "download_report.md",
+    "download_acceptance.json",
+    "download_native-acceptance.json",
+    "download_integrity.json",
+    "download_pytest.xml",
+    "gallery_no_browser_errors"
+  ],
+  "javascript_errors": [],
+  "http_errors": []
+}

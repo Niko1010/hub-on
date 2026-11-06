@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks_passed": 7,
+  "checks": [
+    "native_health",
+    "native_static_preview_import_map",
+    "native_original_renderer_and_no_operating_data",
+    "native_real_cameras_not_connected",
+    "native_capture_and_style_cleanup",
+    "native_default_stays_original",
+    "native_no_js_or_http_errors"
+  ],
+  "javascript_errors": [],
+  "http_errors": [],
+  "real_devices_tested": false,
+  "model_inference_executed": false
+}

@@ -1,0 +1,10 @@
+ .../docs/SPACE_V2_STAGE1_ACCEPTANCE.md             |  136 +
+ hubone-crestc3-demo/frontend/space-v2.bundle.js    | 4135 ++++++++++++++++++++
+ .../frontend/space-v2.bundle.js.LEGAL.txt          |    9 +
+ hubone-crestc3-demo/frontend/space-v2.css          |   23 +
+ hubone-crestc3-demo/frontend/space-v2.html         |   43 +
+ hubone-crestc3-demo/frontend/space-v2.js           |   24 +
+ hubone-crestc3-demo/frontend/three/scene-v2.js     |   76 +
+ hubone-crestc3-demo/scripts/accept_space_v2.py     |  176 +
+ .../scripts/build_space_v2_preview.py              |   93 +
+ 9 files changed, 4715 insertions(+)
