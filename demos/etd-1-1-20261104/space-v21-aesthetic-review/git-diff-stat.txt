@@ -1,0 +1,9 @@
+ .../docs/SPACE_V21_AESTHETIC_ACCEPTANCE.md         |   85 +
+ .../frontend/space-v21-aesthetic.bundle.js         | 4135 ++++++++++++++++++++
+ .../space-v21-aesthetic.bundle.js.LEGAL.txt        |    9 +
+ .../frontend/space-v21-aesthetic.html              |   43 +
+ .../frontend/three/architectural-style-v21.js      |  117 +
+ .../frontend/three/scene-v21-aesthetic.js          |   24 +
+ .../scripts/accept_space_v21_aesthetic.py          |  127 +
+ .../scripts/build_space_v21_aesthetic_preview.py   |   55 +
+ 8 files changed, 4595 insertions(+)

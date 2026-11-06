@@ -1,0 +1,23 @@
+{
+  "source_baseline": "f8efd45d880ef88e1657e272c0d77af56a3a3b41",
+  "source_existing_files_unchanged": 218,
+  "source_added_files": [
+    "hubone-crestc3-demo/docs/SPACE_V21_AESTHETIC_ACCEPTANCE.md",
+    "hubone-crestc3-demo/frontend/space-v21-aesthetic.bundle.js",
+    "hubone-crestc3-demo/frontend/space-v21-aesthetic.bundle.js.LEGAL.txt",
+    "hubone-crestc3-demo/frontend/space-v21-aesthetic.html",
+    "hubone-crestc3-demo/frontend/three/architectural-style-v21.js",
+    "hubone-crestc3-demo/frontend/three/scene-v21-aesthetic.js",
+    "hubone-crestc3-demo/scripts/accept_space_v21_aesthetic.py",
+    "hubone-crestc3-demo/scripts/build_space_v21_aesthetic_preview.py"
+  ],
+  "source_modified_files": [],
+  "source_deleted_files": [],
+  "pages_baseline": "c27f0bc5ff502ba8204daf28dabe22beb08da897",
+  "pages_all_existing_files_unchanged": 272,
+  "demo_existing_files_unchanged": 138,
+  "cad_or_mesh_data_modified": false,
+  "layout_or_global_css_modified": false,
+  "c3_or_api_modified": false,
+  "current_v21_modified": false
+}
