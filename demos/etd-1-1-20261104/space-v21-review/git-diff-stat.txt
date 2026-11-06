@@ -1,0 +1,17 @@
+ .../docs/SPACE_V21_STAGE1_ACCEPTANCE.md            |  153 +
+ .../frontend/space-v21-data/envelope.json          |    1 +
+ .../frontend/space-v21-data/site.json              |    1 +
+ .../frontend/space-v21-data/surfaces.json          |    1 +
+ hubone-crestc3-demo/frontend/space-v21.bundle.js   | 4135 ++++++++++++++++++++
+ .../frontend/space-v21.bundle.js.LEGAL.txt         |    9 +
+ hubone-crestc3-demo/frontend/space-v21.css         |   41 +
+ hubone-crestc3-demo/frontend/space-v21.html        |   43 +
+ hubone-crestc3-demo/frontend/space-v21.js          |   85 +
+ .../frontend/three/building-envelope-v21.js        |   85 +
+ hubone-crestc3-demo/frontend/three/scene-v21.js    |  120 +
+ .../frontend/three/site-context-v21.js             |   28 +
+ hubone-crestc3-demo/scripts/accept_space_v21.py    |  129 +
+ .../scripts/build_space_v21_preview.py             |   59 +
+ .../scripts/prepare_space_v21_data.py              |  142 +
+ hubone-crestc3-demo/tests/test_space_v21.py        |   89 +
+ 16 files changed, 5121 insertions(+)

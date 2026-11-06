@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checks_passed": 16,
+  "checks": [
+    "published_candidate_matches_tested_product_files",
+    "actual_screenshot_overview.png",
+    "actual_screenshot_exploded.png",
+    "actual_screenshot_floor-1.png",
+    "actual_screenshot_floor-2.png",
+    "actual_screenshot_opening.png",
+    "actual_screenshot_mobile.png",
+    "download_report.md",
+    "download_source.patch",
+    "download_acceptance.json",
+    "download_native-acceptance.json",
+    "download_integrity.json",
+    "download_source-integrity.json",
+    "download_void-audit.json",
+    "download_pytest.xml",
+    "gallery_no_browser_errors"
+  ],
+  "javascript_errors": [],
+  "http_errors": []
+}

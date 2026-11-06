@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks_passed": 10,
+  "checks": [
+    "native_api_health",
+    "native_v21_entry_and_import_map",
+    "native_camera_inventory_unchanged",
+    "floor_groups_have_no_xy_shift_or_scale",
+    "native_exploded_entry",
+    "actual_mobile_touch_orbit",
+    "native_capture_and_style_cleanup",
+    "native_preserved_original",
+    "native_preserved_v2",
+    "native_no_js_or_http_errors"
+  ],
+  "javascript_errors": [],
+  "http_errors": [],
+  "physical_windows_verified": false,
+  "physical_gpu_verified": false,
+  "real_devices_tested": false
+}
