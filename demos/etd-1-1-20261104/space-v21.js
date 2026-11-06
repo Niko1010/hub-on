@@ -5,12 +5,13 @@ export function mountSpace(root){
   root.classList.add('space-v21-stage1');
   const view=mountOriginal(root),abort=new AbortController();
   view.viewMode='3d'; // Preview starts in 3D without writing the old version's saved preference.
-  const state={mode:'overview',floors:{floor_1:true,floor_2:true},context:true,roof:true,gap:1};
+  const state={mode:'overview',floors:{floor_1:true,floor_2:true},context:true,roof:true,separation:0};
   const connected=new WeakSet();
-  const titles={overview:'观前街1号 · 建筑总览',interior:'观前街1号 · CAD 内部空间',exploded:'观前街1号 · 楼层拆解'};
+  const titles={overview:'观前街1号 · 建筑总览',interior:'观前街1号 · CAD 内部空间'};
   function current(){return view.threeView;}
   function set(update){
     Object.assign(state,update);if(update.floors)state.floors={...update.floors};
+    if(state.mode==='overview'){state.separation=0;view.explode=0;}
     current()?.setPresentation(state);decorate();updateLabels();
   }
   function updateLabels(){
@@ -29,8 +30,20 @@ export function mountSpace(root){
     root.dataset.v21SceneMode=state.mode;
     if(!controls.querySelector('.space-v21-controls')){
       const box=document.createElement('section');box.className='space-v21-controls space-3d-only';
-      box.innerHTML=`<div class="space-v21-eyebrow">ARCHITECTURAL VIEW / V2.1</div><div class="space-v21-modes">${[['overview','建筑总览'],['interior','内部空间'],['exploded','楼层拆解']].map(([key,label])=>`<button data-v21-mode="${key}" aria-pressed="false">${label}</button>`).join('')}</div><div class="space-v21-floor-visibility"><label><input type="checkbox" data-v21-floor="floor_1" checked> 01F 一层</label><label><input type="checkbox" data-v21-floor="floor_2" checked> 02F 二层</label></div><label class="space-v21-context-toggle"><input type="checkbox" data-v21-context checked> 场地示意 <small>SIMULATED</small></label><label class="space-v21-roof-toggle"><input type="checkbox" data-v21-roof checked> 屋顶参考重建</label><label class="space-v21-gap">展示分离距离<input type="range" data-v21-gap min="0.6" max="1.25" step="0.05" value="1" aria-label="楼层拆解展示间距"><small>展示偏移，不是实际层高</small></label><button class="space-v21-void-button" data-v21-opening>核对二层中空 ↗</button>`;
+      box.innerHTML=`<div class="space-v21-eyebrow">ARCHITECTURAL VIEW / V2.1</div><div class="space-v21-modes">${[['overview','建筑总览'],['interior','内部空间']].map(([key,label])=>`<button data-v21-mode="${key}" aria-pressed="false">${label}</button>`).join('')}</div><div class="space-v21-floor-visibility"><label><input type="checkbox" data-v21-floor="floor_1" checked> 01F 一层</label><label><input type="checkbox" data-v21-floor="floor_2" checked> 02F 二层</label></div><label class="space-v21-context-toggle"><input type="checkbox" data-v21-context checked> 场地示意 <small>SIMULATED</small></label><label class="space-v21-roof-toggle"><input type="checkbox" data-v21-roof checked> 屋顶参考重建</label><p class="space-v21-separation-help">拖动视窗上方滑轨分离楼层；归零恢复原位。仅改变展示位置。</p><button class="space-v21-void-button" data-v21-opening>核对二层中空 ↗</button>`;
       controls.prepend(box);
+    }
+    const rail=root.querySelector('#space-explode-range');
+    if(rail){
+      if(!rail.dataset.v21Slider){
+        rail.dataset.v21Slider='true';rail.min='0';rail.max='1';rail.step='0.001';rail.setAttribute('aria-label','楼层分离，0%恢复原位');
+        const label=document.createElement('label');label.className='space-v21-slider-label';label.htmlFor=rail.id;
+        label.innerHTML='<span>楼层分离</span><output id="space-v21-separation" for="space-explode-range">0%</output>';rail.before(label);
+      }
+      if(Math.abs(Number(rail.value)-state.separation)>1e-9)rail.value=state.separation;
+      const text=(Math.round(state.separation*1000)/10)+'%',output=root.querySelector('#space-v21-separation');
+      if(output.value!==text)output.value=text;
+      rail.setAttribute('aria-valuetext',text+'，仅展示偏移，0%为原始位置');
     }
     if(!map.querySelector('.space-v21-tag')){
       const tag=document.createElement('div');tag.className='space-v21-tag';tag.innerHTML='<b>V2.1 <span>STAGE 01</span></b><a href="./space-v2.html#space">V2 ↗</a><a href="./index.html#space">原版 ↗</a>';
@@ -56,16 +69,20 @@ export function mountSpace(root){
   }
   const observer=new MutationObserver(()=>{decorate();updateLabels();});observer.observe(root,{childList:true,subtree:true});
   root.addEventListener('hubone-v21-draw',updateLabels,{signal:abort.signal});
-  root.addEventListener('hubone-v21-change',updateLabels,{signal:abort.signal});
+  root.addEventListener('hubone-v21-change',()=>{
+    const presentation=current()?.getPresentation();if(presentation){Object.assign(state,presentation);view.explode=state.separation;}
+    decorate();updateLabels();
+  },{signal:abort.signal});
   // Update preview state before the original SpaceView handlers rebuild a floor.
   root.addEventListener('click',e=>{
     const floor=e.target.closest('[data-space-floor]');
     if(floor){state.mode='interior';state.floors={floor_1:false,floor_2:false,[floor.dataset.spaceFloor]:true};}
-    if(e.target.closest('[data-space-building]')){state.mode='overview';state.floors={floor_1:true,floor_2:true};}
+    if(e.target.closest('[data-space-building]')){state.mode='overview';state.separation=0;view.explode=0;state.floors={floor_1:true,floor_2:true};}
   },{capture:true,signal:abort.signal});
   root.addEventListener('click',e=>{
     const mode=e.target.closest('[data-v21-mode]');
     if(mode){set({mode:mode.dataset.v21Mode});if(view.drawerMedia.matches)view.setDrawer(false);}
+    if(e.target.closest('[data-space-building]'))set({mode:'overview',separation:0,floors:{floor_1:true,floor_2:true}});
     if(e.target.closest('[data-v21-opening]')){
       state.mode='interior';state.floors={floor_1:false,floor_2:true};current()?.focusOpening();decorate();if(view.drawerMedia.matches)view.setDrawer(false);
     }
@@ -77,7 +94,6 @@ export function mountSpace(root){
     if(e.target.matches('[data-v21-context]'))set({context:e.target.checked});
     if(e.target.matches('[data-v21-roof]'))set({roof:e.target.checked});
   },{signal:abort.signal});
-  root.addEventListener('input',e=>{if(e.target.matches('[data-v21-gap]'))set({gap:Number(e.target.value)});},{signal:abort.signal});
   decorate();
   const originalDestroy=view.destroy.bind(view);
   view.destroy=()=>{observer.disconnect();abort.abort();root.classList.remove('space-v21-stage1');delete root.dataset.v21SceneMode;originalDestroy();};

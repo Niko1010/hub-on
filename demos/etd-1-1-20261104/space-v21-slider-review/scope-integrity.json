@@ -1,0 +1,26 @@
+{
+  "source_baseline": "7d070bcf7a6e08595205ebe829e823f21328da29",
+  "source_original_files": 209,
+  "source_modified_existing_files": [
+    "hubone-crestc3-demo/frontend/space-v21.bundle.js",
+    "hubone-crestc3-demo/frontend/space-v21.css",
+    "hubone-crestc3-demo/frontend/space-v21.html",
+    "hubone-crestc3-demo/frontend/space-v21.js",
+    "hubone-crestc3-demo/frontend/three/scene-v21.js",
+    "hubone-crestc3-demo/scripts/accept_space_v21.py",
+    "hubone-crestc3-demo/scripts/build_space_v21_preview.py"
+  ],
+  "source_other_files_unchanged": 202,
+  "demo_original_files": 125,
+  "demo_modified_existing_files": [
+    "space-v21.bundle.js",
+    "space-v21.css",
+    "space-v21.html",
+    "space-v21.js"
+  ],
+  "demo_other_files_unchanged": 121,
+  "cad_model_data_changed": false,
+  "exterior_materials_or_site_changed": false,
+  "global_css_or_c3_changed": false,
+  "old_review_changed": false
+}

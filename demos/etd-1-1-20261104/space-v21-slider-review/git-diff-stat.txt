@@ -1,0 +1,10 @@
+ .../docs/SPACE_V21_SLIDER_ACCEPTANCE.md            |  84 +++++++++++++++
+ hubone-crestc3-demo/frontend/space-v21.bundle.js   |  52 +++++-----
+ hubone-crestc3-demo/frontend/space-v21.css         |  18 ++--
+ hubone-crestc3-demo/frontend/space-v21.html        |   4 +-
+ hubone-crestc3-demo/frontend/space-v21.js          |  28 +++--
+ hubone-crestc3-demo/frontend/three/scene-v21.js    |  52 +++++++---
+ hubone-crestc3-demo/scripts/accept_space_v21.py    |   9 +-
+ .../scripts/accept_space_v21_slider.py             | 115 +++++++++++++++++++++
+ .../scripts/build_space_v21_preview.py             |   2 +-
+ 9 files changed, 308 insertions(+), 56 deletions(-)

@@ -1,0 +1,270 @@
+{
+  "status": "passed",
+  "stage": 1,
+  "url": "http://127.0.0.1:8056/hub-on/demos/etd-1-1-20261104/",
+  "browser": "Chromium / SwiftShader",
+  "physical_gpu_verified": false,
+  "real_devices_tested": false,
+  "analysis_layers_developed": false,
+  "user_visual_acceptance": "PENDING",
+  "checks_passed": 73,
+  "checks": [
+    "v2_remains_available",
+    "same_threejs_engine",
+    "overview_default",
+    "only_original_two_floors",
+    "source_provenance_explicit",
+    "no_analytical_data",
+    "actual_frame_geometry",
+    "actual_slope_roof_mesh",
+    "cad_wall_column_glazing_mesh_buffers_unchanged",
+    "2048x972_no_outer_overflow",
+    "2048x972_complete_fit",
+    "2048x972_map_visible",
+    "2048x972_existing_navigation",
+    "1920x1080_no_outer_overflow",
+    "1920x1080_complete_fit",
+    "1920x1080_map_visible",
+    "1920x1080_existing_navigation",
+    "1440x900_no_outer_overflow",
+    "1440x900_complete_fit",
+    "1440x900_map_visible",
+    "1440x900_existing_navigation",
+    "1024x768_no_outer_overflow",
+    "1024x768_complete_fit",
+    "1024x768_map_visible",
+    "1024x768_existing_navigation",
+    "390x844_no_outer_overflow",
+    "390x844_complete_fit",
+    "390x844_map_visible",
+    "390x844_existing_navigation",
+    "pointer_orbit",
+    "pointer_pan",
+    "wheel_zoom",
+    "fit_reset",
+    "roof_can_hide",
+    "context_can_hide",
+    "modes_reuse_same_viewer",
+    "exploded_offset_is_separate",
+    "floors_do_not_occlude_in_default_exploded_view",
+    "both_floor_labels",
+    "floor1_independent_hide",
+    "floor2_independent_hide",
+    "original_floor_button_floor_1",
+    "original_floor_button_floor_2",
+    "columns_hide_preserved",
+    "columns_restore_preserved",
+    "opening_focus",
+    "actual_webgl_mesh_has_no_floor_over_cad_void",
+    "positive_control_floor_ray_hits",
+    "cad_opening_evidence",
+    "cad_region_selection_preserved",
+    "original_2d_entities_preserved",
+    "3d_return_preserved",
+    "drawer_focus_return",
+    "inspector_mobile_close",
+    "v21_scope_removed_on_c3",
+    "webgl_disposed_on_c3",
+    "report11_preserved",
+    "mock_provenance_preserved",
+    "report_evidence_ids_valid",
+    "c3_video_evidence_seek",
+    "c3_audio_evidence_seek",
+    "report_export_md",
+    "report_export_json",
+    "c3_route_timeline",
+    "c3_route_feedback",
+    "c3_route_insights",
+    "c3_route_capture",
+    "return_to_v21",
+    "back_to_v2",
+    "c3_report_pixels_identical",
+    "no_javascript_errors",
+    "no_http_errors",
+    "no_webgl_console_errors"
+  ],
+  "viewports": [
+    {
+      "width": 2048,
+      "height": 972,
+      "scrollWidth": 2048,
+      "scrollHeight": 972,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1222,
+        "height": 589.234375
+      },
+      "sidebar": "fixed"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "map": {
+        "x": 489,
+        "y": 218.984375,
+        "width": 1094,
+        "height": 697.234375
+      },
+      "sidebar": "fixed"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "map": {
+        "x": 439,
+        "y": 216.796875,
+        "width": 702,
+        "height": 519.421875
+      },
+      "sidebar": "fixed"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "scrollHeight": 768,
+      "map": {
+        "x": 93,
+        "y": 216.796875,
+        "width": 914,
+        "height": 325.421875
+      },
+      "sidebar": "fixed"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "map": {
+        "x": 67,
+        "y": 274,
+        "width": 312,
+        "height": 351.421875
+      },
+      "sidebar": "fixed"
+    }
+  ],
+  "javascript_errors": [],
+  "http_errors": [],
+  "console_errors": [],
+  "mesh_hashes": {
+    "v2": [
+      {
+        "floor": "floor_1",
+        "kind": "columns",
+        "attrs": {
+          "position": "ecaf35076cb2d2b82b34ec4f34e1399347dc8af323a4a047feb0bc7e94df2980",
+          "uv": "9c97410e416ee145850c39c7545e0ddb9d1ab30a8bf5ec12dbdda71fad444648",
+          "normal": "6a99a9c5f966a06f0e6af1e5fb01240ff7eee6aa1a6f23d6d1477f39051bc905"
+        }
+      },
+      {
+        "floor": "floor_1",
+        "kind": "walls",
+        "attrs": {
+          "position": "bff87e396cd5a58faf3bc096faea50a0d9825fb07d0207099619c7f80231d251",
+          "uv": "521a3610b32aa14579891df2407c0a8ebd209a626abbd7610c942b5f02701a8e",
+          "normal": "f00d31c47ba2ad1b0bc261525864824d66ad9a7136d302a779679cb6a771d041"
+        }
+      },
+      {
+        "floor": "floor_1",
+        "kind": "glazing",
+        "attrs": {
+          "position": "39fd87fd77dfda229313966313fd57871bbe16df77758967e9c66acca9e1af9b",
+          "uv": "87d328c05345378738b4962827f792e2fd6ee2489d3918d918800c223b12a071",
+          "normal": "d42141a3d1ec20db7d4897adaea30ed3dda3cbd02c0c4e5b87a189b229146ab8"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "columns",
+        "attrs": {
+          "position": "d8e1a0ccb6dba9b9506fb0dbdde9eda69163099577f18265ab1ae876deeac2d0",
+          "uv": "358b175e764d9209fd0bced339fb58a86e0da82b82751d420363afb5cdf2a74b",
+          "normal": "94069bafab1bbfa6cf720a5d0a176b18b42f2d3aa5156bc22ca53ea05e851c6f"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "walls",
+        "attrs": {
+          "position": "df6af6b6ff03ab18fa1fd54e8184f3a28542aca9a7da63e2849d050a6c53f6ab",
+          "uv": "c98aa67fa59ba9d8e1e847b48593322c8dbfa82a2d0ed49bf09c745a2b107418",
+          "normal": "7044da6f5f8bbcdaa777060294ee4c9c60a77d66e442cae7dc25b334efdc7a0c"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "glazing",
+        "attrs": {
+          "position": "de972d1be875b44979f8740af7b757149eae3f96c9c6849435b8642fdd428c82",
+          "uv": "d385a35632b3e37797efcffe1e6445ed19da9ed014c7bfac3a52ed31fd99d0b1",
+          "normal": "2569fb731fdd704d85e344192b5a90c647d08b81b6674615e6d664c6817cb503"
+        }
+      }
+    ],
+    "v21": [
+      {
+        "floor": "floor_1",
+        "kind": "columns",
+        "attrs": {
+          "position": "ecaf35076cb2d2b82b34ec4f34e1399347dc8af323a4a047feb0bc7e94df2980",
+          "uv": "9c97410e416ee145850c39c7545e0ddb9d1ab30a8bf5ec12dbdda71fad444648",
+          "normal": "6a99a9c5f966a06f0e6af1e5fb01240ff7eee6aa1a6f23d6d1477f39051bc905"
+        }
+      },
+      {
+        "floor": "floor_1",
+        "kind": "walls",
+        "attrs": {
+          "position": "bff87e396cd5a58faf3bc096faea50a0d9825fb07d0207099619c7f80231d251",
+          "uv": "521a3610b32aa14579891df2407c0a8ebd209a626abbd7610c942b5f02701a8e",
+          "normal": "f00d31c47ba2ad1b0bc261525864824d66ad9a7136d302a779679cb6a771d041"
+        }
+      },
+      {
+        "floor": "floor_1",
+        "kind": "glazing",
+        "attrs": {
+          "position": "39fd87fd77dfda229313966313fd57871bbe16df77758967e9c66acca9e1af9b",
+          "uv": "87d328c05345378738b4962827f792e2fd6ee2489d3918d918800c223b12a071",
+          "normal": "d42141a3d1ec20db7d4897adaea30ed3dda3cbd02c0c4e5b87a189b229146ab8"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "columns",
+        "attrs": {
+          "position": "d8e1a0ccb6dba9b9506fb0dbdde9eda69163099577f18265ab1ae876deeac2d0",
+          "uv": "358b175e764d9209fd0bced339fb58a86e0da82b82751d420363afb5cdf2a74b",
+          "normal": "94069bafab1bbfa6cf720a5d0a176b18b42f2d3aa5156bc22ca53ea05e851c6f"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "walls",
+        "attrs": {
+          "position": "df6af6b6ff03ab18fa1fd54e8184f3a28542aca9a7da63e2849d050a6c53f6ab",
+          "uv": "c98aa67fa59ba9d8e1e847b48593322c8dbfa82a2d0ed49bf09c745a2b107418",
+          "normal": "7044da6f5f8bbcdaa777060294ee4c9c60a77d66e442cae7dc25b334efdc7a0c"
+        }
+      },
+      {
+        "floor": "floor_2",
+        "kind": "glazing",
+        "attrs": {
+          "position": "de972d1be875b44979f8740af7b757149eae3f96c9c6849435b8642fdd428c82",
+          "uv": "d385a35632b3e37797efcffe1e6445ed19da9ed014c7bfac3a52ed31fd99d0b1",
+          "normal": "2569fb731fdd704d85e344192b5a90c647d08b81b6674615e6d664c6817cb503"
+        }
+      }
+    ]
+  }
+}
