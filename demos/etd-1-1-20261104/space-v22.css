@@ -1,0 +1,10 @@
+/* Scoped exclusively to the independent V2.2 experience panel. */
+.space-v22-preview .space-v22-layer-panel{margin:0 0 16px;padding:13px 12px;border:1px solid #c7e2e4;border-radius:7px;background:#f5fbfb;color:#375e64}
+.space-v22-preview .space-v22-heading{display:flex;justify-content:space-between;gap:6px;font-size:11px;letter-spacing:.7px;margin-bottom:11px}
+.space-v22-preview .space-v22-heading b{font-weight:600;color:#31808a}
+.space-v22-preview .space-v22-toggle,.space-v22-preview .space-v22-floors label{display:flex;align-items:center;gap:7px;font-size:13px}
+.space-v22-preview .space-v22-layer-panel input{accent-color:#368e98;width:14px;height:14px;margin:0;flex-shrink:0}
+.space-v22-preview .space-v22-swatch{width:13px;height:13px;border:1px solid #499da6;background:#50c5cd88;border-radius:2px}
+.space-v22-preview .space-v22-floors{display:flex;flex-wrap:wrap;gap:9px 15px;margin:12px 0}
+.space-v22-preview .space-v22-layer-panel p{font-size:11px;line-height:1.7;color:#648087;margin:0}
+.space-v22-preview .space-v22-layer-panel p strong{font-size:10px;letter-spacing:.4px;color:#397c84}

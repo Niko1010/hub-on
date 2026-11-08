@@ -1,0 +1,903 @@
+{
+  "schema_version": "1.0.0",
+  "route_id": "guanqian-1:visitor-flow:reference-20261107",
+  "building_id": "guanqian-1",
+  "source": "SIMULATED",
+  "simulated": true,
+  "verified": false,
+  "runtime_ready": false,
+  "runnable": false,
+  "fullrouteReady": false,
+  "partial_playback_ready": true,
+  "status": "PARTIAL_PLAYBACK_WITH_PENDING_CONNECTIONS",
+  "notice": "入口右侧净空路线已获确认；安全片段可运行。楼梯落点、左区通道及出口待核连接不播放穿墙粒子，显示SIMULATED待核标记；完整物理动线仍未确认。",
+  "coordinate_system": "Original per-floor DXF WCS XY",
+  "unit": "mm",
+  "registrations": {
+    "floor_1": {
+      "method": "CAD_SHARED_AXIS_BLOCK",
+      "axis_block": "A$C138296ba",
+      "source_spatial_id": "guanqian-1:floor_1:cad-fa9afea6bfcfb85f44c6",
+      "origin_wcs_mm": [
+        -267.7279080402804,
+        -447498.1960970567,
+        0.0
+      ],
+      "formula": "x=(cad_x-origin_x)/1000; y=display_elevation; z=-(cad_y-origin_y)/1000",
+      "physical_verification": "NOT_SURVEYED"
+    },
+    "floor_2": {
+      "method": "CAD_SHARED_AXIS_BLOCK",
+      "axis_block": "A$C138296ba",
+      "source_spatial_id": "guanqian-1:floor_2:cad-450b1318272c624ad836",
+      "origin_wcs_mm": [
+        306207.499152335,
+        -445919.6170965723,
+        0.0
+      ],
+      "formula": "x=(cad_x-origin_x)/1000; y=display_elevation; z=-(cad_y-origin_y)/1000",
+      "physical_verification": "NOT_SURVEYED"
+    }
+  },
+  "reference": {
+    "file": "codex-clipboard-fdbac57b-6c66-45f5-9f7b-74561e72bf7a.png",
+    "role": "USER_CONFIRMED_TOPOLOGY_AND_DIRECTION; NOT_A_SURVEYED_WAYPOINT_FILE",
+    "image_pixels_used_for_runtime_coordinates": false,
+    "topology": [
+      "1F_ENTRY",
+      "1F_MAIN_ROUTE",
+      "STAIR_UP",
+      "2F_MAIN_ROUTE",
+      "STAIR_DOWN",
+      "1F_RETURN_ROUTE",
+      "EXIT"
+    ]
+  },
+  "source_baseline_sha256": {
+    "demos/etd-1-1-20261104/space-data/floor_1_model.json": "b627ae3db0c014d23bc9a00c8460bc5e477f9b174c8cc658b90b3c4dcd2003e1",
+    "demos/etd-1-1-20261104/space-data/floor_2_model.json": "44e4f5b4a3b49fcba0da7b2348122028f1663ee2c938491178fc31a9060ebd70",
+    "integration-source/space-v21-data/surfaces.json": "da6ddbdc5a15b074950345285caa7dc51ec7b1216e8dea6a6048a0da5ec8c3e4"
+  },
+  "itinerarySegmentIds": [
+    "1F_ENTRY",
+    "1F_MAIN_ROUTE",
+    "STAIR_UP",
+    "2F_UPPER_LANDING_ACCESS",
+    "2F_MAIN_ROUTE",
+    "2F_LEFT_REFERENCE_LOOP",
+    "2F_DOWN_LANDING_ACCESS",
+    "STAIR_DOWN",
+    "1F_RETURN_ROUTE",
+    "EXIT"
+  ],
+  "segments": [
+    {
+      "id": "1F_ENTRY",
+      "kind": "floor",
+      "phase": "floor_1",
+      "floor_id": "floor_1",
+      "points": [
+        [
+          100732.2721,
+          -440698.1961
+        ],
+        [
+          106532.2721,
+          -434898.1961
+        ],
+        [
+          106532.2721,
+          -432498.1961
+        ],
+        [
+          100732.2721,
+          -429098.1961
+        ],
+        [
+          100732.2721,
+          -423998.1961
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": true,
+      "markerOnly": false,
+      "route_class": "CONFIRMED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "CAD_PROJECTION_CHECKED",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1.25,
+      "notice": "用户已确认采用入口右侧现有净空绕入；原门槛与幕墙完整保留，路径通过CAD投影避障。",
+      "validation": {
+        "cad_projection_collision_free": true,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": 0.15,
+        "walking_surface_verified": false,
+        "collisions": [],
+        "length_m": 22.4255
+      },
+      "requested_landmark_points": [
+        [
+          100732.2721,
+          -440698.1961
+        ],
+        [
+          100732.2721,
+          -423998.1961
+        ]
+      ]
+    },
+    {
+      "id": "1F_MAIN_ROUTE",
+      "kind": "floor",
+      "phase": "floor_1",
+      "floor_id": "floor_1",
+      "points": [
+        [
+          100732.2721,
+          -423998.1961
+        ],
+        [
+          92654.0971,
+          -423998.1961
+        ],
+        [
+          92654.0971,
+          -420770.1961
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": true,
+      "markerOnly": false,
+      "route_class": "CONFIRMED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "CAD_PROJECTION_CHECKED",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1.25,
+      "notice": "仅可用于已避障片段预览；入口仍未接通。",
+      "validation": {
+        "cad_projection_collision_free": true,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": 0.15,
+        "walking_surface_verified": false,
+        "collisions": [],
+        "length_m": 11.3062
+      }
+    },
+    {
+      "id": "STAIR_UP",
+      "kind": "stair",
+      "phase": "stair_up",
+      "fromFloorId": "floor_1",
+      "toFloorId": "floor_2",
+      "floor_id": "floor_1",
+      "pointFloorIds": [
+        "floor_1",
+        "floor_2"
+      ],
+      "points": [
+        [
+          92654.0971,
+          -420770.1961
+        ],
+        [
+          399129.3242,
+          -408639.6171
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "status": "UNVERIFIED_LANDING_ACCESS",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "sourceConstraintIds": [
+        "floor_2:stair-plan:cf0db8c30df8",
+        "guanqian-1:floor_1:cad-c7858c0567514108a8f8",
+        "guanqian-1:floor_1:cad-f6394375d9cde4f85617",
+        "guanqian-1:floor_2:cad-f2ab0fd5a5cd194ce7f6",
+        "guanqian-1:floor_2:cad-18161df16758a77af183"
+      ],
+      "interpolation": "floorGroup_world_endpoints; no independent explode offset; no spline",
+      "vertical_reference": "USE_EXISTING_DISPLAY_TRANSFORMS_ONLY; physical elevations/riser profile NOT_SURVEYED",
+      "notice": "楼梯中心线由两层现有CAD扶梯/上下标注配对；仅显示SIMULATED待核点标。两端开口待确认，不播放跨层粒子。",
+      "validation": {
+        "registered_xy_correspondence": true,
+        "physical_risers_verified": false,
+        "landing_access_verified": false
+      }
+    },
+    {
+      "id": "2F_UPPER_LANDING_ACCESS",
+      "kind": "floor",
+      "phase": "floor_2",
+      "floor_id": "floor_2",
+      "points": [
+        [
+          399129.3242,
+          -408639.6171
+        ],
+        [
+          399129.3242,
+          -402919.6171
+        ]
+      ],
+      "active": false,
+      "enabled": false,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "PENDING_SPATIAL_CONFIRMATION",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "notice": "中央楼梯北端到巡游区候选连接与现有Q◆09幕墙线冲突；南/西/东方向亦已检查。",
+      "validation": {
+        "cad_projection_collision_free": false,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": null,
+        "walking_surface_verified": false,
+        "collisions": [
+          {
+            "id": "guanqian-1:floor_2:cad-30144a05a2c119926f10",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-a2afef61b61bce72e3f9",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-d5bf7766ca64e7136bcf",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-392cd2fa9bce44dd2c8c",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          }
+        ],
+        "length_m": 5.72
+      }
+    },
+    {
+      "id": "2F_MAIN_ROUTE",
+      "kind": "floor",
+      "phase": "floor_2",
+      "floor_id": "floor_2",
+      "points": [
+        [
+          399129.3242,
+          -402919.6171
+        ],
+        [
+          431407.4992,
+          -403519.6171
+        ],
+        [
+          439807.4992,
+          -405919.6171
+        ],
+        [
+          442207.4992,
+          -405919.6171
+        ],
+        [
+          442207.4992,
+          -415919.6171
+        ],
+        [
+          426207.4992,
+          -415919.6171
+        ],
+        [
+          426007.4992,
+          -422919.6171
+        ],
+        [
+          426207.4992,
+          -422919.6171
+        ],
+        [
+          442207.4992,
+          -422919.6171
+        ],
+        [
+          442207.4992,
+          -430919.6171
+        ],
+        [
+          418207.4992,
+          -430919.6171
+        ],
+        [
+          416207.4992,
+          -425919.6171
+        ],
+        [
+          394207.4992,
+          -425919.6171
+        ],
+        [
+          394207.4992,
+          -407919.6171
+        ],
+        [
+          384207.4992,
+          -407919.6171
+        ],
+        [
+          384607.4992,
+          -414319.6171
+        ],
+        [
+          384607.4992,
+          -420319.6171
+        ],
+        [
+          384207.4992,
+          -422919.6171
+        ],
+        [
+          375207.4992,
+          -422919.6171
+        ],
+        [
+          375607.4992,
+          -417919.6171
+        ],
+        [
+          375607.4992,
+          -411519.6171
+        ],
+        [
+          375207.4992,
+          -407919.6171
+        ],
+        [
+          364207.4992,
+          -407919.6171
+        ],
+        [
+          364207.4992,
+          -422919.6171
+        ],
+        [
+          357207.4992,
+          -428319.6171
+        ],
+        [
+          353207.4992,
+          -428319.6171
+        ],
+        [
+          353207.4992,
+          -422919.6171
+        ],
+        [
+          353207.4992,
+          -411919.6171
+        ],
+        [
+          352807.4992,
+          -411319.6171
+        ],
+        [
+          350207.4992,
+          -410919.6171
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": true,
+      "markerOnly": false,
+      "route_class": "CONFIRMED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "CAD_PROJECTION_CHECKED",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1.25,
+      "notice": "CAD安全巡游候选，仅独立片段预览。x=51m隔墙要求南侧绕行；与示意折线不同，不能声称原图路线已完整配准。",
+      "validation": {
+        "cad_projection_collision_free": true,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": 0.15,
+        "walking_surface_verified": false,
+        "collisions": [],
+        "length_m": 277.6816
+      },
+      "requested_landmark_points": [
+        [
+          399129.3242,
+          -402919.6171
+        ],
+        [
+          442207.4992,
+          -405919.6171
+        ],
+        [
+          442207.4992,
+          -415919.6171
+        ],
+        [
+          426207.4992,
+          -415919.6171
+        ],
+        [
+          426207.4992,
+          -422919.6171
+        ],
+        [
+          442207.4992,
+          -422919.6171
+        ],
+        [
+          442207.4992,
+          -430919.6171
+        ],
+        [
+          418207.4992,
+          -430919.6171
+        ],
+        [
+          416207.4992,
+          -425919.6171
+        ],
+        [
+          394207.4992,
+          -425919.6171
+        ],
+        [
+          394207.4992,
+          -407919.6171
+        ],
+        [
+          384207.4992,
+          -407919.6171
+        ],
+        [
+          384207.4992,
+          -422919.6171
+        ],
+        [
+          375207.4992,
+          -422919.6171
+        ],
+        [
+          375207.4992,
+          -407919.6171
+        ],
+        [
+          364207.4992,
+          -407919.6171
+        ],
+        [
+          364207.4992,
+          -422919.6171
+        ],
+        [
+          353207.4992,
+          -422919.6171
+        ],
+        [
+          353207.4992,
+          -411919.6171
+        ],
+        [
+          350207.4992,
+          -410919.6171
+        ]
+      ]
+    },
+    {
+      "id": "2F_LEFT_REFERENCE_LOOP",
+      "kind": "floor",
+      "phase": "floor_2",
+      "floor_id": "floor_2",
+      "points": [
+        [
+          350207.4992,
+          -410919.6171
+        ],
+        [
+          334207.4992,
+          -410919.6171
+        ],
+        [
+          334207.4992,
+          -401919.6171
+        ],
+        [
+          344744.3242,
+          -401919.6171
+        ],
+        [
+          344744.3242,
+          -410919.6171
+        ]
+      ],
+      "active": false,
+      "enabled": false,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "PENDING_SPATIAL_CONFIRMATION",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "notice": "参考图左区回游与现有分隔墙不一致，保留候选方向并停用。",
+      "validation": {
+        "cad_projection_collision_free": false,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": null,
+        "walking_surface_verified": false,
+        "collisions": [
+          {
+            "id": "guanqian-1:floor_2:cad-b556145b2e51e69052f2",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-082499f8af5b40bfdaae",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-a73837cb62b07936d84b",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-f38520b4a9eacfae407d",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          }
+        ],
+        "length_m": 44.5368
+      }
+    },
+    {
+      "id": "2F_DOWN_LANDING_ACCESS",
+      "kind": "floor",
+      "phase": "floor_2",
+      "floor_id": "floor_2",
+      "points": [
+        [
+          344744.3242,
+          -410919.6171
+        ],
+        [
+          344744.3242,
+          -412259.6171
+        ]
+      ],
+      "active": false,
+      "enabled": false,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "PENDING_SPATIAL_CONFIRMATION",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "notice": "左侧楼梯上端周边玻璃边界未发现已确认开口；南端及东/西侧已复查。",
+      "validation": {
+        "cad_projection_collision_free": false,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": null,
+        "walking_surface_verified": false,
+        "collisions": [
+          {
+            "id": "guanqian-1:floor_2:cad-cec15cfb70004c1b9ac9",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_2:cad-7db573d4843e66ae5311",
+            "kind": "glazing",
+            "layer": "Q◆09 建筑幕墙",
+            "length_m": 0.05
+          }
+        ],
+        "length_m": 1.34
+      }
+    },
+    {
+      "id": "STAIR_DOWN",
+      "kind": "stair",
+      "phase": "stair_down",
+      "fromFloorId": "floor_2",
+      "toFloorId": "floor_1",
+      "floor_id": "floor_2",
+      "pointFloorIds": [
+        "floor_2",
+        "floor_1"
+      ],
+      "points": [
+        [
+          344744.3242,
+          -412259.6171
+        ],
+        [
+          38269.0971,
+          -424970.1961
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "status": "UNVERIFIED_LANDING_ACCESS",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "sourceConstraintIds": [
+        "floor_2:stair-plan:f5efb807c0af",
+        "guanqian-1:floor_2:cad-31a4d5ccad2c74658152",
+        "guanqian-1:floor_2:cad-ffda8bda43717dc9dfe1",
+        "guanqian-1:floor_1:cad-4cef0a04df831d4dfcd0",
+        "guanqian-1:floor_1:cad-b9b2223b1b6f1330c9c8"
+      ],
+      "interpolation": "floorGroup_world_endpoints; no independent explode offset; no spline",
+      "vertical_reference": "USE_EXISTING_DISPLAY_TRANSFORMS_ONLY; physical elevations/riser profile NOT_SURVEYED",
+      "notice": "楼梯中心线由两层现有CAD扶梯/上下标注配对；仅显示SIMULATED待核点标。两端开口待确认，不播放跨层粒子。",
+      "validation": {
+        "registered_xy_correspondence": true,
+        "physical_risers_verified": false,
+        "landing_access_verified": false
+      }
+    },
+    {
+      "id": "1F_RETURN_ROUTE",
+      "kind": "floor",
+      "phase": "floor_1_exit",
+      "floor_id": "floor_1",
+      "points": [
+        [
+          38269.0971,
+          -424970.1961
+        ],
+        [
+          38269.0971,
+          -418498.1961
+        ],
+        [
+          67732.2721,
+          -418498.1961
+        ],
+        [
+          67732.2721,
+          -422498.1961
+        ],
+        [
+          77732.2721,
+          -422498.1961
+        ],
+        [
+          77732.2721,
+          -426498.1961
+        ],
+        [
+          33732.2721,
+          -421498.1961
+        ],
+        [
+          33732.2721,
+          -419498.1961
+        ]
+      ],
+      "active": true,
+      "enabled": true,
+      "particle_enabled": true,
+      "markerOnly": false,
+      "route_class": "CONFIRMED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "CAD_PROJECTION_CHECKED",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1.25,
+      "notice": "左侧楼梯之后的一楼回游/出口前通道安全片段；到出口门仍被石膏板墙阻隔。",
+      "validation": {
+        "cad_projection_collision_free": true,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": 0.15,
+        "walking_surface_verified": false,
+        "collisions": [],
+        "length_m": 100.2184
+      },
+      "requested_landmark_points": [
+        [
+          38269.0971,
+          -424970.1961
+        ],
+        [
+          38269.0971,
+          -418498.1961
+        ],
+        [
+          67732.2721,
+          -418498.1961
+        ],
+        [
+          67732.2721,
+          -422498.1961
+        ],
+        [
+          77732.2721,
+          -422498.1961
+        ],
+        [
+          77732.2721,
+          -426498.1961
+        ],
+        [
+          33732.2721,
+          -419498.1961
+        ]
+      ]
+    },
+    {
+      "id": "EXIT",
+      "kind": "floor",
+      "phase": "floor_1_exit",
+      "floor_id": "floor_1",
+      "points": [
+        [
+          33732.2721,
+          -419498.1961
+        ],
+        [
+          30232.2721,
+          -419498.1961
+        ],
+        [
+          30232.2721,
+          -430998.1961
+        ]
+      ],
+      "active": false,
+      "enabled": false,
+      "particle_enabled": false,
+      "markerOnly": true,
+      "route_class": "SIMULATED",
+      "route_class_scope": "CONFIRMED means CAD projection collision check only, not surveyed/business-verified route",
+      "status": "ROUTE_PENDING",
+      "source": "SIMULATED",
+      "verified": false,
+      "dwellWeight": 1,
+      "notice": "前左侧门槛候选，不代表已确认用户出口。保持原候选坐标；主通道与此门之间现有墙线未连通。",
+      "validation": {
+        "cad_projection_collision_free": false,
+        "inside_display_slab": true,
+        "minimum_model_obstacle_clearance_m": null,
+        "walking_surface_verified": false,
+        "collisions": [
+          {
+            "id": "guanqian-1:floor_1:cad-c96aabf9e6ca623817d5",
+            "kind": "glazing",
+            "layer": "D■04 地面门槛",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_1:cad-7bdbdd6749668b4e0d23",
+            "kind": "glazing",
+            "layer": "D■04 地面门槛",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_1:cad-a19b09028238b36998cf",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          },
+          {
+            "id": "guanqian-1:floor_1:cad-cf70a0e6c5ed4834363d",
+            "kind": "wall_plane",
+            "layer": "建-石膏板墙",
+            "length_m": 0.05
+          }
+        ],
+        "length_m": 15.0
+      }
+    }
+  ],
+  "proposedAlternatives": [
+    {
+      "id": "ENTRY_EXISTING_RIGHT_GAP",
+      "floor_id": "floor_1",
+      "points": [
+        [
+          100732.2721,
+          -440698.1961
+        ],
+        [
+          106532.2721,
+          -434898.1961
+        ],
+        [
+          106532.2721,
+          -432498.1961
+        ],
+        [
+          100732.2721,
+          -429098.1961
+        ],
+        [
+          100732.2721,
+          -423998.1961
+        ]
+      ],
+      "active": true,
+      "approved": true,
+      "status": "USER_APPROVED_AND_APPLIED",
+      "notice": "用户已确认采用入口右侧现有净空路线，已用于1F_ENTRY；建筑门槛/幕墙无改动。"
+    }
+  ],
+  "door_candidates": [
+    {
+      "role": "entry",
+      "floor_id": "floor_1",
+      "cad_wcs_mm": [
+        100732.2721,
+        -434798.1961
+      ],
+      "source_entity_ids": [
+        "guanqian-1:floor_1:cad-09681c50f2c0f5e0f7c9",
+        "guanqian-1:floor_1:cad-d22774cc9a7c1a7ebf13"
+      ],
+      "confirmed_as_business_door": false
+    },
+    {
+      "role": "exit",
+      "floor_id": "floor_1",
+      "cad_wcs_mm": [
+        30409.0971,
+        -430338.1961
+      ],
+      "source_entity_ids": [
+        "guanqian-1:floor_1:cad-c96aabf9e6ca623817d5",
+        "guanqian-1:floor_1:cad-7bdbdd6749668b4e0d23"
+      ],
+      "confirmed_as_business_door": false
+    }
+  ],
+  "runtime_policy": {
+    "full_itinerary": "DISABLED_UNTIL_RUNTIME_READY_TRUE",
+    "active_segments": "PARTIAL_PLAYBACK_ALLOWED for particle_enabled=true; hide particles on blocked links; amber markers remain. Never claim a completed physically connected itinerary.",
+    "pending_segment_clock": "Numerical simulation clock may continue across hidden pending links; no visible particle may interpolate through an obstacle.",
+    "interpolation": "piecewise_linear; no CatmullRom/spline; transform each point through existing floorGroup",
+    "stair_policy": "Never use another slider formula. No physical stair geometry may be inferred from display interpolation.",
+    "no_teleport": true,
+    "no_structure_mutation": true
+  },
+  "validation": {
+    "model_obstacle_buffer_m": 0.15,
+    "wall_line_half_width_m": 0.025,
+    "surveyed_walkability": false,
+    "full_route_connected": false,
+    "active_floor_segments_collision_free": true,
+    "original_geometry_modified": false,
+    "complete_business_route_verified": false
+  }
+}

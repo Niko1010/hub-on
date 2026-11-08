@@ -1,6 +1,19 @@
 /* GitHub Pages read-only adapter. Actual CAD files, no remote inference or device I/O. */
 (() => {
   window.HUBONE_SPACE_PREVIEW = true;
+  if(window.HUBONE_RECORDING?.enabled){
+    const base=new URL('.',document.currentScript.src),prefix=new URL('api/v1',base).pathname;
+    const upstream=window.fetch.bind(window);
+    window.fetch=(input,options={})=>{
+      const url=new URL(typeof input==='string'?input:input.url,base);
+      if(url.origin===base.origin&&url.pathname.startsWith(prefix+'/')){
+        const target='/api/v1'+url.pathname.slice(prefix.length)+url.search;
+        return upstream(typeof input==='string'?target:new Request(new URL(target,location.origin),input),options);
+      }
+      return upstream(input,options);
+    };
+    return;
+  }
   const base = new URL('.', document.currentScript.src);
   const apiRoot = new URL('api/v1', base).pathname;
   const upstream = window.fetch.bind(window);

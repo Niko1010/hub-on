@@ -1,0 +1,2 @@
+# Optional acceptance tooling, not needed to start the dashboard.
+playwright==1.62.0

@@ -1,5 +1,6 @@
 // Read-only Evidence-to-Decision 1.1 replay. Never forwards virtual API requests.
 (() => {
+ if(window.HUBONE_RECORDING?.enabled)return;
  const d=window.HUBONE_REPLAY, original=window.fetch.bind(window);
  const base=new URL('.',document.currentScript.src), apiRoot=new URL('api',base).pathname;
  const readonlyMessage='只读 REPLAY：本页不上传、不采集、不运行识别、LLM 或 MOCK 比较；请使用完整本地后端。';

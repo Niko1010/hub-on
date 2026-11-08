@@ -1,0 +1,7410 @@
+{
+  "schema_version": "0.2.0",
+  "building_id": "guanqian-1",
+  "name": "苏州观前街1号",
+  "english_name": "GUANQIAN STREET",
+  "data_status": "CAD_SOURCE",
+  "simulated": false,
+  "source": {
+    "file": "guanqian-original.dxf",
+    "sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48",
+    "bytes": 6600423
+  },
+  "inventory": {
+    "dxf_version": "AC1027",
+    "encoding": "gbk",
+    "insunits": 4,
+    "measurement": 1,
+    "insbase": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "header_extmin": [
+      -66168.90031576745,
+      -649931.3649809305,
+      -7644.604933836735
+    ],
+    "header_extmax": [
+      679357.8653010033,
+      -55532.58904527454,
+      4711.169360057392
+    ],
+    "computed_model_bounds": [
+      [
+        -66168.90031576745,
+        -649931.3649809305,
+        -7644.604933836735
+      ],
+      [
+        679357.8653010033,
+        -55532.58904527454,
+        4711.169360057392
+      ]
+    ],
+    "audit_errors": 0,
+    "audit_fixes": 0,
+    "modelspace_types": {
+      "INSERT": 22,
+      "LWPOLYLINE": 192,
+      "TEXT": 1469,
+      "HATCH": 8,
+      "OLE2FRAME": 2,
+      "LINE": 432,
+      "MTEXT": 86,
+      "DIMENSION": 22,
+      "ARC": 2,
+      "CIRCLE": 17
+    },
+    "layouts": [
+      {
+        "name": "Model",
+        "block_record_handle": "2",
+        "types": {
+          "INSERT": 22,
+          "LWPOLYLINE": 192,
+          "TEXT": 1469,
+          "HATCH": 8,
+          "OLE2FRAME": 2,
+          "LINE": 432,
+          "MTEXT": 86,
+          "DIMENSION": 22,
+          "ARC": 2,
+          "CIRCLE": 17
+        }
+      },
+      {
+        "name": "布局1",
+        "block_record_handle": "4F69",
+        "types": {}
+      }
+    ],
+    "layers": [
+      {
+        "name": "0",
+        "handle": "6",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Defpoints",
+        "handle": "D7",
+        "color": 250,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★11 平面轴号",
+        "handle": "B4",
+        "color": 136,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★16 楼梯扶梯",
+        "handle": "973",
+        "color": 30,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Q◆09 建筑幕墙",
+        "handle": "941",
+        "color": 60,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "X▲13 给排水",
+        "handle": "1042",
+        "color": 136,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★13 平面栏杆",
+        "handle": "A81",
+        "color": 60,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-钢",
+        "handle": "1007",
+        "color": 21,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-门窗编号",
+        "handle": "835",
+        "color": 31,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "符号",
+        "handle": "997",
+        "color": 4,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-石膏板墙",
+        "handle": "1238",
+        "color": 111,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★03 平面洁具",
+        "handle": "1640",
+        "color": 31,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★10 平面文字",
+        "handle": "97F",
+        "color": 2,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Q◆01 原始墙柱",
+        "handle": "855",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Q◆02 墙柱填充",
+        "handle": "860",
+        "color": 250,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-消防疏散说明",
+        "handle": "FFA",
+        "color": 6,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★06 平面窗户",
+        "handle": "EB5",
+        "color": 60,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★07 平面完成面",
+        "handle": "189A",
+        "color": 200,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★08 半高隔断",
+        "handle": "15E2",
+        "color": 31,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★24 平面洁具地坪不显示",
+        "handle": "15F6",
+        "color": 31,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "疏散距离",
+        "handle": "19",
+        "color": 1,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "D■01 地材分格",
+        "handle": "85B",
+        "color": 136,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "D■04 地面门槛",
+        "handle": "1742",
+        "color": 8,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★01 活动家具",
+        "handle": "16A0",
+        "color": 51,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★02 固定家具",
+        "handle": "17C7",
+        "color": 30,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★04 平面门扇",
+        "handle": "F10",
+        "color": 60,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★05 平面门套",
+        "handle": "F13",
+        "color": 60,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★09 到顶隔断",
+        "handle": "15F2",
+        "color": 30,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Q◆10 建筑沉降缝",
+        "handle": "96E",
+        "color": 200,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "系统",
+        "handle": "4077",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "FF-Text【平面文字】",
+        "handle": "1764",
+        "color": 2,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "DOTE",
+        "handle": "78",
+        "color": 24,
+        "linetype": "DOTE",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "WALL",
+        "handle": "1934",
+        "color": 4,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "WINDOW",
+        "handle": "18C8",
+        "color": 2,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-孔",
+        "handle": "18A0",
+        "color": 31,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "P★08 平面完成面(顶面显示）",
+        "handle": "15D6",
+        "color": 200,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "AXIS",
+        "handle": "AE",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "AXIS_TEXT",
+        "handle": "BB",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "细线",
+        "handle": "28",
+        "color": 251,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "A-Fire",
+        "handle": "44",
+        "color": 22,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "E-文字尺寸",
+        "handle": "19AF",
+        "color": 2,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "PUB_HATCH",
+        "handle": "18C6",
+        "color": 8,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "3T_BAR",
+        "handle": "18EB",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "3T_GLASS",
+        "handle": "1933",
+        "color": 5,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "WINDOW_TEXT",
+        "handle": "1932",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "3T_WOOD",
+        "handle": "18D6",
+        "color": 21,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "PUB_DIM",
+        "handle": "193F",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "PUB_TEXT",
+        "handle": "19C5",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "DIM_SYMB",
+        "handle": "19AC",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "A-新隔墙填充",
+        "handle": "1978",
+        "color": 177,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "龙骨示意",
+        "handle": "19DA",
+        "color": 44,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "IAR-DIM-1",
+        "handle": "19E0",
+        "color": 50,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "疏散",
+        "handle": "19B5",
+        "color": 5,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "PUB_TITLE",
+        "handle": "2DF3",
+        "color": 4,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "DIM_LEAD",
+        "handle": "19C4",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "房间名称",
+        "handle": "194E",
+        "color": 30,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "装饰层",
+        "handle": "1A25",
+        "color": 221,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "示意线",
+        "handle": "1C11",
+        "color": 6,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "看线",
+        "handle": "1A1F",
+        "color": 165,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "7号",
+        "handle": "1A19",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "Q◆06 墙体层",
+        "handle": "1615",
+        "color": 4,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "SPACE_HATCH",
+        "handle": "1CE6",
+        "color": 8,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "SPACE",
+        "handle": "1CE5",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-说明",
+        "handle": "270A",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "建-上部洞口",
+        "handle": "274F",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "DIM_ELEV",
+        "handle": "4BB5",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "文字",
+        "handle": "2A11",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "A_PUB_TEXT",
+        "handle": "2DCD",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "A-DIM_IDEN",
+        "handle": "2CD9",
+        "color": 3,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "图框",
+        "handle": "4043",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "栏杆",
+        "handle": "4B99",
+        "color": 63,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "目录0$0$A_PUB_TEXT",
+        "handle": "4D51",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "图框字体",
+        "handle": "4C2E",
+        "color": 7,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      },
+      {
+        "name": "PUB_WALL",
+        "handle": "5019",
+        "color": 9,
+        "linetype": "Continuous",
+        "off": false,
+        "frozen": false
+      }
+    ],
+    "blocks": [
+      {
+        "name": "*Model_Space",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 22,
+          "LWPOLYLINE": 192,
+          "TEXT": 1469,
+          "HATCH": 8,
+          "OLE2FRAME": 2,
+          "LINE": 432,
+          "MTEXT": 86,
+          "DIMENSION": 22,
+          "ARC": 2,
+          "CIRCLE": 17
+        }
+      },
+      {
+        "name": "*Paper_Space",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {}
+      },
+      {
+        "name": "_ARCHTICK",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "雨水立管",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "CIRCLE": 1
+        }
+      },
+      {
+        "name": "雨水落水斗",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "CIRCLE": 2
+        }
+      },
+      {
+        "name": "TY-M1821",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 4,
+          "ARC": 2
+        }
+      },
+      {
+        "name": "ty-m1021",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "ARC": 1,
+          "LWPOLYLINE": 3
+        }
+      },
+      {
+        "name": "ty-m1521",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 4,
+          "ARC": 2
+        }
+      },
+      {
+        "name": "m2021",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 4,
+          "ARC": 2
+        }
+      },
+      {
+        "name": "_ARROW",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "SOLID": 1
+        }
+      },
+      {
+        "name": "A$C4C1A7F0F",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 146
+        }
+      },
+      {
+        "name": "fgdyu",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 1
+        }
+      },
+      {
+        "name": "desttuio",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 2
+        }
+      },
+      {
+        "name": "hl_arrow2",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 1,
+          "LWPOLYLINE": 1,
+          "SOLID": 2
+        }
+      },
+      {
+        "name": "dssertery",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 134,
+          "LWPOLYLINE": 8
+        }
+      },
+      {
+        "name": "A$C08B81646",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 15,
+          "ARC": 3
+        }
+      },
+      {
+        "name": "fghtyuytoi",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 33
+        }
+      },
+      {
+        "name": "reryttrio",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 20,
+          "LWPOLYLINE": 14
+        }
+      },
+      {
+        "name": "frgretytyi",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 13,
+          "LWPOLYLINE": 8
+        }
+      },
+      {
+        "name": "erreyru",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 15,
+          "LWPOLYLINE": 27
+        }
+      },
+      {
+        "name": "dsetrey",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "7rertytru",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 77,
+          "LWPOLYLINE": 8,
+          "CIRCLE": 2,
+          "TEXT": 2
+        }
+      },
+      {
+        "name": "$lvtry$00000194",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "POINT": 2,
+          "ARC": 17,
+          "CIRCLE": 3,
+          "LINE": 2,
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "$lvtry$00000221",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1,
+          "LINE": 3,
+          "ARC": 3,
+          "POINT": 2,
+          "CIRCLE": 2
+        }
+      },
+      {
+        "name": "A$C0B7849AB",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "ARC": 2,
+          "LWPOLYLINE": 3
+        }
+      },
+      {
+        "name": "A$C69525F90",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 1
+        }
+      },
+      {
+        "name": "海龙_0625182226",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1,
+          "ARC": 1
+        }
+      },
+      {
+        "name": "A$C06071D5D",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "CIRCLE": 1,
+          "INSERT": 1
+        }
+      },
+      {
+        "name": "A$C487C6090",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 23,
+          "ELLIPSE": 1
+        }
+      },
+      {
+        "name": "ZXDVSDB",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 1,
+          "CIRCLE": 2
+        }
+      },
+      {
+        "name": "$lvtry$00000191",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "POINT": 2,
+          "CIRCLE": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        }
+      },
+      {
+        "name": "D",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "F",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "门把手01",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 3
+        }
+      },
+      {
+        "name": "门套线01",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "hld_1_920_130_门把手01_门套线01_45_0_0_3_40_10_0_0_0",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 2,
+          "LWPOLYLINE": 3,
+          "INSERT": 6,
+          "ARC": 1
+        }
+      },
+      {
+        "name": "_AXISO",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "CIRCLE": 1,
+          "ATTDEF": 1
+        }
+      },
+      {
+        "name": "A$C4ABA3BCA",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "A$C910c522c",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 28,
+          "HATCH": 8,
+          "TEXT": 18,
+          "INSERT": 8,
+          "LINE": 1
+        }
+      },
+      {
+        "name": "$TCHSYS$DOOR3D",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "3DFACE": 89
+        }
+      },
+      {
+        "name": "$DorLib2D$00000001",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 4,
+          "ARC": 1
+        }
+      },
+      {
+        "name": "A$C138296ba",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 187,
+          "INSERT": 101,
+          "DIMENSION": 111
+        }
+      },
+      {
+        "name": "A$C6a5ca085",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 574,
+          "HATCH": 277,
+          "LINE": 2331,
+          "TEXT": 88,
+          "INSERT": 156,
+          "CIRCLE": 21,
+          "ARC": 18,
+          "MLINE": 1,
+          "DIMENSION": 1
+        }
+      },
+      {
+        "name": "$LinePat$岩棉板",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "ARC": 3,
+          "LINE": 2,
+          "POINT": 2
+        }
+      },
+      {
+        "name": "A$C34283248",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 59,
+          "ARC": 12,
+          "LWPOLYLINE": 15,
+          "INSERT": 56,
+          "HATCH": 6,
+          "TEXT": 8
+        }
+      },
+      {
+        "name": "A$C35A25674",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 102,
+          "LWPOLYLINE": 54,
+          "HATCH": 5,
+          "TEXT": 18,
+          "DIMENSION": 4,
+          "INSERT": 76
+        }
+      },
+      {
+        "name": "A$C1AC2269E",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 63,
+          "HATCH": 4,
+          "INSERT": 2,
+          "LWPOLYLINE": 9,
+          "TEXT": 7
+        }
+      },
+      {
+        "name": "A$C6E3F0518",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 78,
+          "HATCH": 8,
+          "LWPOLYLINE": 14,
+          "TEXT": 8
+        }
+      },
+      {
+        "name": "A$C3F54319E",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 4,
+          "TEXT": 2,
+          "LWPOLYLINE": 4
+        }
+      },
+      {
+        "name": "*D47",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D48",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D49",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D50",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "A$C6289db31",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "TEXT": 19,
+          "LWPOLYLINE": 2,
+          "LINE": 15
+        }
+      },
+      {
+        "name": "_DIMX",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 1,
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "*D53",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D54",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D55",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D56",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D57",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D58",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D59",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D60",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D61",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D62",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D63",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D64",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D65",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D66",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D67",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D68",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D69",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D70",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D71",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D72",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D73",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D74",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D75",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D76",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D77",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D78",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D79",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D80",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D81",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D82",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D83",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D84",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D85",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D86",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D87",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D88",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D89",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D90",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D91",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D92",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D93",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D94",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D95",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D96",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D97",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D98",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D99",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D100",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D101",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D102",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D103",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D104",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D105",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D106",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D107",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D108",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D109",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D110",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D111",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D112",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D113",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D114",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D115",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D116",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D117",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D118",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D119",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D120",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D121",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D122",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D123",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D124",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D125",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D126",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D127",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D128",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D129",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D130",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D131",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D132",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D133",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D134",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D135",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D136",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D137",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D138",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D139",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D140",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D141",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D142",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D143",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D144",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D145",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D146",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D147",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D148",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D149",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D150",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D151",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D152",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D153",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D154",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D155",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D156",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D157",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D158",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D159",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D160",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D161",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D162",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D163",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "efsty",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 6
+        }
+      },
+      {
+        "name": "sdfdrtyti",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 28
+        }
+      },
+      {
+        "name": "7dfdrtreyu",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 33,
+          "LWPOLYLINE": 3,
+          "CIRCLE": 1
+        }
+      },
+      {
+        "name": "hld_2_1420_120_门把手01_门套线01_45_0_0_3_40_10_0_0_0",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 2,
+          "LWPOLYLINE": 4,
+          "INSERT": 8,
+          "ARC": 2
+        }
+      },
+      {
+        "name": "指北针",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "SOLID": 1,
+          "CIRCLE": 1
+        }
+      },
+      {
+        "name": "海龙_1211135335",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "INSERT": 1,
+          "ATTDEF": 1
+        }
+      },
+      {
+        "name": "A$C0ae5c80e",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "HATCH": 254,
+          "LWPOLYLINE": 105,
+          "LINE": 2513,
+          "TEXT": 53,
+          "INSERT": 108,
+          "CIRCLE": 12,
+          "MLINE": 3,
+          "ARC": 32
+        }
+      },
+      {
+        "name": "yiceng",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LWPOLYLINE": 12,
+          "INSERT": 46,
+          "TEXT": 54,
+          "HATCH": 6
+        }
+      },
+      {
+        "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 4672,
+          "TEXT": 99,
+          "HATCH": 8,
+          "ARC": 81,
+          "ATTDEF": 24,
+          "LWPOLYLINE": 2591
+        }
+      },
+      {
+        "name": "s048D1F80",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "TEXT": 16,
+          "LWPOLYLINE": 1
+        }
+      },
+      {
+        "name": "A$C6fea3b1b",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "TEXT": 25,
+          "LINE": 18,
+          "LWPOLYLINE": 7,
+          "INSERT": 1,
+          "DIMENSION": 4
+        }
+      },
+      {
+        "name": "*D175",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D176",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D177",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D178",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D179",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D180",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D181",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D182",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D183",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D184",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D185",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D186",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D187",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D188",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D189",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 5,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D190",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D191",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D192",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "MTEXT": 1,
+          "INSERT": 2,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D193",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D194",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "MTEXT": 1,
+          "INSERT": 2,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D195",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D196",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D197",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D198",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D199",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D200",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      },
+      {
+        "name": "*D201",
+        "base_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "types": {
+          "LINE": 3,
+          "INSERT": 2,
+          "MTEXT": 1,
+          "POINT": 3
+        }
+      }
+    ],
+    "modelspace_inserts": [
+      {
+        "handle": "18",
+        "name": "A$C910c522c",
+        "layer": "疏散距离",
+        "dxf": {
+          "handle": "18",
+          "owner": "2",
+          "layer": "疏散距离",
+          "color": 5,
+          "name": "A$C910c522c",
+          "insert": [
+            313734.3240632585,
+            -550559.5965992633,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          313734.3240632585,
+          -550559.5965992633,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "72",
+        "name": "A$C138296ba",
+        "layer": "0",
+        "dxf": {
+          "handle": "72",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C138296ba",
+          "insert": [
+            306207.499152335,
+            -555019.6170965723,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          306207.499152335,
+          -555019.6170965723,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "84F",
+        "name": "A$C6a5ca085",
+        "layer": "0",
+        "dxf": {
+          "handle": "84F",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C6a5ca085",
+          "insert": [
+            313634.3240632969,
+            -442307.3362466615,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          313634.3240632969,
+          -442307.3362466615,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "19AA",
+        "name": "A$C6a5ca085",
+        "layer": "0",
+        "dxf": {
+          "handle": "19AA",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C6a5ca085",
+          "insert": [
+            313634.3240632969,
+            -551407.3362466615,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          313634.3240632969,
+          -551407.3362466615,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "19BE",
+        "name": "A$C4ABA3BCA",
+        "layer": "疏散距离",
+        "dxf": {
+          "handle": "19BE",
+          "owner": "2",
+          "layer": "疏散距离",
+          "linetype": "Continuous",
+          "color": 1,
+          "name": "A$C4ABA3BCA",
+          "insert": [
+            391514.9839858702,
+            -567011.5310202874,
+            0.0
+          ],
+          "xscale": -0.8640000000000039,
+          "yscale": 0.8640000000000039,
+          "zscale": 0.864
+        },
+        "matrix44": [
+          -0.8640000000000039,
+          -0.0,
+          -0.0,
+          0.0,
+          0.0,
+          0.8640000000000039,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.864,
+          0.0,
+          391514.9839858702,
+          -567011.5310202874,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "19E9",
+        "name": "A$C6289db31",
+        "layer": "0",
+        "dxf": {
+          "handle": "19E9",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C6289db31",
+          "insert": [
+            301345.5026873666,
+            -461239.2329999322,
+            0.0
+          ],
+          "xscale": 0.78125,
+          "yscale": 0.78125,
+          "zscale": 0.78125
+        },
+        "matrix44": [
+          0.78125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.78125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.78125,
+          0.0,
+          301345.5026873666,
+          -461239.2329999322,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "1A13",
+        "name": "A$C3F54319E",
+        "layer": "E-文字尺寸",
+        "dxf": {
+          "handle": "1A13",
+          "owner": "2",
+          "layer": "E-文字尺寸",
+          "name": "A$C3F54319E",
+          "insert": [
+            380589.5861986579,
+            -459933.7536930477,
+            -1884.467744023073
+          ],
+          "xscale": 0.8,
+          "yscale": 0.8,
+          "zscale": 0.8
+        },
+        "matrix44": [
+          0.8,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0,
+          380589.5861986579,
+          -459933.7536930477,
+          -1884.467744023073,
+          1.0
+        ]
+      },
+      {
+        "handle": "1CEA",
+        "name": "A$C138296ba",
+        "layer": "0",
+        "dxf": {
+          "handle": "1CEA",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C138296ba",
+          "insert": [
+            -267.7279080402804,
+            -447498.1960970567,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -267.7279080402804,
+          -447498.1960970567,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "1CEB",
+        "name": "A$C138296ba",
+        "layer": "0",
+        "dxf": {
+          "handle": "1CEB",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C138296ba",
+          "insert": [
+            -267.7268622717529,
+            -556598.1936830686,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -267.7268622717529,
+          -556598.1936830686,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "1CEC",
+        "name": "A$C0ae5c80e",
+        "layer": "0",
+        "dxf": {
+          "handle": "1CEC",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C0ae5c80e",
+          "insert": [
+            7039.098048697458,
+            -551458.1731857962,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          7039.098048697458,
+          -551458.1731857962,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "296F",
+        "name": "海龙_1211135335",
+        "layer": "FF-Text【平面文字】",
+        "dxf": {
+          "handle": "296F",
+          "owner": "2",
+          "layer": "FF-Text【平面文字】",
+          "attribs_follow": 1,
+          "name": "海龙_1211135335",
+          "insert": [
+            153995.7092259341,
+            -389797.433733342,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          153995.7092259341,
+          -389797.433733342,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "297C",
+        "name": "A$C6289db31",
+        "layer": "0",
+        "dxf": {
+          "handle": "297C",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C6289db31",
+          "insert": [
+            -5129.724373008706,
+            -461378.1030622558,
+            0.0
+          ],
+          "xscale": 0.78125,
+          "yscale": 0.78125,
+          "zscale": 0.78125
+        },
+        "matrix44": [
+          0.78125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.78125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.78125,
+          0.0,
+          -5129.724373008706,
+          -461378.1030622558,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "297D",
+        "name": "A$C3F54319E",
+        "layer": "E-文字尺寸",
+        "dxf": {
+          "handle": "297D",
+          "owner": "2",
+          "layer": "E-文字尺寸",
+          "name": "A$C3F54319E",
+          "insert": [
+            74114.3591382826,
+            -460072.6237553712,
+            -1884.467744023073
+          ],
+          "xscale": 0.8,
+          "yscale": 0.8,
+          "zscale": 0.8
+        },
+        "matrix44": [
+          0.8,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0,
+          74114.3591382826,
+          -460072.6237553712,
+          -1884.467744023073,
+          1.0
+        ]
+      },
+      {
+        "handle": "2991",
+        "name": "A$C0ae5c80e",
+        "layer": "0",
+        "dxf": {
+          "handle": "2991",
+          "owner": "2",
+          "layer": "0",
+          "name": "A$C0ae5c80e",
+          "insert": [
+            7039.097002928902,
+            -442358.1755997843,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          7039.097002928902,
+          -442358.1755997843,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "2992",
+        "name": "A$C4ABA3BCA",
+        "layer": "疏散距离",
+        "dxf": {
+          "handle": "2992",
+          "owner": "2",
+          "layer": "疏散距离",
+          "linetype": "Continuous",
+          "color": 1,
+          "name": "A$C4ABA3BCA",
+          "insert": [
+            102211.2551379898,
+            -566521.3767214416,
+            0.0
+          ],
+          "xscale": -0.8640000000000039,
+          "yscale": 0.8640000000000039,
+          "zscale": 0.864
+        },
+        "matrix44": [
+          -0.8640000000000039,
+          -0.0,
+          -0.0,
+          0.0,
+          0.0,
+          0.8640000000000039,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.864,
+          0.0,
+          102211.2551379898,
+          -566521.3767214416,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "2997",
+        "name": "yiceng",
+        "layer": "疏散距离",
+        "dxf": {
+          "handle": "2997",
+          "owner": "2",
+          "layer": "疏散距离",
+          "color": 5,
+          "name": "yiceng",
+          "insert": [
+            256827.5939334171,
+            -552825.643085726,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          256827.5939334171,
+          -552825.643085726,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "2DED",
+        "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+        "layer": "D■01 地材分格",
+        "dxf": {
+          "handle": "2DED",
+          "owner": "2",
+          "layer": "D■01 地材分格",
+          "attribs_follow": 1,
+          "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+          "insert": [
+            0.0,
+            -205615.3007904958,
+            0.0
+          ],
+          "xscale": 100.0,
+          "yscale": 100.0,
+          "zscale": 100.0
+        },
+        "matrix44": [
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          -205615.3007904958,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "4B59",
+        "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+        "layer": "D■01 地材分格",
+        "dxf": {
+          "handle": "4B59",
+          "owner": "2",
+          "layer": "D■01 地材分格",
+          "attribs_follow": 1,
+          "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+          "insert": [
+            1.45519e-11,
+            -272115.3007904959,
+            0.0
+          ],
+          "xscale": 100.0,
+          "yscale": 100.0,
+          "zscale": 100.0
+        },
+        "matrix44": [
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          1.45519e-11,
+          -272115.3007904959,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "4B77",
+        "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+        "layer": "D■01 地材分格",
+        "dxf": {
+          "handle": "4B77",
+          "owner": "2",
+          "layer": "D■01 地材分格",
+          "attribs_follow": 1,
+          "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+          "insert": [
+            1.45519e-11,
+            -338615.3007904959,
+            0.0
+          ],
+          "xscale": 100.0,
+          "yscale": 100.0,
+          "zscale": 100.0
+        },
+        "matrix44": [
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          1.45519e-11,
+          -338615.3007904959,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "4B95",
+        "name": "海龙_1211135335",
+        "layer": "FF-Text【平面文字】",
+        "dxf": {
+          "handle": "4B95",
+          "owner": "2",
+          "layer": "FF-Text【平面文字】",
+          "attribs_follow": 1,
+          "name": "海龙_1211135335",
+          "insert": [
+            460470.9362863096,
+            -388504.9229873694,
+            0.0
+          ]
+        },
+        "matrix44": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          460470.9362863096,
+          -388504.9229873694,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "handle": "4B98",
+        "name": "A$C6fea3b1b",
+        "layer": "栏杆",
+        "dxf": {
+          "handle": "4B98",
+          "owner": "2",
+          "layer": "栏杆",
+          "name": "A$C6fea3b1b",
+          "insert": [
+            49967.37256641242,
+            -299610.9580206061,
+            -1.4e-15
+          ],
+          "xscale": 2.0,
+          "yscale": 2.0,
+          "zscale": 2.0
+        },
+        "matrix44": [
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          49967.37256641242,
+          -299610.9580206061,
+          -1.4e-15,
+          1.0
+        ]
+      },
+      {
+        "handle": "4C0F",
+        "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+        "layer": "D■01 地材分格",
+        "dxf": {
+          "handle": "4C0F",
+          "owner": "2",
+          "layer": "D■01 地材分格",
+          "attribs_follow": 1,
+          "name": "template_A1电子版_A1_0.0000_b79fc195290096adde81cf63f7cff8eb",
+          "insert": [
+            0.0,
+            -134028.2769401838,
+            0.0
+          ],
+          "xscale": 100.0,
+          "yscale": 100.0,
+          "zscale": 100.0
+        },
+        "matrix44": [
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          100.0,
+          0.0,
+          0.0,
+          -134028.2769401838,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "floors": [
+    {
+      "schema_version": "0.2.0",
+      "floor_id": "floor_1",
+      "name": "一层",
+      "level": 1,
+      "root_handle": "2991",
+      "block_name": "A$C0ae5c80e",
+      "title_handle": "50A5",
+      "title_text": "一层平面图",
+      "excluded_crossing_handles": [
+        "833",
+        "4E29",
+        "4E2A"
+      ],
+      "pdf_validation": "MATCHED_BUILDING_GEOMETRY_WITH_ANNOTATION_DIFFERENCES",
+      "spatial_id": "guanqian-1:floor_1",
+      "building_id": "guanqian-1",
+      "data_status": "CAD_SOURCE",
+      "simulated": false,
+      "vertical_reference": {
+        "floor_elevation_mm": null,
+        "floor_to_floor_height_mm": null,
+        "clear_height_mm": null,
+        "slab_thickness_mm": null,
+        "status": "NOT_SURVEYED"
+      },
+      "crs": {
+        "id": "guanqian-dxf-wcs",
+        "unit": "mm",
+        "insunits": 4,
+        "axes": "Original DXF WCS X/Y/Z; Z is drawing geometry, not floor elevation",
+        "floor_elevation_mm": null,
+        "svg_matrix": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "svg_formula": "svg_x = cad_x; svg_y = -cad_y",
+        "meters_formula": "meters = millimeters / 1000",
+        "cross_floor_registration": "NOT_SURVEYED; sheet placements are not physical floor alignment"
+      },
+      "render_frames": {
+        "cad_wcs_to_building_matrix44": null,
+        "building_registration_status": "NOT_SURVEYED",
+        "floating_origin_wcs_mm": [
+          7039.097002928902,
+          -442358.1755997843,
+          0.0
+        ],
+        "threejs_local_meters_formula": {
+          "x": "(cad_x - origin_x) / 1000",
+          "y": "(cad_z - origin_z) / 1000",
+          "z": "-(cad_y - origin_y) / 1000"
+        },
+        "note": "Rendering-only floating origin, not a surveyed floor alignment or elevation."
+      },
+      "selection": {
+        "method": "EXPLICIT_TITLE_AND_INSERT_WITH_NONCLIPPING_ANNOTATION_WINDOW",
+        "annotation_window_wcs_mm": [
+          -10000,
+          -451500,
+          165000,
+          -380000
+        ],
+        "modelspace_handles": [
+          "1CEA",
+          "296F",
+          "298D",
+          "298E",
+          "298F",
+          "2991",
+          "4E33",
+          "4E43",
+          "4E50",
+          "4E5D",
+          "4E6C",
+          "4E79",
+          "50A5",
+          "50A6",
+          "50A7",
+          "50AB",
+          "50AC",
+          "50AD",
+          "50AE",
+          "50AF",
+          "50B0",
+          "50B1",
+          "50B2",
+          "50B3",
+          "50B4"
+        ],
+        "crossing_handles": [
+          "833",
+          "4E29",
+          "4E2A"
+        ]
+      },
+      "bounds_wcs_mm": [
+        1032.2754635734595,
+        -450674.53791011,
+        156405.1213175373,
+        -384388.02182332106
+      ],
+      "z_range_mm": [
+        -299.9999999999997,
+        0.0
+      ],
+      "svg_view_box": [
+        -2852.0456827756366,
+        380503.700676972,
+        163141.48814666204,
+        74055.15837948715
+      ],
+      "layers": [
+        {
+          "name": "0",
+          "count": 764,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Defpoints",
+          "count": 351,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★11 平面轴号",
+          "count": 101,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★16 楼梯扶梯",
+          "count": 385,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆09 建筑幕墙",
+          "count": 867,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "X▲13 给排水",
+          "count": 142,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★13 平面栏杆",
+          "count": 32,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-钢",
+          "count": 20,
+          "color_index": 21,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "符号",
+          "count": 10,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-石膏板墙",
+          "count": 59,
+          "color_index": 111,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★10 平面文字",
+          "count": 15,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆01 原始墙柱",
+          "count": 1614,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆02 墙柱填充",
+          "count": 243,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★06 平面窗户",
+          "count": 2,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■04 地面门槛",
+          "count": 62,
+          "color_index": 8,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★02 固定家具",
+          "count": 236,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★04 平面门扇",
+          "count": 46,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★05 平面门套",
+          "count": 26,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆10 建筑沉降缝",
+          "count": 17,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "FF-Text【平面文字】",
+          "count": 3,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DOTE",
+          "count": 51,
+          "color_index": 24,
+          "linetype": "DOTE",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS",
+          "count": 596,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS_TEXT",
+          "count": 101,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW_TEXT",
+          "count": 12,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_DIM",
+          "count": 28,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_TEXT",
+          "count": 3,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_SYMB",
+          "count": 3,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "A-新隔墙填充",
+          "count": 4,
+          "color_index": 177,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_LEAD",
+          "count": 10,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "房间名称",
+          "count": 22,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆06 墙体层",
+          "count": 14,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-说明",
+          "count": 2,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-上部洞口",
+          "count": 1,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        }
+      ],
+      "entity_count": 5842,
+      "container_count": 612,
+      "category_counts": {
+        "annotation": 1391,
+        "other": 915,
+        "door_window": 1035,
+        "wall_column": 1934,
+        "stair_railing": 567
+      },
+      "unsupported": [],
+      "zone_status": "NOT_CONNECTED",
+      "zones": [],
+      "notes": [
+        "Closed CAD outlines are not automatically treated as business zones or rooms.",
+        "Original CAD layers are retained independently. Display categories are RULE_BASED.",
+        "Curves are approximated for SVG/picking only. Exact DXF tags are retained in source_entities."
+      ],
+      "source": {
+        "file": "guanqian-original.dxf",
+        "sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48"
+      }
+    },
+    {
+      "schema_version": "0.2.0",
+      "floor_id": "floor_2",
+      "name": "二层",
+      "level": 2,
+      "root_handle": "84F",
+      "block_name": "A$C6a5ca085",
+      "title_handle": "501A",
+      "title_text": "二层平面图",
+      "excluded_crossing_handles": [
+        "833",
+        "4E2B",
+        "4E2C",
+        "4E2D",
+        "4E2E"
+      ],
+      "pdf_validation": "PENDING_CORRECT_SECOND_FLOOR_PDF",
+      "spatial_id": "guanqian-1:floor_2",
+      "building_id": "guanqian-1",
+      "data_status": "CAD_SOURCE",
+      "simulated": false,
+      "vertical_reference": {
+        "floor_elevation_mm": null,
+        "floor_to_floor_height_mm": null,
+        "clear_height_mm": null,
+        "slab_thickness_mm": null,
+        "status": "NOT_SURVEYED"
+      },
+      "crs": {
+        "id": "guanqian-dxf-wcs",
+        "unit": "mm",
+        "insunits": 4,
+        "axes": "Original DXF WCS X/Y/Z; Z is drawing geometry, not floor elevation",
+        "floor_elevation_mm": null,
+        "svg_matrix": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "svg_formula": "svg_x = cad_x; svg_y = -cad_y",
+        "meters_formula": "meters = millimeters / 1000",
+        "cross_floor_registration": "NOT_SURVEYED; sheet placements are not physical floor alignment"
+      },
+      "render_frames": {
+        "cad_wcs_to_building_matrix44": null,
+        "building_registration_status": "NOT_SURVEYED",
+        "floating_origin_wcs_mm": [
+          313634.3240632969,
+          -442307.3362466615,
+          0.0
+        ],
+        "threejs_local_meters_formula": {
+          "x": "(cad_x - origin_x) / 1000",
+          "y": "(cad_z - origin_z) / 1000",
+          "z": "-(cad_y - origin_y) / 1000"
+        },
+        "note": "Rendering-only floating origin, not a surveyed floor alignment or elevation."
+      },
+      "selection": {
+        "method": "EXPLICIT_TITLE_AND_INSERT_WITH_NONCLIPPING_ANNOTATION_WINDOW",
+        "annotation_window_wcs_mm": [
+          300000,
+          -451500,
+          470000,
+          -380000
+        ],
+        "modelspace_handles": [
+          "834",
+          "838",
+          "839",
+          "83A",
+          "83B",
+          "83C",
+          "83D",
+          "83E",
+          "83F",
+          "840",
+          "841",
+          "842",
+          "843",
+          "844",
+          "845",
+          "846",
+          "847",
+          "848",
+          "849",
+          "84A",
+          "84B",
+          "84C",
+          "84D",
+          "84E",
+          "84F",
+          "19C6",
+          "19C8",
+          "19C9",
+          "19D0",
+          "19D1",
+          "19D2",
+          "1CE2",
+          "4B95",
+          "4E93",
+          "4EA2",
+          "4EAF",
+          "4EBC",
+          "4ECB",
+          "4ED8",
+          "4EE7",
+          "4EF4",
+          "4F03",
+          "4F10",
+          "4F1D",
+          "4F2A",
+          "4F37",
+          "4F44",
+          "4F51",
+          "4F5E",
+          "4F5F",
+          "4F60",
+          "4F61",
+          "4F62",
+          "4F63",
+          "4F64",
+          "501A",
+          "501B",
+          "501C",
+          "5054",
+          "5055",
+          "5056",
+          "5057",
+          "5058",
+          "5059",
+          "505A",
+          "505B",
+          "505C",
+          "505D",
+          "505E",
+          "505F",
+          "5060",
+          "5061",
+          "5062",
+          "5063",
+          "5064",
+          "5065",
+          "5066",
+          "5067",
+          "5068",
+          "5069",
+          "506A",
+          "506B",
+          "506C",
+          "506D",
+          "506E",
+          "506F",
+          "5070",
+          "5071"
+        ],
+        "crossing_handles": [
+          "833",
+          "4E2B",
+          "4E2C",
+          "4E2D",
+          "4E2E"
+        ]
+      },
+      "bounds_wcs_mm": [
+        307507.50252394873,
+        -449887.66425472,
+        462880.34837791283,
+        -383095.5110773485
+      ],
+      "z_range_mm": [
+        -1.5891649654728355e-10,
+        1e-08
+      ],
+      "svg_view_box": [
+        303623.1813775996,
+        379211.1899309994,
+        163141.4881466623,
+        74560.79547006969
+      ],
+      "layers": [
+        {
+          "name": "0",
+          "count": 1240,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Defpoints",
+          "count": 381,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★11 平面轴号",
+          "count": 101,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★16 楼梯扶梯",
+          "count": 692,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆09 建筑幕墙",
+          "count": 599,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "X▲13 给排水",
+          "count": 126,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★13 平面栏杆",
+          "count": 70,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-钢",
+          "count": 22,
+          "color_index": 21,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-门窗编号",
+          "count": 25,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "符号",
+          "count": 34,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-石膏板墙",
+          "count": 42,
+          "color_index": 111,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★03 平面洁具",
+          "count": 98,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★10 平面文字",
+          "count": 33,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆01 原始墙柱",
+          "count": 1542,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆02 墙柱填充",
+          "count": 264,
+          "color_index": 250,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-消防疏散说明",
+          "count": 2,
+          "color_index": 6,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★06 平面窗户",
+          "count": 4,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★07 平面完成面",
+          "count": 9,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★08 半高隔断",
+          "count": 5,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★24 平面洁具地坪不显示",
+          "count": 5,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "疏散距离",
+          "count": 29,
+          "color_index": 1,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■01 地材分格",
+          "count": 4,
+          "color_index": 136,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "D■04 地面门槛",
+          "count": 13,
+          "color_index": 8,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★01 活动家具",
+          "count": 1,
+          "color_index": 51,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★02 固定家具",
+          "count": 236,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★04 平面门扇",
+          "count": 48,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★05 平面门套",
+          "count": 26,
+          "color_index": 60,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★09 到顶隔断",
+          "count": 50,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆10 建筑沉降缝",
+          "count": 29,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "FF-Text【平面文字】",
+          "count": 3,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DOTE",
+          "count": 51,
+          "color_index": 24,
+          "linetype": "DOTE",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW",
+          "count": 1,
+          "color_index": 2,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "建-孔",
+          "count": 1,
+          "color_index": 31,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "P★08 平面完成面(顶面显示）",
+          "count": 49,
+          "color_index": 200,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS",
+          "count": 596,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "AXIS_TEXT",
+          "count": 101,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "WINDOW_TEXT",
+          "count": 21,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_DIM",
+          "count": 79,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "PUB_TEXT",
+          "count": 6,
+          "color_index": 7,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_SYMB",
+          "count": 3,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "A-新隔墙填充",
+          "count": 5,
+          "color_index": 177,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "DIM_LEAD",
+          "count": 30,
+          "color_index": 3,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "房间名称",
+          "count": 36,
+          "color_index": 30,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "看线",
+          "count": 1,
+          "color_index": 165,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        },
+        {
+          "name": "Q◆06 墙体层",
+          "count": 9,
+          "color_index": 4,
+          "linetype": "Continuous",
+          "off": false,
+          "frozen": false
+        }
+      ],
+      "entity_count": 6722,
+      "container_count": 710,
+      "category_counts": {
+        "door_window": 793,
+        "wall_column": 1862,
+        "other": 1618,
+        "stair_railing": 916,
+        "annotation": 1533
+      },
+      "unsupported": [],
+      "zone_status": "NOT_CONNECTED",
+      "zones": [],
+      "notes": [
+        "Closed CAD outlines are not automatically treated as business zones or rooms.",
+        "Original CAD layers are retained independently. Display categories are RULE_BASED.",
+        "Curves are approximated for SVG/picking only. Exact DXF tags are retained in source_entities."
+      ],
+      "source": {
+        "file": "guanqian-original.dxf",
+        "sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48"
+      }
+    }
+  ],
+  "source_assets": [
+    {
+      "original_filename": "A 观前街一、二层平面（白图） 2026.04.14定_t3.dxf",
+      "preserved_file": "guanqian-original.dxf",
+      "sha256": "7843ed6b0ba393213ddcd2bb54187acd9f41cec346702a0e6f32717c0f6b8b48",
+      "bytes": 6600423
+    },
+    {
+      "original_filename": "观前街一层平面.pdf",
+      "preserved_file": "floor-1-reference.pdf",
+      "sha256": "773e13e91d5ce618c0e31844f660d75bb4de0191194d59f4fd8311bd2f96f12f",
+      "bytes": 165912
+    },
+    {
+      "original_filename": "观前街二层平面.pdf",
+      "preserved_file": "floor-2-reference.pdf",
+      "sha256": "d66873a5df3f3a813a4f4259b404976048e1ddd98f027323985edefb351c0872",
+      "bytes": 165912
+    }
+  ],
+  "pdf_reference": {
+    "rendered_pages_identical": true,
+    "both_page_titles": "一层平面图",
+    "render_comparison": {
+      "tool": "PyMuPDF 1.26.6",
+      "scale": 1,
+      "page_size_pt": [
+        1190.550048828125,
+        841.8900146484375
+      ],
+      "both_pixel_sha256": "5b733a4b515cc765b3d981baf10089aabbc8be7886e0007cf6db57e821ce3d88",
+      "vector_paths_per_page": 3311
+    },
+    "title_verification": "Visual inspection of supplied PDF rendered pages; not OCR",
+    "second_floor_reference": "PENDING_CORRECT_SECOND_FLOOR_PDF"
+  },
+  "camera_inventory_status": "NOT_CONNECTED",
+  "business_zone_status": "NOT_CONNECTED",
+  "cross_floor_registration": "NOT_SURVEYED",
+  "physical_camera_count": null,
+  "known_camera_records": 0,
+  "unassigned_modelspace_handles": [
+    "18",
+    "72",
+    "833",
+    "19AA",
+    "19AE",
+    "19B3",
+    "19B4",
+    "19B6",
+    "19B7",
+    "19B8",
+    "19B9",
+    "19BA",
+    "19BB",
+    "19BC",
+    "19BD",
+    "19BE",
+    "19BF",
+    "19C0",
+    "19C2",
+    "19D3",
+    "19D4",
+    "19D5",
+    "19D6",
+    "19D9",
+    "19DD",
+    "19DE",
+    "19DF",
+    "19E2",
+    "19E3",
+    "19E4",
+    "19E5",
+    "19E6",
+    "19E7",
+    "19E8",
+    "19E9",
+    "1A13",
+    "1CE0",
+    "1CE1",
+    "1CE3",
+    "1CEB",
+    "1CEC",
+    "2961",
+    "2963",
+    "2965",
+    "2966",
+    "2967",
+    "2968",
+    "2969",
+    "296A",
+    "296B",
+    "296C",
+    "296D",
+    "296E",
+    "297C",
+    "297D",
+    "297E",
+    "297F",
+    "2982",
+    "2983",
+    "2984",
+    "2985",
+    "2986",
+    "2987",
+    "2988",
+    "2989",
+    "298A",
+    "298B",
+    "2992",
+    "2993",
+    "2994",
+    "2995",
+    "2997",
+    "2A10",
+    "2A13",
+    "2A15",
+    "2A16",
+    "2A17",
+    "2A18",
+    "2A19",
+    "2A1A",
+    "2A1B",
+    "2A1C",
+    "2A1D",
+    "2A1E",
+    "2A1F",
+    "2A20",
+    "2A21",
+    "2A22",
+    "2A23",
+    "2A24",
+    "2A25",
+    "2A26",
+    "2A27",
+    "2A28",
+    "2A29",
+    "2A2A",
+    "2A2B",
+    "2A2C",
+    "2A2D",
+    "2A2E",
+    "2A2F",
+    "2A30",
+    "2A31",
+    "2A32",
+    "2A33",
+    "2A34",
+    "2A35",
+    "2A36",
+    "2A37",
+    "2A38",
+    "2A39",
+    "2A3A",
+    "2A3B",
+    "2A3C",
+    "2A3D",
+    "2A3E",
+    "2A3F",
+    "2A40",
+    "2A41",
+    "2A42",
+    "2A43",
+    "2A44",
+    "2A45",
+    "2A46",
+    "2A47",
+    "2A48",
+    "2A49",
+    "2A4A",
+    "2A4B",
+    "2A4C",
+    "2A4D",
+    "2A4E",
+    "2A4F",
+    "2A50",
+    "2A51",
+    "2A52",
+    "2A53",
+    "2A54",
+    "2A55",
+    "2A56",
+    "2A57",
+    "2A58",
+    "2A59",
+    "2A5A",
+    "2A5B",
+    "2A5C",
+    "2A5D",
+    "2A5E",
+    "2A5F",
+    "2A60",
+    "2A61",
+    "2A62",
+    "2A63",
+    "2A64",
+    "2A65",
+    "2A66",
+    "2A67",
+    "2A68",
+    "2A69",
+    "2A6A",
+    "2A6B",
+    "2A6C",
+    "2A6D",
+    "2A6E",
+    "2A6F",
+    "2A70",
+    "2A71",
+    "2A72",
+    "2A73",
+    "2A74",
+    "2A75",
+    "2A76",
+    "2A77",
+    "2A78",
+    "2A79",
+    "2A7A",
+    "2A7B",
+    "2A7C",
+    "2A7D",
+    "2A7E",
+    "2A7F",
+    "2A80",
+    "2A81",
+    "2A82",
+    "2A83",
+    "2A84",
+    "2A85",
+    "2A86",
+    "2A87",
+    "2A88",
+    "2A89",
+    "2A8A",
+    "2A8B",
+    "2A8C",
+    "2A8D",
+    "2A8E",
+    "2A8F",
+    "2A90",
+    "2A91",
+    "2A92",
+    "2A93",
+    "2A94",
+    "2A95",
+    "2A96",
+    "2A97",
+    "2A98",
+    "2A99",
+    "2A9A",
+    "2A9B",
+    "2A9C",
+    "2A9D",
+    "2A9E",
+    "2A9F",
+    "2AA0",
+    "2AA1",
+    "2AA2",
+    "2AA3",
+    "2AA4",
+    "2AA5",
+    "2AA6",
+    "2AA7",
+    "2AA8",
+    "2AA9",
+    "2AAA",
+    "2AAB",
+    "2AAC",
+    "2AAD",
+    "2AAE",
+    "2AAF",
+    "2AB0",
+    "2AB1",
+    "2AB2",
+    "2AB3",
+    "2AB4",
+    "2AB5",
+    "2AB6",
+    "2AB7",
+    "2AB8",
+    "2AB9",
+    "2ABA",
+    "2ABB",
+    "2ABC",
+    "2ABD",
+    "2ABE",
+    "2ABF",
+    "2AC0",
+    "2AC1",
+    "2AC2",
+    "2AC3",
+    "2AC4",
+    "2AC5",
+    "2AC6",
+    "2AC7",
+    "2AC8",
+    "2AC9",
+    "2ACA",
+    "2ACB",
+    "2ACC",
+    "2ACD",
+    "2ACE",
+    "2ACF",
+    "2AD0",
+    "2AD1",
+    "2AD2",
+    "2AD3",
+    "2AD4",
+    "2AD5",
+    "2AD6",
+    "2AD7",
+    "2AD8",
+    "2AD9",
+    "2ADA",
+    "2ADB",
+    "2ADC",
+    "2ADD",
+    "2ADE",
+    "2ADF",
+    "2AE0",
+    "2AE1",
+    "2AE2",
+    "2AE3",
+    "2AE4",
+    "2AE5",
+    "2AE6",
+    "2AE7",
+    "2AE8",
+    "2AE9",
+    "2AEA",
+    "2AEB",
+    "2AEC",
+    "2AED",
+    "2AEE",
+    "2AEF",
+    "2AF0",
+    "2AF1",
+    "2AF2",
+    "2AF3",
+    "2AF4",
+    "2AF5",
+    "2AF6",
+    "2AF7",
+    "2AF8",
+    "2AF9",
+    "2AFA",
+    "2AFB",
+    "2AFC",
+    "2AFD",
+    "2AFE",
+    "2AFF",
+    "2B00",
+    "2B01",
+    "2B02",
+    "2B03",
+    "2B04",
+    "2B05",
+    "2B06",
+    "2B07",
+    "2B08",
+    "2B09",
+    "2B0A",
+    "2B0B",
+    "2B0C",
+    "2B0D",
+    "2B0E",
+    "2B0F",
+    "2B10",
+    "2B11",
+    "2B12",
+    "2B13",
+    "2B14",
+    "2B15",
+    "2B16",
+    "2B17",
+    "2B18",
+    "2B19",
+    "2B1A",
+    "2B1B",
+    "2B1C",
+    "2B1D",
+    "2B1E",
+    "2B1F",
+    "2B20",
+    "2B21",
+    "2B22",
+    "2B23",
+    "2B24",
+    "2B25",
+    "2B26",
+    "2B27",
+    "2B28",
+    "2B29",
+    "2B2A",
+    "2B2B",
+    "2B2C",
+    "2B2D",
+    "2B2E",
+    "2B2F",
+    "2B30",
+    "2B31",
+    "2B32",
+    "2B33",
+    "2B34",
+    "2B35",
+    "2B36",
+    "2B37",
+    "2B38",
+    "2B39",
+    "2B3A",
+    "2B3B",
+    "2B3C",
+    "2B3D",
+    "2B3E",
+    "2B3F",
+    "2B40",
+    "2B41",
+    "2B42",
+    "2B43",
+    "2B44",
+    "2B45",
+    "2B46",
+    "2B47",
+    "2B48",
+    "2B49",
+    "2B4A",
+    "2B4B",
+    "2B4C",
+    "2B4D",
+    "2B4E",
+    "2B4F",
+    "2B50",
+    "2B51",
+    "2B52",
+    "2B53",
+    "2B54",
+    "2B55",
+    "2B56",
+    "2B57",
+    "2B58",
+    "2B59",
+    "2B5A",
+    "2B5B",
+    "2B5C",
+    "2B5D",
+    "2B5E",
+    "2B5F",
+    "2B60",
+    "2B61",
+    "2B62",
+    "2B63",
+    "2B64",
+    "2B65",
+    "2B66",
+    "2B67",
+    "2B68",
+    "2B69",
+    "2B6A",
+    "2B6B",
+    "2B6C",
+    "2B6D",
+    "2B6E",
+    "2B6F",
+    "2B70",
+    "2B71",
+    "2B72",
+    "2B73",
+    "2B74",
+    "2B75",
+    "2B76",
+    "2B77",
+    "2B78",
+    "2B79",
+    "2B7A",
+    "2B7B",
+    "2B7C",
+    "2B7D",
+    "2B7E",
+    "2B7F",
+    "2B80",
+    "2B81",
+    "2B82",
+    "2B83",
+    "2B84",
+    "2B85",
+    "2B86",
+    "2B87",
+    "2B88",
+    "2B89",
+    "2B8A",
+    "2B8B",
+    "2B8C",
+    "2B8D",
+    "2B8E",
+    "2B8F",
+    "2B90",
+    "2B91",
+    "2B92",
+    "2B93",
+    "2B94",
+    "2B95",
+    "2B96",
+    "2B97",
+    "2B98",
+    "2B99",
+    "2B9A",
+    "2B9B",
+    "2B9C",
+    "2B9D",
+    "2B9E",
+    "2B9F",
+    "2BA0",
+    "2BA1",
+    "2BA2",
+    "2BA3",
+    "2BA4",
+    "2BA5",
+    "2BA6",
+    "2BA7",
+    "2BA8",
+    "2BA9",
+    "2BAA",
+    "2BAB",
+    "2BAC",
+    "2BAD",
+    "2BAE",
+    "2BAF",
+    "2BB0",
+    "2BB1",
+    "2BB2",
+    "2BB3",
+    "2BB4",
+    "2BB5",
+    "2BB6",
+    "2BB7",
+    "2BB8",
+    "2BB9",
+    "2BBA",
+    "2BBB",
+    "2BBC",
+    "2BBD",
+    "2BBE",
+    "2BBF",
+    "2BC0",
+    "2BC1",
+    "2BC2",
+    "2BC3",
+    "2BC4",
+    "2BC5",
+    "2BC6",
+    "2BC7",
+    "2BC8",
+    "2BC9",
+    "2BCA",
+    "2BCB",
+    "2BCC",
+    "2BCD",
+    "2BCE",
+    "2BCF",
+    "2BD0",
+    "2BD1",
+    "2BD2",
+    "2BD3",
+    "2BD4",
+    "2BD5",
+    "2BD6",
+    "2BD7",
+    "2BD8",
+    "2BD9",
+    "2BDA",
+    "2BDB",
+    "2BDC",
+    "2BDD",
+    "2BDE",
+    "2BDF",
+    "2BE0",
+    "2BE1",
+    "2BE2",
+    "2BE3",
+    "2BE4",
+    "2BE5",
+    "2BE6",
+    "2BE7",
+    "2BEA",
+    "2BEB",
+    "2BED",
+    "2BEE",
+    "2BEF",
+    "2BF0",
+    "2BF1",
+    "2BF4",
+    "2BF5",
+    "2BF6",
+    "2BF7",
+    "2BF8",
+    "2BF9",
+    "2BFA",
+    "2BFB",
+    "2BFC",
+    "2BFD",
+    "2BFE",
+    "2BFF",
+    "2C00",
+    "2C01",
+    "2C02",
+    "2C03",
+    "2C06",
+    "2C07",
+    "2C08",
+    "2C09",
+    "2C0A",
+    "2C0B",
+    "2C0C",
+    "2C0D",
+    "2C0E",
+    "2C0F",
+    "2C11",
+    "2C12",
+    "2C13",
+    "2C15",
+    "2C16",
+    "2C17",
+    "2C18",
+    "2C19",
+    "2C1A",
+    "2C1D",
+    "2C1E",
+    "2C1F",
+    "2C20",
+    "2C21",
+    "2C24",
+    "2C25",
+    "2C26",
+    "2C27",
+    "2C28",
+    "2C29",
+    "2C2C",
+    "2C2D",
+    "2C2E",
+    "2C30",
+    "2C32",
+    "2C33",
+    "2C34",
+    "2C35",
+    "2C36",
+    "2C37",
+    "2C38",
+    "2C39",
+    "2C3A",
+    "2C3B",
+    "2C3C",
+    "2C3D",
+    "2C3E",
+    "2C3F",
+    "2C40",
+    "2C41",
+    "2C42",
+    "2C43",
+    "2C44",
+    "2C45",
+    "2C46",
+    "2C47",
+    "2C48",
+    "2C49",
+    "2C4A",
+    "2C4B",
+    "2C4C",
+    "2C4D",
+    "2C4E",
+    "2C4F",
+    "2C52",
+    "2C53",
+    "2C54",
+    "2C55",
+    "2C56",
+    "2C57",
+    "2C58",
+    "2C59",
+    "2C5A",
+    "2C5C",
+    "2C5D",
+    "2C5E",
+    "2C5F",
+    "2C61",
+    "2C62",
+    "2C64",
+    "2C65",
+    "2C67",
+    "2C68",
+    "2C69",
+    "2C6A",
+    "2C6B",
+    "2C6C",
+    "2C6D",
+    "2C6E",
+    "2C6F",
+    "2C70",
+    "2C72",
+    "2C73",
+    "2C76",
+    "2C78",
+    "2C79",
+    "2C7A",
+    "2C7B",
+    "2C7C",
+    "2C7E",
+    "2C80",
+    "2C81",
+    "2C82",
+    "2C83",
+    "2C85",
+    "2C86",
+    "2C88",
+    "2C89",
+    "2C8A",
+    "2C8B",
+    "2C8C",
+    "2C8E",
+    "2C8F",
+    "2C90",
+    "2C94",
+    "2C95",
+    "2C97",
+    "2C98",
+    "2C99",
+    "2C9A",
+    "2C9B",
+    "2C9C",
+    "2C9F",
+    "2CA1",
+    "2CA2",
+    "2CA3",
+    "2CA4",
+    "2CA6",
+    "2CA7",
+    "2CA8",
+    "2CA9",
+    "2CAA",
+    "2CAB",
+    "2CAF",
+    "2CB0",
+    "2CB2",
+    "2CB3",
+    "2CB4",
+    "2CB5",
+    "2CB6",
+    "2CB7",
+    "2CB9",
+    "2CBA",
+    "2CBB",
+    "2CBC",
+    "2CBD",
+    "2CBE",
+    "2CBF",
+    "2CC0",
+    "2CC2",
+    "2CC3",
+    "2CC4",
+    "2CC5",
+    "2CC6",
+    "2CC7",
+    "2CC8",
+    "2CCB",
+    "2CCC",
+    "2CCE",
+    "2CCF",
+    "2CD0",
+    "2CD1",
+    "2CD2",
+    "2CD3",
+    "2CD5",
+    "2CE4",
+    "2CF2",
+    "2CF3",
+    "2CF4",
+    "2CF5",
+    "2CF6",
+    "2CFD",
+    "2D07",
+    "2D08",
+    "2D0A",
+    "2D0B",
+    "2D0C",
+    "2D0D",
+    "2D0E",
+    "2D0F",
+    "2D10",
+    "2D12",
+    "2D13",
+    "2D14",
+    "2D15",
+    "2D16",
+    "2D18",
+    "2D19",
+    "2D1A",
+    "2D1B",
+    "2D1C",
+    "2D1E",
+    "2D1F",
+    "2D20",
+    "2D21",
+    "2D22",
+    "2D23",
+    "2D24",
+    "2D25",
+    "2D26",
+    "2D27",
+    "2D28",
+    "2D29",
+    "2D2A",
+    "2D2B",
+    "2D2C",
+    "2D2D",
+    "2D2E",
+    "2D2F",
+    "2D30",
+    "2D31",
+    "2D32",
+    "2D33",
+    "2D34",
+    "2D35",
+    "2D36",
+    "2D37",
+    "2D38",
+    "2D39",
+    "2D3A",
+    "2D3B",
+    "2D3C",
+    "2D3D",
+    "2D3E",
+    "2D3F",
+    "2D40",
+    "2D41",
+    "2D42",
+    "2D43",
+    "2D44",
+    "2D45",
+    "2D46",
+    "2D47",
+    "2D48",
+    "2D49",
+    "2D4A",
+    "2D4B",
+    "2D4C",
+    "2D4D",
+    "2D4E",
+    "2D4F",
+    "2D50",
+    "2D51",
+    "2D52",
+    "2D53",
+    "2D54",
+    "2D55",
+    "2D56",
+    "2D57",
+    "2D58",
+    "2D59",
+    "2D5A",
+    "2D5B",
+    "2D5C",
+    "2D5D",
+    "2D5E",
+    "2D5F",
+    "2D60",
+    "2D61",
+    "2D62",
+    "2D63",
+    "2D64",
+    "2D65",
+    "2D66",
+    "2D67",
+    "2D68",
+    "2D69",
+    "2D6A",
+    "2D6B",
+    "2D6C",
+    "2D6D",
+    "2D6E",
+    "2D6F",
+    "2D70",
+    "2D71",
+    "2D72",
+    "2D73",
+    "2D74",
+    "2D75",
+    "2D76",
+    "2D77",
+    "2D78",
+    "2D79",
+    "2D7A",
+    "2D7B",
+    "2D7C",
+    "2D7D",
+    "2D7E",
+    "2D7F",
+    "2D80",
+    "2D81",
+    "2D82",
+    "2D83",
+    "2D84",
+    "2D85",
+    "2D86",
+    "2D87",
+    "2D88",
+    "2D89",
+    "2D8A",
+    "2D8B",
+    "2D8C",
+    "2D8D",
+    "2D8E",
+    "2D8F",
+    "2D90",
+    "2D91",
+    "2D92",
+    "2D93",
+    "2D94",
+    "2D95",
+    "2D96",
+    "2D97",
+    "2D98",
+    "2D99",
+    "2D9A",
+    "2D9B",
+    "2D9C",
+    "2D9D",
+    "2D9E",
+    "2D9F",
+    "2DA0",
+    "2DA1",
+    "2DA2",
+    "2DA3",
+    "2DA4",
+    "2DA5",
+    "2DA6",
+    "2DA7",
+    "2DA8",
+    "2DA9",
+    "2DAF",
+    "2DB1",
+    "2DB2",
+    "2DB5",
+    "2DB6",
+    "2DB7",
+    "2DB8",
+    "2DB9",
+    "2DBB",
+    "2DBD",
+    "2DC4",
+    "2DC7",
+    "2DC8",
+    "2DC9",
+    "2DCA",
+    "2DCB",
+    "2DD0",
+    "2DD1",
+    "2DD2",
+    "2DD3",
+    "2DD4",
+    "2DD5",
+    "2DD6",
+    "2DD7",
+    "2DD8",
+    "2DDB",
+    "2DDF",
+    "2DE0",
+    "2DE1",
+    "2DE2",
+    "2DE3",
+    "2DE4",
+    "2DE5",
+    "2DE6",
+    "2DE7",
+    "2DE8",
+    "2DE9",
+    "2DEA",
+    "2DEB",
+    "2DEC",
+    "2DED",
+    "4B59",
+    "4B77",
+    "4B98",
+    "4BE6",
+    "4BE7",
+    "4BE8",
+    "4BE9",
+    "4BEA",
+    "4BEB",
+    "4BEC",
+    "4BEE",
+    "4BEF",
+    "4BF1",
+    "4BF2",
+    "4BF3",
+    "4BF4",
+    "4BF6",
+    "4BF8",
+    "4BFA",
+    "4BFB",
+    "4BFF",
+    "4C00",
+    "4C01",
+    "4C03",
+    "4C04",
+    "4C05",
+    "4C06",
+    "4C07",
+    "4C08",
+    "4C09",
+    "4C0A",
+    "4C0B",
+    "4C0C",
+    "4C0F",
+    "4C2D",
+    "4C30",
+    "4C31",
+    "4C32",
+    "4C33",
+    "4C34",
+    "4C35",
+    "4C36",
+    "4C37",
+    "4C38",
+    "4C39",
+    "4C3A",
+    "4C3B",
+    "4C3C",
+    "4C3D",
+    "4C3E",
+    "4C3F",
+    "4C40",
+    "4C41",
+    "4C42",
+    "4C43",
+    "4C44",
+    "4C45",
+    "4C46",
+    "4C47",
+    "4C48",
+    "4C49",
+    "4C4A",
+    "4C4B",
+    "4C4C",
+    "4C4D",
+    "4C4E",
+    "4C4F",
+    "4C50",
+    "4C51",
+    "4C52",
+    "4C53",
+    "4C54",
+    "4C55",
+    "4C56",
+    "4C57",
+    "4C58",
+    "4C59",
+    "4C5A",
+    "4C5B",
+    "4C5C",
+    "4C5D",
+    "4C5E",
+    "4C5F",
+    "4C60",
+    "4C61",
+    "4C62",
+    "4C63",
+    "4C64",
+    "4C65",
+    "4C66",
+    "4C67",
+    "4C68",
+    "4C69",
+    "4C6A",
+    "4C6B",
+    "4C6C",
+    "4C6D",
+    "4C6E",
+    "4C6F",
+    "4C70",
+    "4C71",
+    "4C72",
+    "4C73",
+    "4C74",
+    "4C75",
+    "4C76",
+    "4C77",
+    "4C78",
+    "4C79",
+    "4C7A",
+    "4C7B",
+    "4C7C",
+    "4C7D",
+    "4C7E",
+    "4C7F",
+    "4C80",
+    "4C81",
+    "4C82",
+    "4C83",
+    "4C84",
+    "4C85",
+    "4C86",
+    "4C87",
+    "4C88",
+    "4C89",
+    "4C8A",
+    "4C8B",
+    "4C8C",
+    "4C8D",
+    "4C8E",
+    "4C8F",
+    "4C90",
+    "4C91",
+    "4C92",
+    "4C93",
+    "4C94",
+    "4C95",
+    "4C96",
+    "4C97",
+    "4C98",
+    "4C99",
+    "4C9A",
+    "4C9B",
+    "4C9C",
+    "4C9D",
+    "4C9E",
+    "4C9F",
+    "4CA0",
+    "4CA1",
+    "4CA2",
+    "4CA3",
+    "4CA4",
+    "4CA5",
+    "4CA6",
+    "4CA7",
+    "4CA8",
+    "4CA9",
+    "4CAA",
+    "4CAB",
+    "4CAC",
+    "4CAD",
+    "4CAE",
+    "4CAF",
+    "4CB0",
+    "4CB1",
+    "4CB2",
+    "4CB3",
+    "4CB4",
+    "4CB5",
+    "4CB6",
+    "4CB7",
+    "4CB8",
+    "4CB9",
+    "4CBA",
+    "4CBB",
+    "4CBC",
+    "4CBD",
+    "4CBE",
+    "4CBF",
+    "4CC0",
+    "4CC1",
+    "4CC2",
+    "4CC3",
+    "4CC4",
+    "4CC5",
+    "4CC6",
+    "4CC7",
+    "4CC8",
+    "4CC9",
+    "4CCA",
+    "4CCB",
+    "4CCC",
+    "4CCD",
+    "4CCE",
+    "4CCF",
+    "4CD0",
+    "4CD1",
+    "4CD2",
+    "4CD3",
+    "4CD4",
+    "4CD5",
+    "4CD6",
+    "4CD7",
+    "4CD8",
+    "4CD9",
+    "4CDA",
+    "4CDB",
+    "4CDC",
+    "4CDD",
+    "4CDE",
+    "4CDF",
+    "4CE0",
+    "4CE1",
+    "4CE2",
+    "4CE3",
+    "4CE4",
+    "4CE5",
+    "4CE6",
+    "4CE7",
+    "4CE8",
+    "4CE9",
+    "4CEA",
+    "4CEB",
+    "4CEC",
+    "4CED",
+    "4CEE",
+    "4CEF",
+    "4CF0",
+    "4CF1",
+    "4CF2",
+    "4CF3",
+    "4CF4",
+    "4CF6",
+    "4CF7",
+    "4CF8",
+    "4CF9",
+    "4CFA",
+    "4CFB",
+    "4CFC",
+    "4CFD",
+    "4CFE",
+    "4CFF",
+    "4D00",
+    "4D01",
+    "4D02",
+    "4D03",
+    "4D04",
+    "4D05",
+    "4D06",
+    "4D07",
+    "4D08",
+    "4D09",
+    "4D0A",
+    "4D0B",
+    "4D0C",
+    "4D0D",
+    "4D0E",
+    "4D0F",
+    "4D10",
+    "4D11",
+    "4D12",
+    "4D13",
+    "4D14",
+    "4D15",
+    "4D16",
+    "4D17",
+    "4D18",
+    "4D19",
+    "4D1A",
+    "4D1B",
+    "4D1C",
+    "4D1D",
+    "4D1E",
+    "4D1F",
+    "4D20",
+    "4D21",
+    "4D22",
+    "4D23",
+    "4D24",
+    "4D25",
+    "4D26",
+    "4D27",
+    "4D28",
+    "4D29",
+    "4D2A",
+    "4D2B",
+    "4D2C",
+    "4D2D",
+    "4D2E",
+    "4D2F",
+    "4D30",
+    "4D31",
+    "4D32",
+    "4D33",
+    "4D34",
+    "4D35",
+    "4D36",
+    "4D37",
+    "4D38",
+    "4D39",
+    "4D3A",
+    "4D3B",
+    "4D3C",
+    "4D3D",
+    "4D3E",
+    "4D3F",
+    "4D40",
+    "4D41",
+    "4D42",
+    "4D43",
+    "4D44",
+    "4D45",
+    "4D46",
+    "4D47",
+    "4D48",
+    "4D49",
+    "4D4A",
+    "4D4B",
+    "4D4C",
+    "4D4D",
+    "4D4E",
+    "4D4F",
+    "4D50",
+    "4D53",
+    "4D54",
+    "4D55",
+    "4D56",
+    "4D57",
+    "4D58",
+    "4D59",
+    "4D5B",
+    "4D5C",
+    "4D5D",
+    "4D5E",
+    "4D5F",
+    "4D60",
+    "4D61",
+    "4D62",
+    "4D63",
+    "4D64",
+    "4D65",
+    "4D66",
+    "4D67",
+    "4D68",
+    "4D69",
+    "4D6A",
+    "4D6B",
+    "4D6C",
+    "4D6D",
+    "4D6E",
+    "4D6F",
+    "4D70",
+    "4D71",
+    "4D72",
+    "4D73",
+    "4D74",
+    "4D75",
+    "4D76",
+    "4D77",
+    "4D78",
+    "4D79",
+    "4D7A",
+    "4D7B",
+    "4D7C",
+    "4D7D",
+    "4D7E",
+    "4D7F",
+    "4D80",
+    "4D81",
+    "4D82",
+    "4D83",
+    "4D84",
+    "4D85",
+    "4D86",
+    "4D87",
+    "4D88",
+    "4D89",
+    "4D8A",
+    "4D8B",
+    "4D8C",
+    "4D8D",
+    "4D8E",
+    "4D8F",
+    "4D90",
+    "4D91",
+    "4D92",
+    "4D93",
+    "4D94",
+    "4D95",
+    "4D96",
+    "4D97",
+    "4D98",
+    "4D99",
+    "4D9A",
+    "4D9B",
+    "4D9C",
+    "4D9D",
+    "4D9E",
+    "4D9F",
+    "4DA0",
+    "4DA1",
+    "4DA2",
+    "4DA3",
+    "4DA4",
+    "4DA5",
+    "4DA6",
+    "4DA7",
+    "4DA8",
+    "4DA9",
+    "4DAA",
+    "4DAB",
+    "4DAC",
+    "4DAD",
+    "4DAE",
+    "4DAF",
+    "4DB0",
+    "4DB1",
+    "4DB2",
+    "4DB3",
+    "4DB4",
+    "4DB5",
+    "4DB6",
+    "4DB7",
+    "4DB8",
+    "4DB9",
+    "4DBA",
+    "4DBB",
+    "4DBC",
+    "4DBD",
+    "4DBE",
+    "4DBF",
+    "4DC0",
+    "4DC1",
+    "4DC2",
+    "4DC3",
+    "4DC4",
+    "4DC5",
+    "4DC6",
+    "4DC7",
+    "4DC8",
+    "4DC9",
+    "4DCA",
+    "4DCB",
+    "4DCC",
+    "4DCD",
+    "4DCE",
+    "4DCF",
+    "4DD0",
+    "4DD1",
+    "4DD2",
+    "4DD3",
+    "4DD4",
+    "4DD5",
+    "4DD6",
+    "4DD7",
+    "4DD8",
+    "4DD9",
+    "4DDA",
+    "4DDB",
+    "4DDC",
+    "4DDD",
+    "4DDE",
+    "4DDF",
+    "4DE0",
+    "4DE1",
+    "4DE2",
+    "4DE3",
+    "4DE4",
+    "4DE5",
+    "4DE6",
+    "4DE7",
+    "4DE8",
+    "4DE9",
+    "4DEA",
+    "4DEB",
+    "4DEC",
+    "4DED",
+    "4DEE",
+    "4DEF",
+    "4DF0",
+    "4DF1",
+    "4DF2",
+    "4DF3",
+    "4DF4",
+    "4DF5",
+    "4DF6",
+    "4DF7",
+    "4DF8",
+    "4DF9",
+    "4DFA",
+    "4DFB",
+    "4DFC",
+    "4DFD",
+    "4DFE",
+    "4DFF",
+    "4E00",
+    "4E01",
+    "4E02",
+    "4E03",
+    "4E04",
+    "4E05",
+    "4E06",
+    "4E07",
+    "4E08",
+    "4E09",
+    "4E0A",
+    "4E0B",
+    "4E0C",
+    "4E0D",
+    "4E0E",
+    "4E0F",
+    "4E10",
+    "4E11",
+    "4E12",
+    "4E13",
+    "4E14",
+    "4E15",
+    "4E16",
+    "4E17",
+    "4E18",
+    "4E19",
+    "4E1A",
+    "4E1B",
+    "4E1C",
+    "4E1D",
+    "4E1E",
+    "4E1F",
+    "4E20",
+    "4E21",
+    "4E22",
+    "4E23",
+    "4E24",
+    "4E25",
+    "4E26",
+    "4E27",
+    "4E28",
+    "4E29",
+    "4E2A",
+    "4E2B",
+    "4E2C",
+    "4E2D",
+    "4E2E",
+    "4E2F",
+    "4E30",
+    "4E31",
+    "4E32",
+    "4E86",
+    "501D",
+    "501E",
+    "501F",
+    "5020",
+    "5021",
+    "5022",
+    "5023",
+    "5024",
+    "5025",
+    "5026",
+    "5027",
+    "5028",
+    "5029",
+    "502A",
+    "502B",
+    "502C",
+    "502D",
+    "502E",
+    "502F",
+    "5030",
+    "5031",
+    "5032",
+    "5033",
+    "5034",
+    "5035",
+    "5036",
+    "5037",
+    "5038",
+    "5039",
+    "503A",
+    "503B",
+    "503C",
+    "503D",
+    "503E",
+    "503F",
+    "5040",
+    "5041",
+    "5042",
+    "5043",
+    "5044",
+    "5045",
+    "5046",
+    "5047",
+    "5048",
+    "5049",
+    "504A",
+    "504B",
+    "504C",
+    "504D",
+    "504E",
+    "504F",
+    "5050",
+    "5051",
+    "5052",
+    "5053",
+    "5072",
+    "5073",
+    "5074",
+    "5075",
+    "5076",
+    "5077",
+    "5078",
+    "5079",
+    "507A",
+    "507B",
+    "507C",
+    "507D",
+    "507E",
+    "507F",
+    "5080",
+    "5081",
+    "5082",
+    "5083",
+    "5084",
+    "5085",
+    "5086",
+    "5087",
+    "5088",
+    "5089",
+    "508A",
+    "508B",
+    "508C",
+    "508D",
+    "508E",
+    "508F",
+    "5090",
+    "5091",
+    "5092",
+    "5093",
+    "5094",
+    "5095",
+    "5096",
+    "5097",
+    "5098",
+    "5099",
+    "509A",
+    "509B",
+    "509C",
+    "509D",
+    "509E",
+    "509F",
+    "50A0",
+    "50A1",
+    "50A2",
+    "50A3",
+    "50A4",
+    "50A8",
+    "50A9",
+    "50AA",
+    "50B5",
+    "50B6",
+    "50B7",
+    "50B8",
+    "50B9",
+    "50BA",
+    "50BB",
+    "50BC",
+    "50BD",
+    "50BE",
+    "50BF",
+    "50C0",
+    "50C1",
+    "50C2",
+    "50C3",
+    "50C4",
+    "50C5",
+    "50C6",
+    "50C7",
+    "50C8",
+    "50C9",
+    "50CA",
+    "50CB",
+    "50CC",
+    "50CD",
+    "50CE",
+    "50CF",
+    "50D0",
+    "50D1",
+    "50D2",
+    "50D3",
+    "50D4",
+    "50D5",
+    "50D6",
+    "50D7",
+    "50D8",
+    "50D9",
+    "50DA",
+    "50DB",
+    "50DC",
+    "50DD",
+    "50DE",
+    "50DF",
+    "50E0",
+    "50E1",
+    "50E2",
+    "50E3",
+    "50E4",
+    "50E5",
+    "50E6",
+    "50E7",
+    "50E8",
+    "50E9",
+    "50EA",
+    "50EB",
+    "50EC",
+    "50ED",
+    "50EE",
+    "50EF",
+    "50F0",
+    "50F1",
+    "50F2",
+    "50F3",
+    "50F4",
+    "50F5",
+    "50F6",
+    "50F7",
+    "50F8",
+    "50F9",
+    "50FA",
+    "50FB",
+    "50FC",
+    "50FD",
+    "50FE",
+    "50FF",
+    "5100",
+    "5101",
+    "5102",
+    "5103",
+    "5104",
+    "5105",
+    "5106",
+    "5107",
+    "5108",
+    "5109",
+    "510A",
+    "510B",
+    "510C",
+    "510D",
+    "510E",
+    "510F",
+    "5110",
+    "5111",
+    "5112",
+    "5113",
+    "5114",
+    "5115",
+    "5116",
+    "5117",
+    "5118",
+    "5119",
+    "511A",
+    "511B",
+    "511C",
+    "511D",
+    "511E",
+    "511F",
+    "5120",
+    "5121",
+    "5122",
+    "5123",
+    "5124",
+    "5125",
+    "5126",
+    "5127",
+    "5128",
+    "5129",
+    "512A",
+    "512B",
+    "512C",
+    "512D",
+    "512E",
+    "512F",
+    "5130",
+    "5131",
+    "5132",
+    "5133",
+    "5134",
+    "5135",
+    "5136",
+    "5137",
+    "5138",
+    "5139",
+    "513A",
+    "513B",
+    "513C",
+    "513D",
+    "513E",
+    "513F",
+    "5140",
+    "5141",
+    "5142",
+    "5143",
+    "5144",
+    "5145",
+    "5146",
+    "5147",
+    "5148",
+    "5149",
+    "514A",
+    "514B",
+    "514C",
+    "514D",
+    "514E",
+    "514F",
+    "5150",
+    "5151",
+    "5152",
+    "5153",
+    "5154",
+    "5155",
+    "5156",
+    "5157",
+    "5158",
+    "5159",
+    "515A",
+    "515B",
+    "515C",
+    "515D",
+    "515E",
+    "515F",
+    "5160",
+    "5161",
+    "5162",
+    "5163",
+    "5164",
+    "5165",
+    "5166",
+    "5167",
+    "5168",
+    "5169",
+    "516A",
+    "516B",
+    "516C",
+    "516D",
+    "516E",
+    "516F",
+    "5170",
+    "5171",
+    "5172",
+    "5173",
+    "5174",
+    "5175",
+    "5176",
+    "5177",
+    "5178",
+    "5179",
+    "517A",
+    "517B",
+    "517C",
+    "517D",
+    "517E",
+    "517F",
+    "5180",
+    "5181",
+    "5182",
+    "5183",
+    "5184",
+    "5185",
+    "5186",
+    "5187",
+    "5188",
+    "5189",
+    "518A",
+    "518B",
+    "518C",
+    "518D",
+    "518E",
+    "518F",
+    "5190",
+    "5191",
+    "5192",
+    "5193",
+    "5194",
+    "5195",
+    "5196",
+    "5197",
+    "5198",
+    "5199",
+    "519A",
+    "519B",
+    "519C",
+    "519D",
+    "519E",
+    "519F",
+    "51A0",
+    "51A1",
+    "51A2",
+    "51A3",
+    "51A4",
+    "51A5",
+    "51A6",
+    "51A7",
+    "51A8",
+    "51A9",
+    "51AA",
+    "51AB",
+    "51AC",
+    "51AD",
+    "51AE",
+    "51AF",
+    "51B0",
+    "51B1",
+    "51B2",
+    "51B3",
+    "51B4",
+    "51B5",
+    "51B6",
+    "51B7",
+    "51B8",
+    "51B9",
+    "51BA",
+    "51BB",
+    "51BC",
+    "51BD",
+    "51BE",
+    "51BF",
+    "51C0",
+    "51C1",
+    "51C2",
+    "51C3",
+    "51C4",
+    "51C5",
+    "51C6",
+    "51C7",
+    "51C8",
+    "51C9",
+    "51CA",
+    "51CB",
+    "51CC",
+    "51CD",
+    "51CE",
+    "51CF",
+    "51D0",
+    "51D1",
+    "51D2",
+    "51D3",
+    "51D4",
+    "51D5",
+    "51D6",
+    "51D7",
+    "51D8",
+    "51D9",
+    "51DA",
+    "51DB",
+    "51DC",
+    "51DD",
+    "51DE",
+    "51DF",
+    "51E0",
+    "51E1",
+    "51E2",
+    "51E3",
+    "51E4",
+    "51E5",
+    "51E6",
+    "51E7",
+    "51E8",
+    "51E9",
+    "51EA",
+    "51EB",
+    "51EC",
+    "51ED",
+    "51EE",
+    "51EF",
+    "51F0",
+    "51F1",
+    "51F2",
+    "51F3",
+    "51F4",
+    "51F5",
+    "51F6",
+    "51F7",
+    "51F8",
+    "51F9",
+    "51FA",
+    "51FB",
+    "51FC",
+    "51FD",
+    "51FE",
+    "51FF",
+    "5200",
+    "5201",
+    "5202",
+    "5203",
+    "5204",
+    "5205",
+    "5206",
+    "5207",
+    "5208",
+    "5209",
+    "520A",
+    "520B",
+    "520C",
+    "520D",
+    "520E",
+    "520F",
+    "5210",
+    "5211",
+    "5212",
+    "5213",
+    "5214",
+    "5215",
+    "5216",
+    "5217",
+    "5218",
+    "5219",
+    "521A",
+    "521B",
+    "521C",
+    "521D",
+    "521E",
+    "521F",
+    "5220",
+    "5221",
+    "5222",
+    "5223",
+    "5224",
+    "5225",
+    "5226",
+    "5227",
+    "5228",
+    "5229",
+    "522A",
+    "522B",
+    "522C",
+    "522D",
+    "522E",
+    "522F",
+    "5230",
+    "5231",
+    "5232",
+    "5233",
+    "5234",
+    "5235",
+    "5236",
+    "5237",
+    "5238",
+    "5239",
+    "523A",
+    "523B",
+    "523C",
+    "523D",
+    "523E",
+    "523F",
+    "5240",
+    "5241",
+    "5242",
+    "5243",
+    "5244",
+    "5245",
+    "5246",
+    "5247",
+    "5248",
+    "5249",
+    "524A",
+    "524B",
+    "524C",
+    "524D",
+    "524E",
+    "524F",
+    "5250",
+    "5251",
+    "5252",
+    "5253",
+    "5254",
+    "5255",
+    "5256",
+    "5257",
+    "5258",
+    "5259",
+    "525A",
+    "525B",
+    "525C",
+    "525D",
+    "525E",
+    "525F",
+    "5260",
+    "5261",
+    "5262",
+    "5263",
+    "5264",
+    "5265",
+    "5266",
+    "5267",
+    "5268",
+    "5269",
+    "526A",
+    "526B",
+    "526C",
+    "526D",
+    "526E",
+    "526F",
+    "5270",
+    "5271",
+    "5272",
+    "5273",
+    "5274",
+    "5275",
+    "5276",
+    "5277",
+    "5278",
+    "5279",
+    "527A",
+    "527B",
+    "527C",
+    "527D",
+    "527E",
+    "527F",
+    "5280",
+    "5281",
+    "5282",
+    "5283",
+    "5284",
+    "5285",
+    "5286",
+    "5287",
+    "5288",
+    "5289",
+    "528A",
+    "528B",
+    "528C",
+    "528D",
+    "528E",
+    "528F",
+    "5290",
+    "5291",
+    "5292",
+    "5293",
+    "5294",
+    "5295",
+    "5296",
+    "5297",
+    "5298",
+    "5299",
+    "529A",
+    "529B",
+    "529C",
+    "529D",
+    "529E",
+    "529F",
+    "52A0",
+    "52A1",
+    "52A2",
+    "52A3",
+    "52A4",
+    "52A5",
+    "52A6",
+    "52A7",
+    "52A8",
+    "52A9",
+    "52AA",
+    "52AB",
+    "52AC",
+    "52AD",
+    "52AE",
+    "52AF",
+    "52B0",
+    "52B1",
+    "52B2",
+    "52B3",
+    "52B4",
+    "52B5",
+    "52B6",
+    "52B7",
+    "52B8",
+    "52B9",
+    "52BA",
+    "52BB",
+    "52BC",
+    "52BD",
+    "52BE",
+    "52BF",
+    "52C0",
+    "52C1",
+    "52C2",
+    "52C3",
+    "52C4",
+    "52C5",
+    "52C6",
+    "52C7",
+    "52C8",
+    "52C9",
+    "52CA",
+    "52CB",
+    "52CC",
+    "52CD",
+    "52CE",
+    "52CF",
+    "52D0",
+    "52D1",
+    "52D2",
+    "52D3",
+    "52D4",
+    "52D5",
+    "52D6",
+    "52D7"
+  ],
+  "publication_scope": "VIEWER_GEOMETRY_ONLY"
+}

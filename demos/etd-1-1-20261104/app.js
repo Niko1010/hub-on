@@ -1,3 +1,9 @@
+import {mountRecordingView} from './recording-view.js?v=recording-20261108';
+import {mountLiveView} from './live-view.js?v=acl-live-20261108';
+import {mountExperienceView} from './experience-view.js?v=acl-experience-timeline-20261108-r2';
+const recordingMode=window.HUBONE_RECORDING?.enabled===true;
+const aclStudyMode=recordingMode&&new URLSearchParams(location.search).get('study')==='acl';
+const sessionKey=recordingMode?'hubone-integrated-recording-session':'hubone-etd-1-1-20261104-session';
 const $ = (q) => document.querySelector(q);
 const esc = (x) => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clock = (s=0) => `${String(Math.floor(s/60)).padStart(2,'0')}:${(s%60).toFixed(1).padStart(4,'0')}`;
@@ -20,15 +26,17 @@ const pages = [
   ['insights','✧','产品洞察','从真实证据，到改进假设。','每个产品建议，都能回到最初的体验证据。'],
   ['report','▤','研究报告','把一次体验，沉淀为研究。','完整研究记录、证据索引与下一轮验证实验。'],
 ];
+if(recordingMode)pages.unshift(['live','◉','实时摄像头','RTSP 持续采集','真实摄像头 → YOLO → Tracking → Observation → Event'],['recording','◉','录像检测','真实录像 · 视觉证据','YOLO、Track Observation 与事件在同一 Session 中核验。']);
 // Integrated local review: public CAD-derived viewer and C3 1.1 replay in one shell.
 if(!window.HUBONE_REPLAY||window.HUBONE_SPACE_PREVIEW)pages.unshift(['space','⌖','空间智能','Space Intelligence','观前街1号 · 建筑空间数字孪生']);
-let spaceView=null,renderGeneration=0;
-const state = {sid:localStorage.getItem('hubone-etd-1-1-20261104-session'),session:null,sessions:[],events:[],feedback:null,report:null,comparisonReport:null,
+const experiencePage=['experience','◉','体验研究','Consumer Experience Intelligence','六维框架 · 原始证据 · 人工核验 · 研究交付'];
+let experienceView=null,spaceView=null,recordingView=null,liveView=null,renderGeneration=0;
+const state = {sid:(recordingMode?new URLSearchParams(location.search).get('sid'):null)||localStorage.getItem(sessionKey),session:null,sessions:[],events:[],feedback:null,report:null,comparisonReport:null,
   stats:{},cap:{},page:'capture',filter:'all',busy:false,stream:null,device:null,recorder:null};
 
 async function api(path, opts={}) {
   const headers = opts.body instanceof FormData ? {} : {'Content-Type':'application/json'};
-  const res = await fetch('./api'+path,{...opts,headers:{...headers,...opts.headers}});
+  const res = await fetch(window.HUBONE_RECORDING?.apiUrl(path)||'./api'+path,{...opts,headers:{...headers,...opts.headers}});
   if(!res.ok){
     let data;try{data=await res.json();}catch{throw Error(`请求失败：HTTP ${res.status}`);}
     throw Error(typeof data.detail==='string'?data.detail:JSON.stringify(data.detail));
@@ -39,12 +47,12 @@ const post=(path,body)=>api(path,{method:'POST',body:JSON.stringify(body)});
 function error(e){$('#error-panel').textContent=e.message||String(e);$('#error-panel').hidden=false;}
 function clearError(){$('#error-panel').hidden=true;}
 function toast(message){$('#toast').textContent=message;$('#toast').hidden=false;setTimeout(()=>$('#toast').hidden=true,3500);}
-function mediaUrl(asset){return window.HUBONE_REPLAY.media[asset.asset_id];}
+function mediaUrl(asset){return recordingMode?(asset.recording_mode==='REAL_RECORDING'?window.HUBONE_RECORDING.playbackUrl(asset.session_id,asset.asset_id):window.HUBONE_RECORDING.mediaUrl(asset.session_id,asset.asset_id)):window.HUBONE_REPLAY.media[asset.asset_id];}
 function evidenceButtons(ids){return ids.map(id=>`<button class="quote-link" data-evidence="${esc(id)}">↗ E:${esc(id.slice(0,7))}</button>`).join('');}
 function empty(title,text){return `<div class="empty"><strong>${esc(title)}</strong>${esc(text)}</div>`;}
 function requireSession(){if(!state.sid)throw Error('请先新建 Session，或运行完整演示。');}
 function isSim(){return state.session?.simulated||state.session?.assets.some(a=>a.simulated)||state.events.some(e=>e.metadata.simulated);}
-function sessionBadge(){if(state.page==='space'){$('#mode').className='pill model';$('#mode').textContent='CAD SOURCE · mm';return;}const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?'USER INPUT · 待复核':'尚无 Session';}
+function sessionBadge(){if(state.page==='live')return;if(state.page==='space'){$('#mode').className='pill model';$('#mode').textContent='CAD SOURCE · mm';return;}const sim=isSim();$('#mode').className='pill'+(sim?' sim':'');$('#mode').textContent=sim?'SIMULATED · 演示资料':state.sid?(recordingMode&&state.session?.assets.some(a=>a.recording_mode==='REAL_RECORDING')?'REAL_RECORDING':'USER INPUT · 待复核'):'尚无 Session';}
 
 async function refreshSessions(){
   const sessions=await api('/sessions');
@@ -70,32 +78,64 @@ async function selectSession(sid){
   stopPreview();
   state.sid=sid||null;state.session=null;state.events=[];state.feedback=null;state.report=null;state.comparisonReport=null;state.stats={};
   $('#job-panel').hidden=true;$('#job-message').textContent='等待新任务';
-  localStorage.setItem('hubone-etd-1-1-20261104-session',sid||'');
+  localStorage.setItem(sessionKey,sid||'');
+  if(recordingMode){const url=new URL(location.href);if(sid)url.searchParams.set('sid',sid);else url.searchParams.delete('sid');history.replaceState(null,'',url);}
   $('#session-select').value=sid||'';
   if(sid){await loadData();connectStream();}else sessionBadge();
   render();
 }
-function connectStream(){}
+function connectStream(){
+  if(!recordingMode||!state.sid)return;
+  const sid=state.sid;
+  const ws=new WebSocket(`${location.protocol==='https:'?'wss':'ws'}://${location.host}/api/sessions/${sid}/stream`);
+  state.stream=ws;
+  ws.onmessage=async message=>{
+    const data=JSON.parse(message.data);
+    if(data.type!=='events_snapshot'||data.session_id!==state.sid||state.stream!==ws||state.busy)return;
+    if(JSON.stringify(state.events.map(e=>e.event_id))===JSON.stringify(data.events.map(e=>e.event_id)))return;
+    try{await loadData();const aclPane=state.session?.product==='ACL Knee Brace'&&['timeline','report','insights','feedback'].includes(state.page);if(state.sid===sid&&aclPane&&state.page==='timeline'){const target=$('[data-acl-original-events]');if(target)target.innerHTML=renderTimeline();}else if(state.sid===sid&&!['space','live','experience'].includes(state.page)&&!aclPane)render();}catch(e){error(e);}
+  };
+  ws.onclose=()=>{if(state.stream===ws){state.stream=null;$('#health').textContent='事件更新 NOT CONNECTED · 刷新重连';}};
+}
 function stopPreview(){state.device?.getTracks().forEach(t=>t.stop());state.device=null;}
 function navigate(){
   const next=location.hash.replace('#','')||'capture';
   if(state.recorder?.state==='recording'){
     toast('请先停止录制，再切换页面。');location.hash=state.page;return;
   }
-  stopPreview();state.page=pages.some(p=>p[0]===next)?next:'capture';render();
+  stopPreview();state.page=(pages.some(p=>p[0]===next)||(recordingMode&&next==='experience'))?next:'capture';render();
 }
 function render(){
+  experienceView?.destroy();experienceView=null;
+  liveView?.destroy();liveView=null;
+  recordingView?.destroy();recordingView=null;
   spaceView?.destroy();spaceView=null;const generation=++renderGeneration;
-  const page=pages.find(p=>p[0]===state.page);
+  const page=state.page==='experience'?experiencePage:pages.find(p=>p[0]===state.page);
+  const acl=state.session?state.session.product==='ACL Knee Brace':aclStudyMode;
+  const aclFocus=acl?({timeline:'timeline',report:'decision',insights:'research',feedback:'feedback'}[state.page]||null):null;
+  const studyCard=$('.sidebar-study');
+  studyCard.querySelector('strong').textContent=acl?'ACL KNEE BRACE':'CREST C3';
+  studyCard.querySelector('.study-mark').firstChild.textContent=acl?'ACL':'C3';
+  studyCard.querySelector('p').innerHTML=acl?'功能性膝关节支具<br>真实可穿戴产品体验':'智能运动外骨骼<br>消费者体验研究';
   const spatial=state.page==='space';document.body.classList.toggle('is-space',spatial);
   $('#nav').innerHTML=pages.map((p,i)=>`${p[0]==='capture'&&!window.HUBONE_REPLAY?'<span class="nav-section-label">CREST C3 EXPERIENCE LAB</span>':''}<a href="#${p[0]}" class="nav-link ${p[0]===state.page?'active':''}"><span class="nav-icon">${icon(p[0])}</span><span class="nav-text">${p[2]}</span><span class="nav-index">0${i+1}</span></a>`).join('');
   $('#breadcrumb').textContent=page[2];$('#page-title').textContent=page[3];$('#page-subtitle').textContent=page[4];
-  $('#workspace-context').textContent=spatial?'Space Intelligence':'Crest C3';
+  $('#workspace-context').textContent=spatial?'Space Intelligence':acl?'ACL Knee Brace':state.page==='experience'?'Consumer Experience Intelligence':state.page==='live'?'RTSP Vision':state.page==='recording'?'Recorded Vision':'Crest C3';
   $('#page-eyebrow').textContent=spatial?'HUB ONE / SPACE INTELLIGENCE':'MULTIMODAL CONSUMER RESEARCH';
-  $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':'HUB ONE × CREST C3';
-  $('#footer-note').textContent=spatial?'真实 CAD 几何 · 设备与消费者行为尚未连接':'证据驱动的产品研究 · 所有改进建议均待验证';
-  $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':({capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
+  $('#footer-product').textContent=spatial?'HUB ONE · SPACE INTELLIGENCE':acl?'HUB ONE × ACL KNEE BRACE':state.page==='experience'?'HUB ONE · EXPERIENCE INTELLIGENCE':'HUB ONE × CREST C3';
+  $('#footer-note').textContent=spatial?'真实 CAD 几何 · 家庭录像未现场标定 · CAD 轨迹 NOT CONNECTED':'证据驱动的产品研究 · 所有改进建议均待验证';
+  $('#content').innerHTML=spatial?'<div class="card card-body small-note">正在连接空间数据…</div>':aclFocus?'':({experience:()=>'',live:()=>'',recording:()=>'',capture:renderCapture,timeline:renderTimeline,feedback:renderFeedback,insights:renderInsights,report:renderReport}[state.page])();
   if(spatial)import('./space.js?v=etd-1-1-20261105-integrated').then(module=>{if(generation===renderGeneration)spaceView=module.mountSpace($('#content'));}).catch(error);
+  if(state.page==='recording')recordingView=mountRecordingView($('#content'),{session:state.session,events:state.events,showEvidence});
+  if(state.page==='live')liveView=mountLiveView($('#content'),{session:state.session,study:!state.session&&aclStudyMode?'acl':null,onSession:async sid=>{await refreshSessions();if(state.page==='live')await selectSession(sid);}});
+  if(state.page==='experience'||aclFocus){
+    if(acl&&!state.session)$('#content').innerHTML='<section class="card exp-card"><div class="eyebrow green">ACL KNEE BRACE · 测试准备</div><h2>新建并开始 ACL 真实体验</h2><p>尚未建立本次研究 Session。开始后由现有 RTSP 服务创建独立 ACL Knee Brace Session，历史家庭测试与 Crest C3 资料不会作为本次体验证据。</p><a class="button primary" href="#live">前往摄像头 · 开始 ACL 真实体验 ↗</a><p>接近产品 → 拿取 → 穿戴 → 调整绑带 → 站立 → 行走 → 脱下 → 体验反馈。以上是计划，不代表已经发生。</p></section>';
+    else if(aclFocus==='timeline'){
+      $('#content').innerHTML='<div data-acl-timeline-workspace></div><details class="exp-detail"><summary>原始事件时间线 · 保留事件筛选与证据查看</summary><div data-acl-original-events>'+renderTimeline()+'</div></details>';
+      experienceView=mountExperienceView($('[data-acl-timeline-workspace]'),{session:state.session,showEvidence,aclFocus});
+    }else experienceView=mountExperienceView($('#content'),{session:state.session,showEvidence,aclFocus});
+  }
+  if(recordingMode&&['capture','recording','live'].includes(state.page))$('#content').insertAdjacentHTML('afterbegin','<div class="exp-entry"><p>Consumer Experience Intelligence · 证据、人工标注与研究交付</p><a class="button small" href="#experience">进入体验研究工作台 ↗</a></div>');
   $('#demo-btn').disabled=state.busy;$('#session-select').disabled=state.busy;$('#new-session').disabled=state.busy;
   sessionBadge();
 }
@@ -110,7 +150,7 @@ function sourceLabel(source){return {video:'视频观测',audio:'语音转录',m
 function provenanceTags(event){
   const m=event.metadata||event;
   const method=m.processing_method||'UNVERIFIED';
-  const origin=m.simulated?'SIMULATED':(m.input_origin||'UNVERIFIED');
+  const origin=m.simulated?'SIMULATED':(m.recording_mode||m.input_origin||'UNVERIFIED');
   const originText={SIMULATED:'SIMULATED',REAL_RECORDING_REFERENCE:'真实参考录像 / 录音',USER_PROVIDED:'用户资料 · 来源待核',MANUAL:'人工录入',EVIDENCE_DERIVED:'引用原始证据',UNVERIFIED:'历史资料 · 未核验'}[origin]||origin;
   const tone=method==='REAL_MODEL'?'model':method==='RULE_BASED'?'rule':'';
   return `<span class="pill ${origin==='SIMULATED'?'sim':''}" title="${esc(origin)}" data-origin="${esc(origin)}">输入 ${esc(originText)}</span> <span class="pill ${tone}">处理 ${esc(method)}</span>`;
@@ -129,7 +169,7 @@ function renderCapture(){
     <p class="device-warning">云端不访问本地设备；采集需浏览器权限，且需 HTTPS 或 localhost。录制从本 Session 的所填偏移时间开始。</p>
     <div class="upload-grid"><div class="upload-zone"><label><strong>↥ 上传体验视频</strong><p>MP4 / MOV / AVI / WebM · 200 MB</p><input id="video-file" type="file" accept="video/mp4,video/webm,video/quicktime,.avi"></label><button class="button small" data-action="upload-video">上传并分析视频</button></div><div class="upload-zone"><label><strong>↥ 上传体验语音</strong><p>WAV / MP3 / M4A / OGG / WebM</p><input id="audio-file" type="file" accept="audio/*,.webm"></label><button class="button small" data-action="upload-audio">上传并转录语音</button></div></div>
     <div class="card-body"><div class="form-row"><label>视频起点偏移（秒） <input type="number" id="video-offset" value="${assetOffset(video)}" min="0" step="0.1"></label><label>音频起点偏移（秒） <input type="number" id="audio-offset" value="${assetOffset(audio)}" min="0" step="0.1"></label></div><p class="small-note">独立录制的音视频需要手动填写与 Session 起点的偏移。默认体验区为画面内 5%–95% 矩形；API 支持自定义归一化多边形。</p>${assetList()}</div></section>
-    <div class="stack"><section class="card"><div class="card-head"><h2>语音采集</h2><span class="sub">AUDIO INPUT</span></div><div class="card-body"><div class="audio-status"><span class="audio-symbol">${icon("microphone")}</span><div><strong>${audio?'音频已接入':'等待语音输入'}</strong><small>ASR · ${esc(state.cap.asr_provider||'none')} / CPU</small></div></div><div class="waveform" id="waveform" aria-label="音频状态装饰，非实时音量">${'<i></i>'.repeat(43)}</div>${audio?`<audio class="audio-player" controls src="${mediaUrl(audio)}"></audio>`:''}<div class="form-actions"><button class="button small" data-action="microphone" id="record-audio">● 录制麦克风</button></div><p class="small-note">${state.cap.asr_provider==='none'?'尚未配置 ASR。可先用手动转录文本运行完整分析。':'音频为 SIMULATED 演示录音；本页不执行 ASR。'}<br>装饰波形不代表真实音频能量。</p></div></section>
+    <div class="stack"><section class="card"><div class="card-head"><h2>语音采集</h2><span class="sub">AUDIO INPUT</span></div><div class="card-body"><div class="audio-status"><span class="audio-symbol">${icon("microphone")}</span><div><strong>${audio?'音频已接入':'等待语音输入'}</strong><small>ASR · ${esc(state.cap.asr_provider||'none')} / CPU</small></div></div><div class="waveform" id="waveform" aria-label="音频状态装饰，非实时音量">${'<i></i>'.repeat(43)}</div>${audio?`<audio class="audio-player" controls src="${mediaUrl(audio)}"></audio>`:''}<div class="form-actions"><button class="button small" data-action="microphone" id="record-audio">● 录制麦克风</button></div><p class="small-note">${state.cap.asr_provider==='none'?'尚未配置 ASR。可先用手动转录文本运行完整分析。':recordingMode?'语音转录使用现有后端；本轮录像不自动分析音频。':'音频为 SIMULATED 演示录音；本页不执行 ASR。'}<br>装饰波形不代表真实音频能量。</p></div></section>
     <section class="card"><div class="card-head"><h2>事件流</h2><a class="sub" href="#timeline">查看全部 ↗</a></div><div class="mini-events" id="mini-events">${miniEvents()}</div></section>
     <section class="card"><div class="card-body"><div class="eyebrow green">NEXT STEP</div><h3 style="font-weight:500;font-size:15px">资料就绪，生成体验洞察。</h3><p class="small-note">规则分析无需密钥。大模型分析需要服务器配置 API，失败会如实显示。</p>${analysisButtons()}</div></section></div></div>
     <details class="details"><summary>＋ 手动输入带时间戳的转录文本 / 人工观察</summary><div class="card-body"><div class="hint-banner">手动文本标记为 MANUAL，不会被记为 ASR。每行格式：起始秒 | 结束秒 | 说话人（可留空） | 原话</div><textarea id="transcript-input" placeholder="5 | 8 | P01 | 穿起来还可以，但是腰部有点紧。&#10;10 | 13 | P01 | 上坡的时候感觉助力还不错。&#10;15 | 18 | P01 | 走久了之后感觉有一点重。"></textarea><div class="form-actions"><button class="button primary" data-action="save-transcript">保存转录文本</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><div class="form-row"><label>时间（秒）<input id="manual-time" type="number" min="0" value="0"></label><input class="input" id="manual-description" placeholder="人工观察，例如：调整腰部固定带"></div><div class="form-actions"><button class="button" data-action="save-manual">记录人工观察</button></div></div></details>
@@ -149,11 +189,11 @@ function comparisonControls(){
 function researchBrief(){
   if(!state.session)return `<section class="card research-brief"><div class="card-body"><div class="eyebrow">EVIDENCE → DECISION</div><h2>从研究问题开始。</h2><p>新建 Session 后设置研究目标并上传资料，或使用明确标记的 Mock 测试链路。</p><button class="button" data-action="research-demo">新建 MOCK 演示 · 本地后端功能</button></div></section>`;
   const b=state.session.research||{question:'消费者在 Crest C3 穿戴与行走任务中遇到哪些使用障碍，下一轮应验证什么？',objective:'区分原始记录、消费者反馈与研究推断。',tasks:['穿戴并调整固定带','等长行走后口述反馈'],decision_to_support:'确定下一轮产品验证。',recording_relationship:'unknown'};
-  return `<section class="card research-brief"><div class="card-head"><h2>研究问题 → 验证决定</h2><span class="sub">EVIDENCE-TO-DECISION 1.1</span></div><div class="card-body"><p class="research-question">${esc(b.question)}</p><details><summary>查看目标、任务与采集关系 · 只读</summary><div class="research-form"><label>具体研究问题<textarea id="research-question" rows="2" maxlength="1000">${esc(b.question)}</textarea></label><label>研究目标<textarea id="research-objective" rows="2" maxlength="1500">${esc(b.objective)}</textarea></label><label>计划任务（每行一项，不代表已经完成）<textarea id="research-tasks" rows="3">${esc(b.tasks.join('\n'))}</textarea></label><label>需要支持的决定<textarea id="research-decision" rows="2" maxlength="1500">${esc(b.decision_to_support)}</textarea></label><label>目标用户（有资料时填写）<input id="research-audience" maxlength="1000" value="${esc(b.target_audience||'')}" placeholder="尚未定义"></label><label>决策负责人<input id="research-owner" maxlength="200" value="${esc(b.decision_owner||'')}" placeholder="待指定"></label><label>音视频原始采集关系<select id="research-relationship">${[['unknown','未知，尚未核验'],['same_capture','同一次采集（用户声明，仍待核验）'],['independent','独立采集，不作真实同步解释']].map(([v,t])=>`<option value="${v}" ${b.recording_relationship===v?'selected':''}>${t}</option>`).join('')}</select></label><div><button class="button" data-action="save-research">保存研究设置</button><p class="small-note">此静态回放不保存研究设置；请使用完整本地后端编辑。</p></div></div></details>${comparisonControls()}<div class="form-actions"><button class="button small" data-action="research-demo">新建 MOCK 演示 · 本地后端功能</button></div></div></section>`;
+  return `<section class="card research-brief"><div class="card-head"><h2>研究问题 → 验证决定</h2><span class="sub">EVIDENCE-TO-DECISION 1.1</span></div><div class="card-body"><p class="research-question">${esc(b.question)}</p><details><summary>查看目标、任务与采集关系${recordingMode?'':' · 只读'}</summary><div class="research-form"><label>具体研究问题<textarea id="research-question" rows="2" maxlength="1000">${esc(b.question)}</textarea></label><label>研究目标<textarea id="research-objective" rows="2" maxlength="1500">${esc(b.objective)}</textarea></label><label>计划任务（每行一项，不代表已经完成）<textarea id="research-tasks" rows="3">${esc(b.tasks.join('\n'))}</textarea></label><label>需要支持的决定<textarea id="research-decision" rows="2" maxlength="1500">${esc(b.decision_to_support)}</textarea></label><label>目标用户（有资料时填写）<input id="research-audience" maxlength="1000" value="${esc(b.target_audience||'')}" placeholder="尚未定义"></label><label>决策负责人<input id="research-owner" maxlength="200" value="${esc(b.decision_owner||'')}" placeholder="待指定"></label><label>音视频原始采集关系<select id="research-relationship">${[['unknown','未知，尚未核验'],['same_capture','同一次采集（用户声明，仍待核验）'],['independent','独立采集，不作真实同步解释']].map(([v,t])=>`<option value="${v}" ${b.recording_relationship===v?'selected':''}>${t}</option>`).join('')}</select></label><div><button class="button" data-action="save-research">保存研究设置</button><p class="small-note">${recordingMode?'保存到当前 Session，保留原有报告契约。':'此静态回放不保存研究设置；请使用完整本地后端编辑。'}</p></div></div></details>${comparisonControls()}<div class="form-actions"><button class="button small" data-action="research-demo">新建 MOCK 演示 · 本地后端功能</button></div></div></section>`;
 }
 function renderTimeline(){
   const events=state.events.filter(e=>state.filter==='all'||e.source===state.filter);
-  return `<div class="section-intro"><div><h2>体验事件时间线 <span class="pill">${events.length} 条事件</span></h2><p>SESSION TIME · 事件时间是相对于共同起点的秒数。</p></div>${state.sid?`<a class="button" download="crestc3-replay-events.json" href="./events.json">↓ 导出事件 JSON</a>`:''}</div><div class="card"><div class="card-head"><div class="timeline-tools">${[['all','全部事件'],['video','视频'],['audio','语音'],['manual','人工'],['AI_analysis','分析']].map(([key,label])=>`<button class="filter ${state.filter===key?'active':''}" data-filter="${key}">${label}</button>`).join('')}</div><span class="sub">按时间排序</span></div><div class="timeline-list">${events.length?events.map(e=>`<article class="timeline-item"><time>${clock(e.timestamp)}</time><span class="timeline-line"></span><div><h3>${esc(e.description)}</h3><div class="event-meta"><span class="pill">${sourceLabel(e.source)}</span>${provenanceTags(e)}<span class="stage-tag">${esc(e.event_type)}</span></div><p>${e.confidence===null?'置信度未提供':`${e.source==='video'?'人体检测':'来源'}置信度 ${(e.confidence*100).toFixed(0)}%（非行为准确率）`} · E:${e.event_id.slice(0,8)}</p></div><button class="button small" data-evidence="${e.event_id}">查看证据 ↗</button></article>`).join(''):empty('时间线还是空的','先上传资料、输入文本，或运行完整演示。')}</div></div>`;
+  return `<div class="section-intro"><div><h2>体验事件时间线 <span class="pill">${events.length} 条事件</span></h2><p>SESSION TIME · 事件时间是相对于共同起点的秒数。</p></div>${state.sid?`<a class="button" download="crestc3-replay-events.json" href="${recordingMode?`/api/sessions/${state.sid}/events.json`:'./events.json'}">↓ 导出事件 JSON</a>`:''}</div><div class="card"><div class="card-head"><div class="timeline-tools">${[['all','全部事件'],['video','视频'],['audio','语音'],['manual','人工'],['AI_analysis','分析']].map(([key,label])=>`<button class="filter ${state.filter===key?'active':''}" data-filter="${key}">${label}</button>`).join('')}</div><span class="sub">按时间排序</span></div><div class="timeline-list">${events.length?events.map(e=>`<article class="timeline-item"><time>${clock(e.timestamp)}</time><span class="timeline-line"></span><div><h3>${esc(e.description)}</h3><div class="event-meta"><span class="pill">${sourceLabel(e.source)}</span>${provenanceTags(e)}<span class="stage-tag">${esc(e.event_type)}</span></div><p>${e.confidence===null?'置信度未提供':`${e.source==='video'?'人体检测':'来源'}置信度 ${(e.confidence*100).toFixed(0)}%（非行为准确率）`} · E:${e.event_id.slice(0,8)}</p></div><button class="button small" data-evidence="${e.event_id}">查看证据 ↗</button></article>`).join(''):empty('时间线还是空的','先上传资料、输入文本，或运行完整演示。')}</div></div>`;
 }
 function renderFeedback(){
   const f=state.feedback;
@@ -195,8 +235,8 @@ function renderReport(){
   if(!r)return researchBrief()+`<div class="card"><div class="card-body"><div class="section-intro"><div><h2>决策型研究报告尚未生成。</h2><p>先保存研究问题，再从当前 Session 的证据生成报告。模型失败会保留真实错误，不改用 Mock。</p></div>${analysisButtons()}</div><button class="button" data-action="research-demo">运行软件流程演示 · SIMULATED + MOCK</button></div></div>`;
   const a=r.decision_analysis;
   const decision=a?`<section class="decision-summary"><div><div class="eyebrow">CURRENT DECISION / ${esc(a.decision.classification)}</div><h2>${esc(a.decision.recommendation)}</h2><p>研究问题：${esc(r.research.question)}</p>${evidenceButtons(a.decision.evidence_ids)}</div><div class="decision-counts">${[['FACT','记录事实'],['INFERENCE','研究推断'],['INSUFFICIENT_EVIDENCE','证据不足']].map(([key,label])=>`<div><strong>${a.claims.filter(c=>c.classification===key).length}</strong><span>${label}</span></div>`).join('')}</div></section>`:'';
-  const exports=state.comparisonReport?'<button class="button outline" data-action="export-comparison-md">↓ 比较 Markdown</button><button class="button outline" data-action="export-comparison-json">↓ 比较 JSON</button><button class="button outline" data-action="close-comparison">返回当前 Session</button>':`<a class="button outline" download="crestc3-replay-report.md" href="./report.md">↓ Markdown</a><a class="button outline" download="crestc3-replay-report.json" href="./report.json">↓ JSON</a>`;
-  return researchBrief()+`<div class="report-banner"><div><div class="eyebrow">EVIDENCE → DECISION ${esc(r.report_schema_version||'1.0')} / ${r.simulated?'SIMULATED':'USER INPUT'}</div><h2>${state.comparisonReport?'多 Session 比较':'CREST C3'} · 决策型研究报告</h2><p>${esc(r.engine)} · ${new Date(r.generated_at).toLocaleString('zh-CN')}</p></div><div class="report-export">${exports}</div></div>${r.processing_method==='MOCK'?'<div class="hint-banner mock-banner">MOCK + SIMULATED · 软件流程演示，未执行 LLM、真实设备或 GPU 验证。</div>':''}${decision}<div class="card card-body report-regenerate"><span class="small-note">引用完整性已校验；内容、因果与模型质量仍待研究员复核。</span>${analysisButtons()}</div><article class="report-paper">${markdown(r.markdown)}</article>`;
+  const exports=state.comparisonReport?'<button class="button outline" data-action="export-comparison-md">↓ 比较 Markdown</button><button class="button outline" data-action="export-comparison-json">↓ 比较 JSON</button><button class="button outline" data-action="close-comparison">返回当前 Session</button>':`<a class="button outline" download="crestc3-replay-report.md" href="${recordingMode?`/api/sessions/${state.sid}/report.md`:'./report.md'}">↓ Markdown</a><a class="button outline" download="crestc3-replay-report.json" href="${recordingMode?`/api/sessions/${state.sid}/report.json`:'./report.json'}">↓ JSON</a>`;
+  return researchBrief()+`<div class="report-banner"><div><div class="eyebrow">EVIDENCE → DECISION ${esc(r.report_schema_version||'1.0')} / ${r.simulated?'SIMULATED':'USER INPUT'}</div><h2>${state.comparisonReport?'多 Session 比较':state.session?.product==='ACL Knee Brace'?'ACL Knee Brace':'CREST C3'} · 决策型研究报告</h2><p>${esc(r.engine)} · ${new Date(r.generated_at).toLocaleString('zh-CN')}</p></div><div class="report-export">${exports}</div></div>${r.processing_method==='MOCK'?'<div class="hint-banner mock-banner">MOCK + SIMULATED · 软件流程演示，未执行 LLM、真实设备或 GPU 验证。</div>':''}${decision}<div class="card card-body report-regenerate"><span class="small-note">引用完整性已校验；内容、因果与模型质量仍待研究员复核。</span>${analysisButtons()}</div><article class="report-paper">${markdown(r.markdown)}</article>`;
 }
 
 function exportComparison(format){
@@ -219,7 +259,7 @@ async function watchJob(job,sid=state.sid){
       $('#job-status').textContent=`${j.status.toUpperCase()} · ${Math.round((Date.now()-began)/1000)}s`;
       if(j.status==='failed')throw Error(j.error||'任务失败');
       if(j.status==='completed'){
-        $('#job-panel').classList.add('done');$('#job-message').textContent='示例已回放 · 未运行模型';
+        $('#job-panel').classList.add('done');$('#job-message').textContent=recordingMode?'处理完成 · 结果已保存':'示例已回放 · 未运行模型';
         if(sid===state.sid){await loadData();render();}
         return j;
       }
@@ -230,7 +270,7 @@ async function watchJob(job,sid=state.sid){
   }
 }
 async function uploadFile(file,kind){
-  const body=new FormData();body.append('kind',kind);body.append('file',file);
+  const body=new FormData();body.append('kind',kind);body.append('file',file);if(recordingMode&&kind==='video')body.append('recording_mode','REAL_RECORDING');
   return api(`/sessions/${state.sid}/assets`,{method:'POST',body});
 }
 function offset(kind){return Number($(`#${kind}-offset`)?.value||0);}
@@ -246,13 +286,13 @@ async function showEvidence(id){
   const aid=e.evidence.asset_id;
   const asset=state.session?.assets.find(a=>a.asset_id===aid&&a.session_id===e.session_id);
   const record=report?.evidence_index?.[id];
-  const url=record?.media_url||(asset?mediaUrl(asset):null);
+  const url=recordingMode&&asset?.recording_mode==='REAL_RECORDING'?mediaUrl(asset):record?.media_url||(asset?mediaUrl(asset):null);
   if(url){
     const t=e.evidence.media_time??e.evidence.start??0;
     seekTime=Number(t);
     const src=url+`#t=${t}`;
     if(e.source==='video'){
-      if(e.evidence.snapshot)media+=`<img alt="演示证据帧（非真实模型识别）" src="${record?.frame_url||`./frames/${aid}/${esc(e.evidence.snapshot)}`}">`;
+      if(e.evidence.snapshot)media+=`<img alt="${recordingMode?'实际分析证据帧':'演示证据帧（非真实模型识别）'}" src="${record?.frame_url||(recordingMode?window.HUBONE_RECORDING.frameUrl(e.session_id,aid,e.evidence.snapshot):`./frames/${aid}/${esc(e.evidence.snapshot)}`)}">`;
       media+=`<video controls src="${src}"></video>`;
     }else media+=`<audio controls src="${src}"></audio>`;
   }
@@ -341,7 +381,7 @@ document.addEventListener('click',async e=>{
   const action=e.target.closest('[data-action]');const reprocess=e.target.closest('[data-reprocess]');
   try{
     if(evidence){await showEvidence(evidence.dataset.evidence);return;}
-    if(filter){state.filter=filter.dataset.filter;render();return;}
+    if(filter){state.filter=filter.dataset.filter;const target=$('[data-acl-original-events]');if(state.session?.product==='ACL Knee Brace'&&state.page==='timeline'&&target)target.innerHTML=renderTimeline();else render();return;}
     if(!action&&!reprocess)return;
     if(state.busy)throw Error('当前任务运行中，请等待完成。');
     clearError();
@@ -355,9 +395,9 @@ $('#session-select').onchange=async e=>{try{clearError();await selectSession(e.t
 $('#new-session').onclick=async()=>{
   try{
     if(state.recorder?.state==='recording')throw Error('请先停止当前录制。');
-    const name=prompt('体验 Session 名称','Crest C3 · 消费者体验');if(!name?.trim())return;
+    const name=prompt('体验 Session 名称',recordingMode?'家庭录像测试 · REAL_RECORDING':'Crest C3 · 消费者体验');if(!name?.trim())return;
     $('#content').inert=true;$('#new-session').disabled=true;
-    const session=await post('/sessions',{name:name.trim(),simulated:$('#session-sim').checked});await refreshSessions();await selectSession(session.session_id);location.hash='capture';
+    const session=await post('/sessions',{name:name.trim(),simulated:$('#session-sim').checked,...(recordingMode?{product:'大华摄像头家庭录像测试'}:{})});await refreshSessions();await selectSession(session.session_id);location.hash='capture';
   }catch(err){error(err);}finally{$('#content').inert=false;$('#new-session').disabled=false;}
 };
 $('#demo-btn').onclick=async()=>{
@@ -374,9 +414,11 @@ async function init(){
   navigate();
   try{
     const [health,cap,sessions]=await Promise.all([api('/health'),api('/capabilities'),refreshSessions()]);
-    state.cap=cap;$('#health').textContent=health.status==='ok'?'C3 1.1 · 只读 REPLAY':'服务待检查';
+    state.cap=cap;$('#health').textContent=health.status==='ok'?(recordingMode?'视觉 API 已连接 · RTSP 状态见实时摄像头':'C3 1.1 · 只读 REPLAY'):'服务待检查';
     if(state.sid&&!sessions.some(s=>s.session_id===state.sid))state.sid=null;
+    if(aclStudyMode&&state.sid&&!sessions.some(s=>s.session_id===state.sid&&s.product==='ACL Knee Brace'))await selectSession(null);
     if(state.sid)await selectSession(state.sid);else render();
   }catch(e){$('#health').textContent='服务连接失败';error(e);}
 }
+window.HUBONE_RECORDING?.decorate();
 init();
