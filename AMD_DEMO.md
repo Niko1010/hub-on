@@ -1,21 +1,15 @@
-# Hub One AMD Demo — 2026-11-09
+# AMD Demo — exact current 8004 product
 
-Frozen branch: `demo/amd-2026-11-09`. Independent snapshot of Integrated Demo 1.3, Vision Intelligence 1.1, Experience Intelligence 1.2, DeepSeek/Ollama/Anthropic adapters and ACL study workflow. Does not merge or change development branches.
+The authoritative demo is the full running FastAPI application and private data snapshot, defaulting to the original ACL Knee Brace Session. It is NOT the public Crest C3 replay or a static-only website. Original application JS, CSS, CAD, APIs, navigation and report logic are copied without product redesign.
 
-## Public replay
-Run START_AMD_OFFLINE.cmd with Python installed. Browser: http://127.0.0.1:8016/demos/etd-1-1-20261104/?mode=replay#space
-Uses the existing SIMULATED / REPLAY Crest C3 records and spatial overlays. Static hosting cannot run FastAPI, CUDA, RTSP or a cloud model. Real data is never relabeled as simulated or embedded in the public repository.
+## Start the complete copy
+Run START_AMD_ACL.ps1 -PrivateRoot <private-release-directory> -Python <compatible-python.exe>.
+The private directory has separate data/, models/, originals/ and config/ folders. data/ contains a consistent full SQLite snapshot and all original runtime media. config/.env and config/.env.local are private and never committed. The wrapper prints the ACL URL including the original Session ID. Default port is 8008; original 8004 remains untouched.
+All original Sessions including Crest C3 are retained. The launch wrapper requires the ACL Session and never substitutes a simulated record. Saved reports and feedback need no new inference. The ACL capture saved 1928 JPEG observations, not a continuous MP4; separately recorded original household MP4 files are retained in originals/ with their original provenance, not falsely attached to the ACL Session.
 
-## Full local backend
-PowerShell: `./START_AMD_WINDOWS.ps1 -Python "path/to/compatible/python.exe"`
-Use a compatible preinstalled environment, or create an isolated .venv and install hubone-crestc3-demo/requirements.txt before going offline. CPU and CUDA baseline scripts are preserved. No dependencies are upgraded by these launchers.
-Open http://127.0.0.1:8006/integrated/?mode=live#experience . Backend runtime is an independent ignored .amd-local/runtime directory. ACL workflow can be opened with study=acl; private Sessions are deliberately absent from a fresh public installation. The existing video, observation, review and report API implementations are retained.
+## Controlled online deployment — not yet provisioned
+Deploy this same code with Python/FastAPI and a compatible preinstalled CPU/CUDA environment. Transfer the private data/models/originals separately to controlled storage; supply configuration through server environment or the private config directory. Keep data outside the web static root. Run one Uvicorn worker. Put the whole service, media routes and WebSocket routes behind an authenticated HTTPS gateway; do not expose the raw API or database directly. Domain, hosting target, authentication and access from the company network must be verified before calling the deployment complete.
+No hosting target or credentials have been supplied for a full backend deployment. No existing site is overwritten. The previous raw.githack preview is a legacy static replay and is NOT the requested AMD complete product URL.
 
-Configure DEEPSEEK_API_KEY and optional camera credentials in a local ignored hubone-crestc3-demo/.env.local or environment. Never put credentials in a URL or public frontend. Credentials, model weights and real recordings are not distributed. Cloud inference and live capture need authorized local configuration/connectivity; an offline replay does not claim they are running.
-
-## Deployment boundary
-Existing GitHub Pages is unchanged. This branch is not configured to replace it. A static commit-addressed preview may be used separately; full backend hosting needs a separately provisioned server and private configuration. Reachability from a corporate network must be tested on that computer; local success cannot establish company firewall access.
-
-## Sources and privacy
-Public demo: explicitly SIMULATED / REPLAY. Live service: LIVE only while capture is active. Uploaded real media: REAL_RECORDING. Unconnected capabilities remain NOT CONNECTED.
-No .env.local, API tokens, RTSP passwords, household frames/videos, personal ACL quotes or SQLite database is included. Private original research stays in the original Windows workspace. Original CAD and UI geometry assets are copied without regeneration.
+## Backup and rollback
+Public Git branch stores code only. Private offline ZIP contains unchanged code, all database/media, models and original recordings. Credentials stay outside that ZIP and must be transferred securely if needed. To roll back, stop only the independent AMD service, unpack the private snapshot in a new directory and launch it against a fresh copy of data/. Preserve the prior directory; never reset or clean the original workspaces.
